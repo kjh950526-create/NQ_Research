@@ -1,0 +1,7 @@
+Instrument,Action,Type,Quantity,Limit,Stop,State,Filled,Avg. price,Remaining,Name,Strategy,OCO,TIF,Account display name,ID,Time,Cancel,
+MNQ JUN26,Buy to cover,MIT,1,0,29376.00,Filled,1,29377,0,Target1,(20) - 1,96887dc707774760a432e23452db415f,GTC,Playback101,9313cb5f71894afb80adc3857e778aa3,2026-06-08 오전 10:16:50,,
+MNQ JUN26,Buy to cover,Stop Market,1,0,29421.00,Cancelled,0,0,1,Stop1,(20) - 1,96887dc707774760a432e23452db415f,GTC,Playback101,5313908e47974e7487465a364256696f,2026-06-08 오전 10:16:50,,
+MNQ JUN26,Sell,Market,1,0,0,Filled,1,29401,0,Entry,,,GTC,Playback101,838360152669451082a4a10ce8d06a70,2026-06-08 오전 10:16:16,,
+MNQ JUN26,Buy to cover,MIT,1,0,29390.75,Cancelled,0,0,1,Target1,(15) - 1,cd5182e414d24c3faa9ebcbe91d7c921,GTC,Playback101,b6790ad85236476ca5c727da4a0dd0cf,2026-06-08 오전 10:08:56,,
+MNQ JUN26,Buy to cover,Stop Market,1,0,29424.50,Filled,1,29424.5,0,Stop1,(15) - 1,cd5182e414d24c3faa9ebcbe91d7c921,GTC,Playback101,b3d9ef54cad34f7abb2e2aef18d98fa5,2026-06-08 오전 10:08:56,,
+MNQ JUN26,Sell,Market,1,0,0,Filled,1,29409.5,0,Entry,(15) - 1,,GTC,Playback101,a89d749a7a6a4f67b851c29f0581d9ad,2026-06-08 오전 10:08:41,,
