@@ -6,7 +6,7 @@
 > 운영: 의미 있는 진전(검증 결과/방향 전환/버그 해결/새 결론)이 생길 때마다 Claude가
 > 해당 섹션을 갱신하고 §9 업데이트 로그에 한 줄 추가한다.
 
-**최종 갱신: 2026-06-25 (v42)**
+**최종 갱신: 2026-06-25 (v43)**
 
 ---
 
@@ -625,7 +625,19 @@ merged_log 5/26~6/11(6/1 HF 제외). 진입 32 / 참음(-) 72 / 충동(!) 36. �
 - **Claude OUTPUT (raw 측정):** zone_width, price_vs_zone, first_touch, reaction(존중/관통/되돌림), broke_through, break_dist_pct, hold_after_break_bars, zone_quality, chaos_level.
 - 구글시트로 거래자가 작성 → fileId 받으면 Claude가 읽어 raw 분석(스캘핑 시트와 동일 구조). **시작: 다음 거래일 9:30부터. 스캘핑 50개 우선은 유지(이건 관찰이라 병행).**
 
+### 10.11. zone 기록 최종 확정 — 당일차트 불필요 + 폴더분리 + 입력 4칸 (2026-06-25)
+
+**★ 핵심 단순화 (거래자):** zone 식별에 *당일 세션 차트는 볼 필요 없음.* 보는 것은 단 하나 — **"전날 세션의 응집구간이 그보다 과거 며칠 전과 일치하는가?"** 일치하면 강한 zone(여러번 존중된 레벨). 그 zone을 오늘 세션에 미리 그려두고 마감 후 반응 확인. → 새벽 실시간 관찰 불필요 완전 해결(zone=과거로 정의, 반응=마감후 Claude 측정).
+
+**역할 분담 최종 (거래자 입력 최소):**
+- **거래자(구글시트 bar_zone_log, 4칸):** session_date / zone_range(예 30080-30100) / lookback_refs(예 "260620 0930-0935; 260623 1420-1445") / note(이유). 그날 *새로 찾은* zone만. 기존 살아있는 zone은 차트에 남겨두고 시트엔 재기록 불필요(Claude가 zone_id로 이어 추적). 매일 현재가 위아래 넉넉히 몇개씩 탐색해 쌓음. 시트는 프로젝트 소스로 공유.
+- **Claude(GitHub `bar_research/` 폴더, 스캘핑과 완전분리):** zone_id 부여(Z+날짜+순번)·zone_master 관리·lookback refs 정리·1분봉 raw로 반응/월장/유지/카오스/퀄리티 측정·zone 수명(생성~사망) 추적. zone_master.csv / zone_lookback_refs.csv / zone_daily_reaction.csv.
+
+(구글 Drive 파일생성 도구가 일시적 에러 → 시트는 거래자가 CSV 가져오기로 생성 후 프로젝트 소스 공유, fileId 받으면 Claude가 읽음.)
+
 ## 9. 업데이트 로그
+
+- **2026-06-25 (v43):** §10.11 — zone 기록 최종확정. **당일차트 불필요**(전날 응집이 과거 며칠과 일치하는가만 봄=새벽 실시간 관찰 문제 해결). 역할분담: 거래자 4칸(session_date/zone_range/lookback_refs/note, 새 zone만)만, Claude가 GitHub bar_research/ 폴더(스캘핑과 분리)에서 zone_id·master·반응측정 전담. 시트는 프로젝트소스 공유.
 
 - **2026-06-25 (v42):** §10.10 — 분봉 zone 기록 워크플로우+입력양식 확정. 브레인스토밍: 불확실성=본질(partial+트레일로 양쪽대비), SL=돌파경계 안쪽(타이트), 월장=거리+시간+재응집 확률판정, 15분봉 zone이 5분보다 의미있을 가능성(검증대상), 카오스 환경필터 필요, 실시간 우려→마감캔들만+기록항목화. **워크플로우: 9:30 고정에 zone 위아래 넉넉히 그려 INPUT(예측고정)→마감후 Claude가 raw로 반응측정. 거래자 입력 6칸(zone_range/lookback date·time/catchable 자유서술)만, 나머지 Claude. 다음 거래일부터, 스캘핑과 병행.** 양식 trend/bar_zone_INPUT_template.csv.
 
