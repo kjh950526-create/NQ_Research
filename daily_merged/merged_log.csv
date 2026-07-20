@@ -275,5 +275,5 @@ date,trade_num,entry_or_pass,day_chaos,trade_vol,time,side,pts,R_ratio,outcome,b
 260717,,impulse,,,10:24:39,L,,,,이번에는 진짜 bo chase
 260717,,impulse,,,10:25:30,S,,,,고점 찍고 다시 zone2로 복귀
 260717,,impulse,,,10:26:42,S,,,,왠지 최고점 갱신보다 zone3로 갈듯
-260720,1,entry,,,10:23:58,LONG,24.50,1.25,1,zone확신도1
-260720,2,entry,,,10:28:40,SHORT,-20.25,1.25,-1,zone확신도1
+260720,1,entry,,,10:23:58,LONG,24.50,1.25,1,zone확신도3 (함정 많은 느낌, zone 파악 오래 걸림, zone 이탈 적어 셋업 부족)
+260720,2,entry,,,10:28:40,SHORT,-20.25,1.25,-1,zone확신도3 (함정 많은 느낌, zone 파악 오래 걸림, zone 이탈 적어 셋업 부족)
