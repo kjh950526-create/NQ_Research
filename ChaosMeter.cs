@@ -47,8 +47,8 @@ namespace NinjaTrader.NinjaScript.Indicators
 		private bool   loggedToday = false;
 		private string statusText = "대기";
 
-		// 이미 로그에 기록된 날짜 (파일에서 로드) → 재실행/재playback시 중복 방지
-		private HashSet<string> loggedDates = new HashSet<string>();
+		// 로그 전체 행을 날짜순으로 보관 (재playback 중복 방지 + 자동 정렬)
+		private SortedDictionary<string, string> logRows = new SortedDictionary<string, string>(StringComparer.Ordinal);
 		private bool loggedDatesLoaded = false;
 
 		// 현재시각 표시용 (데이터 기반)
@@ -223,40 +223,40 @@ namespace NinjaTrader.NinjaScript.Indicators
 				string dir = Path.GetDirectoryName(LogPath);
 				if (!Directory.Exists(dir)) Directory.CreateDirectory(dir);
 
-				// ── 파일에 이미 있는 날짜 로드 (최초 1회) → 재playback 중복 방지 ──
+				// ── 파일의 모든 기존 행 로드 (최초 1회): 날짜→전체행 맵 ──
 				if (!loggedDatesLoaded)
 				{
-					loggedDates.Clear();
+					logRows.Clear();
 					if (File.Exists(LogPath))
 					{
 						foreach (string line in File.ReadAllLines(LogPath))
 						{
+							if (string.IsNullOrWhiteSpace(line)) continue;
 							int comma = line.IndexOf(',');
-							if (comma > 0)
-							{
-								string dcol = line.Substring(0, comma).Trim();
-								if (dcol.Length == 8 && dcol != "date")   // yyyyMMdd
-									loggedDates.Add(dcol);
-							}
+							if (comma <= 0) continue;
+							string dcol = line.Substring(0, comma).Trim();
+							if (dcol.Length == 8 && dcol != "date")   // yyyyMMdd 데이터 행만
+								logRows[dcol] = line;
 						}
 					}
 					loggedDatesLoaded = true;
 				}
 
 				string key = curDay.ToString("yyyyMMdd");
-				if (loggedDates.Contains(key))
+				if (logRows.ContainsKey(key))
 					return;   // 이미 기록된 날 → 재저장 안 함
 
-				bool newFile = !File.Exists(LogPath);
-				using (StreamWriter sw = new StreamWriter(LogPath, true, Encoding.UTF8))
+				// 새 행 추가
+				string sig = Signal(meterValue);
+				logRows[key] = string.Format("{0},{1:0.0},{2}", key, meterValue, sig);
+
+				// ── 전체를 날짜순 정렬해 파일 재작성 (SortedDictionary가 자동 정렬) ──
+				using (StreamWriter sw = new StreamWriter(LogPath, false, Encoding.UTF8))
 				{
-					if (newFile)
-						sw.WriteLine("date,ens_1000_1010,signal");
-					string sig = Signal(meterValue);
-					sw.WriteLine(string.Format("{0},{1:0.0},{2}",
-						key, meterValue, sig));
+					sw.WriteLine("date,ens_1000_1010,signal");
+					foreach (var kv in logRows)   // SortedDictionary → 날짜 오름차순
+						sw.WriteLine(kv.Value);
 				}
-				loggedDates.Add(key);   // 세션 내 재저장도 방지
 			}
 			catch (Exception ex)
 			{
