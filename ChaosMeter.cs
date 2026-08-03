@@ -43,7 +43,6 @@ namespace NinjaTrader.NinjaScript.Indicators
 
 		private DateTime curDay = DateTime.MinValue;
 		private double meterValue = double.NaN;   // 미터창 앙상블 값
-		private double auxValue   = double.NaN;   // 9:30-9:45 보조 (계산만, 표시 off)
 		private bool   finalizedToday = false;
 		private bool   loggedToday = false;
 		private string statusText = "대기";
@@ -68,7 +67,6 @@ namespace NinjaTrader.NinjaScript.Indicators
 				IsSuspendedWhileInactive = false;
 
 				// 사용자 설정
-				ShowAux      = false;                  // 9:30-9:45 보조 표시
 				WriteLog     = true;                   // CSV 자동 로그
 				LogPath      = @"C:\NQ_Research\chaos_meter_log.csv";
 				PanelCorner  = 0;                      // 0=좌상, 1=우상, 2=좌하, 3=우하
@@ -97,19 +95,19 @@ namespace NinjaTrader.NinjaScript.Indicators
 				curDay = t.Date;
 				buffer.Clear();
 				meterValue = double.NaN;
-				auxValue = double.NaN;
 				finalizedToday = false;
 				loggedToday = false;
 				statusText = "대기";
 			}
 
 			// 계산창 밖이면 여기서 종료 (버퍼링·계산·렌더 트리거 없음)
-			if (tod < new TimeSpan(9, 29, 0) || tod > new TimeSpan(10, 11, 0))
+			// 미터창(10:00-10:10)만 계산 → 09:59:50부터 버퍼링 (여유 10초)
+			if (tod < new TimeSpan(9, 59, 50) || tod > new TimeSpan(10, 11, 0))
 				return;
 
 			lastTickTime = t;
 
-			// 09:29~10:11 구간만 버퍼링 (보조창 9:30 + 미터창 10:10 커버)
+			// 미터창 계산용 1초 데이터 버퍼링 (10:00-10:10)
 			buffer.Add(new Tick {
 				T = t,
 				Close = Closes[1][0],
@@ -127,7 +125,6 @@ namespace NinjaTrader.NinjaScript.Indicators
 			if (!finalizedToday && tod > new TimeSpan(10, 10, 0))
 			{
 				meterValue = ComputeEnsemble(new TimeSpan(10, 0, 0), new TimeSpan(10, 10, 0));
-				auxValue   = ComputeEnsemble(new TimeSpan(9, 30, 0), new TimeSpan(9, 45, 0));
 				finalizedToday = true;
 				statusText = "확정";
 
@@ -254,10 +251,10 @@ namespace NinjaTrader.NinjaScript.Indicators
 				using (StreamWriter sw = new StreamWriter(LogPath, true, Encoding.UTF8))
 				{
 					if (newFile)
-						sw.WriteLine("date,ens_1000_1010,ens_0930_0945,signal");
+						sw.WriteLine("date,ens_1000_1010,signal");
 					string sig = Signal(meterValue);
-					sw.WriteLine(string.Format("{0},{1:0.0},{2:0.0},{3}",
-						key, meterValue, auxValue, sig));
+					sw.WriteLine(string.Format("{0},{1:0.0},{2}",
+						key, meterValue, sig));
 				}
 				loggedDates.Add(key);   // 세션 내 재저장도 방지
 			}
@@ -294,9 +291,6 @@ namespace NinjaTrader.NinjaScript.Indicators
 			string line1 = double.IsNaN(meterValue)
 				? string.Format("CHAOS: {0}", statusText)
 				: string.Format("CHAOS {0:0.0}  [{1}]", meterValue, sig);
-			string line2 = ShowAux && !double.IsNaN(auxValue)
-				? string.Format("aux(9:30) {0:0.0}", auxValue)
-				: "";
 			string line3 = lastTickTime == DateTime.MinValue
 				? ""
 				: string.Format("time {0:HH:mm:ss}", lastTickTime);
@@ -307,10 +301,9 @@ namespace NinjaTrader.NinjaScript.Indicators
 				SharpDX.DirectWrite.FontStyle.Normal, FontSizePx);
 
 			string text = line1;
-			if (line2 != "") text += "\n" + line2;
 			if (line3 != "") text += "\n" + line3;
 
-			float w = 210, h = (line2 != "" ? 74 : 56);
+			float w = 210, h = 56;
 			float pad = 10;
 			float x, y;
 			double panelW = chartControl.CanvasRight - chartControl.CanvasLeft;
@@ -336,25 +329,21 @@ namespace NinjaTrader.NinjaScript.Indicators
 
 		#region Properties
 		[NinjaScriptProperty]
-		[Display(Name = "9:30 보조 표시", Order = 1, GroupName = "설정")]
-		public bool ShowAux { get; set; }
-
-		[NinjaScriptProperty]
-		[Display(Name = "CSV 로그 기록", Order = 2, GroupName = "설정")]
+		[Display(Name = "CSV 로그 기록", Order = 1, GroupName = "설정")]
 		public bool WriteLog { get; set; }
 
 		[NinjaScriptProperty]
-		[Display(Name = "로그 경로", Order = 3, GroupName = "설정")]
+		[Display(Name = "로그 경로", Order = 2, GroupName = "설정")]
 		public string LogPath { get; set; }
 
 		[NinjaScriptProperty]
 		[Range(0, 3)]
-		[Display(Name = "패널 위치(0좌상/1우상/2좌하/3우하)", Order = 4, GroupName = "설정")]
+		[Display(Name = "패널 위치(0좌상/1우상/2좌하/3우하)", Order = 3, GroupName = "설정")]
 		public int PanelCorner { get; set; }
 
 		[NinjaScriptProperty]
 		[Range(8, 40)]
-		[Display(Name = "글자 크기", Order = 5, GroupName = "설정")]
+		[Display(Name = "글자 크기", Order = 4, GroupName = "설정")]
 		public float FontSizePx { get; set; }
 		#endregion
 	}
