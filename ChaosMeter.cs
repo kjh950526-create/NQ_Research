@@ -48,6 +48,10 @@ namespace NinjaTrader.NinjaScript.Indicators
 		private bool   loggedToday = false;
 		private string statusText = "대기";
 
+		// 이미 로그에 기록된 날짜 (파일에서 로드) → 재실행/재playback시 중복 방지
+		private HashSet<string> loggedDates = new HashSet<string>();
+		private bool loggedDatesLoaded = false;
+
 		// 현재시각 표시용 (데이터 기반)
 		private DateTime lastTickTime = DateTime.MinValue;
 
@@ -84,9 +88,10 @@ namespace NinjaTrader.NinjaScript.Indicators
 				return;
 
 			DateTime t = Times[1][0];      // ★ 데이터 틱 시각 (playback에서도 정확)
-			lastTickTime = t;
+			TimeSpan tod = t.TimeOfDay;
 
-			// 날짜 바뀌면 리셋
+			// ── 성능: 계산창(9:29~10:11) 밖에서는 즉시 반환, 아무 작업 안 함 ──
+			// 단, 날짜 전환 감지는 가볍게 유지 (하루 첫 틱에서만 리셋)
 			if (t.Date != curDay)
 			{
 				curDay = t.Date;
@@ -98,17 +103,19 @@ namespace NinjaTrader.NinjaScript.Indicators
 				statusText = "대기";
 			}
 
+			// 계산창 밖이면 여기서 종료 (버퍼링·계산·렌더 트리거 없음)
+			if (tod < new TimeSpan(9, 29, 0) || tod > new TimeSpan(10, 11, 0))
+				return;
+
+			lastTickTime = t;
+
 			// 09:29~10:11 구간만 버퍼링 (보조창 9:30 + 미터창 10:10 커버)
-			TimeSpan tod = t.TimeOfDay;
-			if (tod >= new TimeSpan(9, 29, 0) && tod <= new TimeSpan(10, 11, 0))
-			{
-				buffer.Add(new Tick {
-					T = t,
-					Close = Closes[1][0],
-					High = Highs[1][0],
-					Low = Lows[1][0]
-				});
-			}
+			buffer.Add(new Tick {
+				T = t,
+				Close = Closes[1][0],
+				High = Highs[1][0],
+				Low = Lows[1][0]
+			});
 
 			// 진행 상태 표시 (미터창 진입 중)
 			if (tod > new TimeSpan(10, 0, 0) && tod <= new TimeSpan(10, 10, 0) && !finalizedToday)
@@ -129,6 +136,9 @@ namespace NinjaTrader.NinjaScript.Indicators
 					WriteLogLine();
 					loggedToday = true;
 				}
+
+				// 확정 후엔 버퍼 비워 메모리 정리 (당일 재계산 불필요)
+				buffer.Clear();
 			}
 		}
 
@@ -215,15 +225,41 @@ namespace NinjaTrader.NinjaScript.Indicators
 			{
 				string dir = Path.GetDirectoryName(LogPath);
 				if (!Directory.Exists(dir)) Directory.CreateDirectory(dir);
+
+				// ── 파일에 이미 있는 날짜 로드 (최초 1회) → 재playback 중복 방지 ──
+				if (!loggedDatesLoaded)
+				{
+					loggedDates.Clear();
+					if (File.Exists(LogPath))
+					{
+						foreach (string line in File.ReadAllLines(LogPath))
+						{
+							int comma = line.IndexOf(',');
+							if (comma > 0)
+							{
+								string dcol = line.Substring(0, comma).Trim();
+								if (dcol.Length == 8 && dcol != "date")   // yyyyMMdd
+									loggedDates.Add(dcol);
+							}
+						}
+					}
+					loggedDatesLoaded = true;
+				}
+
+				string key = curDay.ToString("yyyyMMdd");
+				if (loggedDates.Contains(key))
+					return;   // 이미 기록된 날 → 재저장 안 함
+
 				bool newFile = !File.Exists(LogPath);
 				using (StreamWriter sw = new StreamWriter(LogPath, true, Encoding.UTF8))
 				{
 					if (newFile)
 						sw.WriteLine("date,ens_1000_1010,ens_0930_0945,signal");
 					string sig = Signal(meterValue);
-					sw.WriteLine(string.Format("{0:yyyyMMdd},{1:0.0},{2:0.0},{3}",
-						curDay, meterValue, auxValue, sig));
+					sw.WriteLine(string.Format("{0},{1:0.0},{2:0.0},{3}",
+						key, meterValue, auxValue, sig));
 				}
+				loggedDates.Add(key);   // 세션 내 재저장도 방지
 			}
 			catch (Exception ex)
 			{
