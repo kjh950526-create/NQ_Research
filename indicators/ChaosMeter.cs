@@ -306,14 +306,17 @@ namespace NinjaTrader.NinjaScript.Indicators
 			float w = 210, h = 56;
 			float pad = 10;
 			float x, y;
-			double panelW = chartControl.CanvasRight - chartControl.CanvasLeft;
-			double panelH = chartControl.CanvasBottom - chartControl.CanvasTop;
+			// NT8: 캔버스 경계는 ChartPanel에서 가져옴 (ChartControl엔 Canvas* 없음)
+			float left   = (float)ChartPanel.X;
+			float top    = (float)ChartPanel.Y;
+			float right  = (float)(ChartPanel.X + ChartPanel.W);
+			float bottom = (float)(ChartPanel.Y + ChartPanel.H);
 			switch (PanelCorner)
 			{
-				case 1: x = (float)(chartControl.CanvasRight - w - pad); y = (float)(chartControl.CanvasTop + pad); break;
-				case 2: x = (float)(chartControl.CanvasLeft + pad); y = (float)(chartControl.CanvasBottom - h - pad); break;
-				case 3: x = (float)(chartControl.CanvasRight - w - pad); y = (float)(chartControl.CanvasBottom - h - pad); break;
-				default: x = (float)(chartControl.CanvasLeft + pad); y = (float)(chartControl.CanvasTop + pad); break;
+				case 1: x = right - w - pad; y = top + pad; break;
+				case 2: x = left + pad; y = bottom - h - pad; break;
+				case 3: x = right - w - pad; y = bottom - h - pad; break;
+				default: x = left + pad; y = top + pad; break;
 			}
 
 			var rect = new SharpDX.RectangleF(x, y, w, h);
