@@ -53,6 +53,7 @@ namespace NinjaTrader.NinjaScript.Indicators
 
 		// 현재시각 표시용 (데이터 기반)
 		private DateTime lastTickTime = DateTime.MinValue;
+		private bool windowEnded = false;   // 10:30 지남 → 거래창 종료 표시
 
 		protected override void OnStateChange()
 		{
@@ -97,15 +98,24 @@ namespace NinjaTrader.NinjaScript.Indicators
 				meterValue = double.NaN;
 				finalizedToday = false;
 				loggedToday = false;
+				windowEnded = false;
 				statusText = "대기";
 			}
 
-			// 계산창 밖이면 여기서 종료 (버퍼링·계산·렌더 트리거 없음)
-			// 미터창(10:00-10:10)만 계산 → 09:59:50부터 버퍼링 (여유 10초)
+			// ── 시각 표시: 거래창 종료(10:30)까지 갱신, 이후엔 표시 중단 ──
+			if (tod <= new TimeSpan(10, 30, 0))
+			{
+				lastTickTime = t;          // 10:30까지 현재시각 계속 갱신
+				windowEnded = false;
+			}
+			else
+			{
+				windowEnded = true;        // 10:30 넘음 → "거래창 종료" 표시
+			}
+
+			// ── 무거운 작업(버퍼링·앙상블 계산)은 미터창 구간(9:59:50~10:11)에서만 ──
 			if (tod < new TimeSpan(9, 59, 50) || tod > new TimeSpan(10, 11, 0))
 				return;
-
-			lastTickTime = t;
 
 			// 미터창 계산용 1초 데이터 버퍼링 (10:00-10:10)
 			buffer.Add(new Tick {
@@ -291,9 +301,13 @@ namespace NinjaTrader.NinjaScript.Indicators
 			string line1 = double.IsNaN(meterValue)
 				? string.Format("CHAOS: {0}", statusText)
 				: string.Format("CHAOS {0:0.0}  [{1}]", meterValue, sig);
-			string line3 = lastTickTime == DateTime.MinValue
-				? ""
-				: string.Format("time {0:HH:mm:ss}", lastTickTime);
+			string line3;
+			if (windowEnded)
+				line3 = "거래창 종료 (10:30)";
+			else if (lastTickTime == DateTime.MinValue)
+				line3 = "";
+			else
+				line3 = string.Format("time {0:HH:mm:ss}", lastTickTime);
 
 			var tf = new SharpDX.DirectWrite.TextFormat(
 				NinjaTrader.Core.Globals.DirectWriteFactory, "Arial",
