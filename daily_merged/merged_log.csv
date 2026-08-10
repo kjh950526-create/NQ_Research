@@ -333,3 +333,4 @@ date,trade_num,entry_or_pass,day_chaos,trade_vol,time,side,pts,R_ratio,outcome,b
 260807,1,entry,,,10:13:04,SHORT,-20.00,0.75,-1,"[역방향실행/미터12.7빨강/playback] hotkey 반전 15/20 | 금요일 밤 일정으로 playback. 거래창 레인지 215pt 매우 넓음"
 260807,2,entry,,,10:15:49,SHORT,-20.00,0.75,-1,"[역방향실행/미터12.7빨강/playback] 역방향 실행"
 260807,3,entry,,,10:27:59,SHORT,15.00,0.75,1,"[역방향실행/미터12.7빨강/playback] 역방향 실행"
+260810,1,entry,,,10:16:36,SHORT,20.00,1.0,1,"[정방향/미터1.2초록/MFFU라이브] 첫 라이브 정방향+첫 라이브 초록날. 20/20 브래킷. 슬립-0.50(유리). 미터창 효율0.69 방향성강함"
