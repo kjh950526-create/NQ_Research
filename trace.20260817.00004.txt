@@ -1,0 +1,775 @@
+******************* Session Start (Version 8.1.8.2) *******************
+2026-08-17 11:37:46:997 Cbi.Globals.MachineId: True/True 61E5D250E3A79DFB4A4EB19D0B3450B6
+2026-08-17 11:37:46:997 NinjaTrader.Gui.LoginInternal user='' mode='Simulation'
+2026-08-17 11:37:47:403 Core.Instrumentation.ActivitySource: enabled=False randomPercent=40.38367 enabledSessionsPercent=-1 chartMs=250 enabledTypes=''
+2026-08-17 11:37:48:200 (Simulation) NinjaTrader.Core.Authentication.GetAccessToken6
+2026-08-17 11:37:49:013 Cbi.UserEntitlement.VerifyAsync.0 apiUrl='https://live.tradovateapi.com'
+2026-08-17 11:37:49:591 Cbi.UserEntitlement.VerifyAsync.98: Evaluation expiration=2100-01-01
+2026-08-17 11:37:49:622 (Simulation) Cbi.AuthenticatedUser.RunSchedulerAsync: user='Google:103410224232927036006:NTB' sleep='3600.0s' expiration='2026-08-17T16:57:47.7520000Z'
+2026-08-17 11:37:49:622 FeatureFlagsService: Starting initialization...
+2026-08-17 11:37:49:653 FeatureFlagsService: Context - UserId: 3783991
+2026-08-17 11:37:49:700 FeatureFlagsService: LaunchDarkly mobile key configured (40 chars)
+2026-08-17 11:37:49:716 FlagService: Starting initialization...
+2026-08-17 11:37:50:705 FlagService: Initialization complete. Status: True
+2026-08-17 11:37:50:720 FeatureFlagsService: Registered LaunchDarkly provider.
+2026-08-17 11:37:50:852 FlagService: Starting Statsig initialization...
+2026-08-17 11:37:51:053 PrimaryMonitorWPFDPIScale=0.80
+2026-08-17 11:37:51:648 FlagService: Statsig initialization complete. Status: True
+2026-08-17 11:37:51:648 FeatureFlagsService: Registered Statsig provider.
+2026-08-17 11:37:51:649 FeatureFlagsService: Initialization completed. Default provider initialized: True
+2026-08-17 11:37:51:649 FeatureFlagsService: Initialization result: True
+2026-08-17 11:37:51:719 Cbi.UserEntitlement.VerifyAsync.99: subscription=Free licensedProviders='Playback Simulator NinjaTrader NinjaTrader Continuum NinjaTrader FXCM IQFeed E-Signal External FOREX.com Interactive Brokers Barchart.com Kinetick FXCM Coinbase cTrader Schwab Rithmic for NinjaTrader Brokerage Custom0 Custom2 Custom3 Custom4 Custom6 Custom7 Custom8 Custom9 Custom10 Provider13 Custom14 Provider26 Custom15 Custom16 Custom17 Custom18 Custom19 Custom20 Custom21 Custom22 Custom23 Custom24 Custom25 Custom26 Custom27 Custom28 Custom29 Custom30 Custom31 Custom32 Custom33 Custom34 Custom35 Custom36 Custom37 Custom38 Custom39 Custom40 Custom41'
+2026-08-17 11:37:52:021 InstallDir='C:\Program Files\NinjaTrader 8\'
+2026-08-17 11:37:52:021 UserDataDir='C:\Users\PC\Documents\NinjaTrader 8\'
+2026-08-17 11:37:52:021 MachineId='61E5D250E3A79DFB4A4EB19D0B3450B6'
+2026-08-17 11:37:52:021 MachineId2='0ecc0595109e410a90c3324814ac3ca2'
+2026-08-17 11:37:52:021 OS='Microsoft Windows NT 10.0.19045.0'/'Win32NT'
+2026-08-17 11:37:52:021 OSLanguage='ko-KR'
+2026-08-17 11:37:52:021 OSEnvironment='64bit'
+2026-08-17 11:37:52:021 Processors=4
+2026-08-17 11:37:52:021 ThreadPool: minWorkerThreads=4 maxWorkerThreads=32767 minCompletionPortThreads=4 maxCompletionPortThreads=1000
+2026-08-17 11:37:53:051 ProcessorSpeed=3.5 GHz
+2026-08-17 11:37:53:051 PhysicalMemory=12288 MB
+2026-08-17 11:37:53:072 DisplayAdapters=1/NVIDIA GeForce GTX 970
+2026-08-17 11:37:53:072 Monitors=2/2560x1440|2400x1350
+2026-08-17 11:37:53:072 .NET/CLR Version='4.8'/64bit
+2026-08-17 11:37:53:072 SQLiteVersion='2.0.2.0'
+2026-08-17 11:37:53:072 ApplicationTimezone=EST +0 hour(s)
+2026-08-17 11:37:53:072 ApplicationTimezone=UTC -4 hour(s)
+2026-08-17 11:37:53:072 LocalTimezone=EST +13 hour(s)
+2026-08-17 11:37:53:072 LocalTimezone=UTC +9 hour(s)
+2026-08-17 11:37:53:185 DirectXRenderingHW
+2026-08-17 11:37:53:185 Copying custom assemblies...
+2026-08-17 11:37:53:193 Loading custom assemblies...
+2026-08-17 11:37:53:193 Loading C:\Users\PC\Documents\NinjaTrader 8\bin\Custom\NinjaTrader.Custom.dll...
+2026-08-17 11:37:53:475 Loading C:\Users\PC\Documents\NinjaTrader 8\bin\Custom\NinjaTrader.Vendor.dll...
+2026-08-17 11:37:53:522 Deleting temporary files...
+2026-08-17 11:37:53:727 Copying db and restoring templates...
+2026-08-17 11:37:53:732 Loading third party assemblies...
+2026-08-17 11:37:54:076 Loading 3rd party C:\Users\PC\Documents\NinjaTrader 8\bin\Custom\Replikanto.dll...
+2026-08-17 11:37:54:702 Cbi.VendorLicense.Verify.1: trying 'https://license.ninjatrader.com/vendorlicensenew/FlowBots/Replikanto/6/R-61E5D250E3A79DFB4A4EB19D0B3450B6-Jayden.xml' ...
+2026-08-17 11:37:54:929 Cbi.VendorLicense.Verify.1: good
+2026-08-17 11:37:54:930 Loading 3rd party C:\Users\PC\Documents\NinjaTrader 8\bin\Custom\RiskMaster.VMRuntime.dll...
+2026-08-17 11:37:54:930 Loading 3rd party C:\Users\PC\Documents\NinjaTrader 8\bin\Custom\RiskMaster_v1.3.0.1.dll...
+2026-08-17 11:37:56:027 Initializing database...
+2026-08-17 11:37:56:027 Loading master instruments...
+2026-08-17 11:37:57:634 (Db) Cbi.DB.get_Current.CreateConnection.Start
+2026-08-17 11:37:57:634 (Db) Cbi.DB: connectionString='Data Source="C:\Users\PC\Documents\NinjaTrader 8\db\NinjaTrader.sqlite";Version=3;Synchronous=Full;Journal Mode=Off;Pooling=True;Max Pool Size=100;foreign keys=true;'
+2026-08-17 11:37:58:039 (Db) Cbi.DB.get_Current.CreateConnection.End
+2026-08-17 11:37:58:110 Loading instruments...
+2026-08-17 11:37:58:358 Loading accounts...
+2026-08-17 11:37:58:534 Loading users...
+2026-08-17 11:37:58:534 Downloading server info...
+2026-08-17 11:37:58:534 Starting instrument management...
+2026-08-17 11:37:58:563 Starting timer...
+2026-08-17 11:37:58:563 Creating file type watcher...
+2026-08-17 11:37:58:564 Setting ATI...
+2026-08-17 11:37:58:567 Server.HdsClient.Connect: type=IS server='is-us-nt-005.ninjatrader.com' port=31658 system='NT' useSsl=True
+2026-08-17 11:37:58:616 Connecting ATI server...
+2026-08-17 11:37:58:616 Server.AtiServer.Connect0
+2026-08-17 11:37:58:617 Starting adapter server...
+2026-08-17 11:37:58:617 Server.AtiServer.Connect1: Port='36973'
+2026-08-17 11:37:58:617 Server.AtiServer.Connect2
+2026-08-17 11:37:58:627 Starting bars dictionary...
+2026-08-17 11:37:58:627 Starting recorder...
+2026-08-17 11:37:58:628 Starting server(s)...
+2026-08-17 11:37:58:643 Core.Globals.ApplicationStart.Commission: minVersion=1 maxVersion=3156
+2026-08-17 11:37:58:643 Core.Globals.ApplicationStart.InstrumentList: minVersion=-442 maxVersion=493
+2026-08-17 11:37:58:643 Core.Globals.ApplicationStart.MasterInstrument: minVersion=1 maxVersion=10205
+2026-08-17 11:37:58:643 Core.Globals.ApplicationStart.Risk: minVersion=1 maxVersion=16437
+2026-08-17 11:37:58:643 Core.Globals.ApplicationStart.TradingHours: minVersion=1 maxVersion=5143
+2026-08-17 11:37:58:914 ChartHotKeys: Alerts='' DisableAllAlerts='' EnableAllAlerts='' DataSeries='' Indicators='' Strategies='' Properties='' CrosshairPointer='' CrosshairLocal='' CrosshairGlobal='' CrosshairGlobal2='' CrosshairLock='' AutoScaleAndReturn='' CyclePlotExecutions='' ReloadHistoricalData='' ReloadNinjaScript='' SaveChartImage='' ShowDataBox='' ShowChartTrader='' ShowChartTraderHidden='' ShowIndicators='' ShowScrollBar='' SnapModeBar='' SnapModeBarTick='' SnapModeBarObject='' SnapModeDisabled='' SnapModeTick='' StayInDrawMode='' ZoomIn='' ZoomOut='' BarSpacingPlus='' BarSpacingMinus='' BarWidthPlus='' BarWidthMinus='' Arc='' AndrewsPitchfork='' ArrowDown='F6' ArrowLine='' ArrowUp='F5' Diamond='F7' Dot='' Ellipse='' ExtendedLine='' FibonacciCircle='' FibonacciExtension='' FibonacciRetracement='' FibonacciTimeExtension='' GannFan='' HorizontalLine='F9' Line='' Path='' Polygon='' VolumeProfile='' VWAP='' Ray='' Rectangle='F10' RegressionChannel='' HideDrawingObjects='' RemoveDrawingObjects='' RegionHighlightX='F8' RegionHighlightY='F11' RiskReward='' Ruler='' Square='' Text='F12' TimeCycles='' TrendChannel='' Triangle='' TriangleDown='' TriangleUp='' VerticalLine=''
+2026-08-17 11:37:58:914 GlobalHotKeys: CloseWorkspace='' NextWorkspace='' PreviousWorkspace='' SaveWorkspace='' SaveAllWorkspaces='' NewAccountData='' NewTradePerformance='' NewAlertsLog='' NewBasicEntry='' NewChart='' NewFxBoard='' NewFxPro='' NewHotListAnalyzer='' NewLevel2='' NewMarketAnalyzer='' NewMarketWatch='' NewNews='' NewNinjaScriptEditor='' NewNinjaScriptOutput='' NewOrderTicket='' NewStrategyAnalyzer='' NewDynamicDom='' NewStaticDom='' NewTimeAndSales='' CancelAllOrders='' FlattenEverything='' OpenInstrumentManager='' OpenInstrumentList='' OpenDatabase='' OpenHotKeyManager='' OpenHistoricalData='' OpenCommission='' OpenRisk='' OpenTradingHoursManager='' OpenRemoveNinjaScript='' CloseOtherTabs='' CloseTab='' DuplicateInNewTab='' DuplicateInNewWindow='' Export='' Find='' MoveToNewWindow='' Print='' Replace='' Share='' LoadTemplate='' SaveTemplate='' SaveTemplateAsDefault=''
+2026-08-17 11:37:58:914 MarketAnalyzerHotKeys: AddBlankRow='' AddLabelRow='' Columns='' Alerts='' EnableAllAlerts='' DisableAllAlerts='' AutoSort='' RowFilter='' ReloadHistorical='' ReloadNinjaScript=''
+2026-08-17 11:37:58:915 NinjaScriptEditorHotKeys: InsertCodeSnippet='' FindNext='' Compile='' GoToLine='' CommentSelection='' InlineSyntaxChecking='' CollapseToDefinitions='' ExpandAllOutlining='' StartOutlining='' StopOutlining='' HideSelection='' StopHidingSelection='' ToggleAllOutlining='' ToggleOutlining='' Save='' Undo='' Redo=''
+2026-08-17 11:37:58:915 OrderEntryHotKeys: BuyAsk='' BuyBid='' BuyMarket='F2' SellAsk='' SellBid='' SellMarket='F3' BreakevenAtmStrategy='' BreakevenPosition='' CancelLastOrder='' CloseAtmStrategy='' ClosePosition='F4' DecreaseLastOrderPrice='' IncreaseLastOrderPrice='' ModifyLastOrder2Fill='' Reverse='' OcoOrder='' SimulatedOrder=''
+2026-08-17 11:37:58:915 SuperDomHotKeys: Center='' Columns='' Indicators='' ReloadAllHistoricalData='' ReloadNinjaScript=''
+2026-08-17 11:37:58:915 OrderEntryHotKeys=enabled
+2026-08-17 11:37:58:915 AutoClose=disabled
+2026-08-17 11:38:00:662 Server.HdsClient.ProcessStartupInfo.Info0: Commissions=0 InstrumentLists=11 MasterInstruments=0 Messages=6 Risks=1 RolloverCollection=361 TradingHours=0
+2026-08-17 11:38:02:515 Server.HdsClient.ProcessStartupInfo.Info1: Commissions=0.01ms InstrumentLists=0.18ms MasterInstruments=0.01ms Messages=5.71ms Risks=6.22ms RolloverCollection=1840.24ms TradingHours=0.01ms
+2026-08-17 11:38:02:515 Starting server message polling timer with interval 3600 seconds...
+2026-08-17 11:38:09:654 3 Chart Chart1Tab1 1 Ser 3 Ind 10 DrawObj Chart2Tab1 1 Ser 1 Ind 0 DrawObj Chart3Tab1 1 Ser 3 Ind 18 DrawObj 
+2026-08-17 11:38:18:958 (Playback) Gui.ControlCenter.OnConnect
+2026-08-17 11:38:26:059 Server.HdsClient.Connect: type=HDS server='hds-us-nt-009.ninjatrader.com' port=31655 system='NT' useSsl=True
+2026-08-17 11:39:38:259 (Playback) Cbi.Connection.Connect0: status=Disconnected assembly=8.1.8.2 date=2026-08-17 runAsProcess=False
+2026-08-17 11:39:38:284 (Playback) Cbi.Connection.ConnectionStatusCallback: status=Connecting priceStatus=Connecting previousStatus=Disconnected previousPriceStatus=Disconnected errorCode=NoError nativeError=''
+2026-08-17 11:39:38:288 (Playback) NinjaTrader.Gui.ControlCenter.OnConnectionStatus: Playback status=Connecting priceStatus=Connecting previousStatus=Disconnected previousPriceStatus=Disconnected errorCode=NoError nativeError=''
+2026-08-17 11:39:38:299 (Playback) Cbi.Connection.Connect1
+2026-08-17 11:39:38:310 (Playback) Cbi.Connection.Connect2
+2026-08-17 11:39:38:310 (Playback) Cbi.Connection.Connect3
+2026-08-17 11:39:38:317 (Playback) Cbi.Connection.CreateAccount: account='Playback101' displayName='Playback101' fcm='' denomination=UsDollar forexLotSize=0
+2026-08-17 11:39:38:324 (Playback) Cbi.Account.OnConnectionStatus: account='Playback101' fcm='' status=Connecting previousStatus=Disconnected message=''
+2026-08-17 11:39:38:325 (Playback) NinjaTrader.Gui.ControlCenter.OnConnectionStatus.DispatcherInvoke: Playback status=Connecting priceStatus=Connecting previousStatus=Disconnected previousPriceStatus=Disconnected errorCode=NoError nativeError=''
+2026-08-17 11:39:38:326 (Playback) Gui.ControlCenter.OnConnectionStatus.Adding: provider=Playback status=Connecting priceStatus=Connecting
+2026-08-17 11:39:38:327 (Playback) Cbi.Account.OnConnectionStatus.PositionExecutions: account='Playback101'
+2026-08-17 11:39:38:363 (Playback) Cbi.Connection.CreateAccount: account='PlaybackAccount1' displayName='PlaybackAccount1' fcm='' denomination=UsDollar forexLotSize=1000
+2026-08-17 11:39:38:363 (Playback) Cbi.Account.OnConnectionStatus: account='PlaybackAccount1' fcm='' status=Connecting previousStatus=Disconnected message=''
+2026-08-17 11:39:38:363 (Playback) Cbi.Account.OnConnectionStatus.PositionExecutions: account='PlaybackAccount1'
+2026-08-17 11:39:38:363 (Playback) Cbi.Connection.CreateAccount: account='PlaybackAccount2' displayName='PlaybackAccount2' fcm='' denomination=UsDollar forexLotSize=1000
+2026-08-17 11:39:38:363 (Playback) Cbi.Account.OnConnectionStatus: account='PlaybackAccount2' fcm='' status=Connecting previousStatus=Disconnected message=''
+2026-08-17 11:39:38:363 (Playback) Cbi.Account.OnConnectionStatus.PositionExecutions: account='PlaybackAccount2'
+2026-08-17 11:39:38:363 (Playback) Cbi.Connection.CreateAccount: account='PlaybackAccount4' displayName='PlaybackAccount4' fcm='' denomination=UsDollar forexLotSize=1000
+2026-08-17 11:39:38:363 (Playback) Cbi.Account.OnConnectionStatus: account='PlaybackAccount4' fcm='' status=Connecting previousStatus=Disconnected message=''
+2026-08-17 11:39:38:363 (Playback) Cbi.Account.OnConnectionStatus.PositionExecutions: account='PlaybackAccount4'
+2026-08-17 11:39:38:363 (Playback) Cbi.Connection.Connect4
+2026-08-17 11:39:38:364 (Playback) Cbi.Connection.Connect5
+2026-08-17 11:39:38:365 (Playback) Adapter.PlaybackAdapter.Connect
+2026-08-17 11:39:38:488 NinjaTrader.Gui.ControlCenter.OnConnectionStatus: foundPriceLoss=False foundTradeLoss=False foundConnectingStatus=True foundConnected=False
+2026-08-17 11:39:38:489 NinjaTrader.Gui.ControlCenter.OnConnectionStatus: Status=Connecting
+2026-08-17 11:39:39:284 (Playback) Cbi.Connection.ConnectionStatusCallback: status=Connected priceStatus=Connected previousStatus=Connecting previousPriceStatus=Connecting errorCode=NoError nativeError=''
+2026-08-17 11:39:39:285 (Playback) Cbi.Account.OnConnectionStatus: account='Playback101' fcm='' status=Connected previousStatus=Connecting message=''
+2026-08-17 11:39:39:285 (Playback) Cbi.Account.OnConnectionStatus: account='PlaybackAccount1' fcm='' status=Connected previousStatus=Connecting message=''
+2026-08-17 11:39:39:285 (Playback) Cbi.Account.OnConnectionStatus: account='PlaybackAccount2' fcm='' status=Connected previousStatus=Connecting message=''
+2026-08-17 11:39:39:286 (Playback) Cbi.Account.OnConnectionStatus: account='PlaybackAccount4' fcm='' status=Connected previousStatus=Connecting message=''
+2026-08-17 11:39:39:305 (Playback) Core.Connection.Statistics: connectAttempts=1/940.7ms
+2026-08-17 11:39:39:305 (Playback) Cbi.Connection.ConnectionStatusCallback: autoClosePositionTime='11/04/2024 00:00:00' autoClosePosition=False
+2026-08-17 11:39:39:307 Server.HdsClient.Connect: type=HDS server='hds-us-nt-020.ninjatrader.com' port=31655 system='' useSsl=True
+2026-08-17 11:39:39:572 (Playback) NinjaTrader.Gui.ControlCenter.OnConnectionStatus: Playback status=Connected priceStatus=Connected previousStatus=Connecting previousPriceStatus=Connecting errorCode=NoError nativeError=''
+2026-08-17 11:39:39:572 (Playback) NinjaTrader.Gui.ControlCenter.OnConnectionStatus.DispatcherInvoke: Playback status=Connected priceStatus=Connected previousStatus=Connecting previousPriceStatus=Connecting errorCode=NoError nativeError=''
+2026-08-17 11:39:39:572 (Playback) Gui.ControlCenter.OnConnectionStatus.Adding: provider=Playback status=Connected priceStatus=Connected
+2026-08-17 11:39:39:594 (Playback) Cbi.Connection.Connect9 ok
+2026-08-17 11:39:39:741 NinjaTrader.Gui.ControlCenter.OnConnectionStatus: foundPriceLoss=False foundTradeLoss=False foundConnectingStatus=False foundConnected=True
+2026-08-17 11:39:39:741 NinjaTrader.Gui.ControlCenter.OnConnectionStatus: Status=Connected
+2026-08-17 11:39:40:028 (Playback) Cbi.Account.ResetSimulationAccount.Start: account='Playback101'
+2026-08-17 11:39:40:046 [2026-08-18 00:39:40.0469264] System.Data.SQLite (Log): SQLite error (17): statement aborts at 50: database schema has changed; [SELECT Id,Account,BarIndex,Commission,Exchange,ExecutionId,Fee,Instrument,IsEntry,IsEntryStrategy,IsExit,IsExitStrategy,LotSize,MarketPosition,MaxPrice,MinPrice,Name,OrderId,Position,PositionStrategy,Price,Quantity,Rate,ServerName,StatementDate,Time FROM Executions WHERE Account=? AND Instrument=? AND Time>=? AND Time<=?]
+2026-08-17 11:39:40:047 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=BuyingPower currency=UsDollar value=*****
+2026-08-17 11:39:40:051 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=CashValue currency=UsDollar value=*****
+2026-08-17 11:39:40:051 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=Commission currency=UsDollar value=*****
+2026-08-17 11:39:40:051 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=Fee currency=UsDollar value=*****
+2026-08-17 11:39:40:051 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=GrossRealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:39:40:051 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:39:40:051 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=InitialMargin currency=UsDollar value=*****
+2026-08-17 11:39:40:051 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=IntradayMargin currency=UsDollar value=*****
+2026-08-17 11:39:40:051 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=LongOptionValue currency=UsDollar value=*****
+2026-08-17 11:39:40:051 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=LookAheadMaintenanceMargin currency=UsDollar value=*****
+2026-08-17 11:39:40:051 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=LongStockValue currency=UsDollar value=*****
+2026-08-17 11:39:40:051 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=MaintenanceMargin currency=UsDollar value=*****
+2026-08-17 11:39:40:051 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=NetLiquidationByCurrency currency=UsDollar value=*****
+2026-08-17 11:39:40:051 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=PositionMargin currency=UsDollar value=*****
+2026-08-17 11:39:40:051 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:39:40:051 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=ShortOptionValue currency=UsDollar value=*****
+2026-08-17 11:39:40:051 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=ShortStockValue currency=UsDollar value=*****
+2026-08-17 11:39:40:051 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=SodCashValue currency=UsDollar value=*****
+2026-08-17 11:39:40:051 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=SodLiquidatingValue currency=UsDollar value=*****
+2026-08-17 11:39:40:051 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=TotalCashBalance currency=UsDollar value=*****
+2026-08-17 11:39:40:051 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=WeeklyProfitLoss currency=UsDollar value=*****
+2026-08-17 11:39:40:052 (Playback) Cbi.Account.ResetSimulationAccount.End: account='Playback101'
+2026-08-17 11:39:40:052 (Playback) Cbi.Account.ResetSimulationAccount.Start: account='PlaybackAccount1'
+2026-08-17 11:39:40:053 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=BuyingPower currency=UsDollar value=*****
+2026-08-17 11:39:40:053 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=CashValue currency=UsDollar value=*****
+2026-08-17 11:39:40:053 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=Commission currency=UsDollar value=*****
+2026-08-17 11:39:40:053 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=Fee currency=UsDollar value=*****
+2026-08-17 11:39:40:053 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=GrossRealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:39:40:053 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:39:40:053 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=InitialMargin currency=UsDollar value=*****
+2026-08-17 11:39:40:053 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=IntradayMargin currency=UsDollar value=*****
+2026-08-17 11:39:40:053 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=LongOptionValue currency=UsDollar value=*****
+2026-08-17 11:39:40:053 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=LookAheadMaintenanceMargin currency=UsDollar value=*****
+2026-08-17 11:39:40:053 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=LongStockValue currency=UsDollar value=*****
+2026-08-17 11:39:40:053 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=MaintenanceMargin currency=UsDollar value=*****
+2026-08-17 11:39:40:053 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=NetLiquidationByCurrency currency=UsDollar value=*****
+2026-08-17 11:39:40:053 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=PositionMargin currency=UsDollar value=*****
+2026-08-17 11:39:40:053 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:39:40:053 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=ShortOptionValue currency=UsDollar value=*****
+2026-08-17 11:39:40:053 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=ShortStockValue currency=UsDollar value=*****
+2026-08-17 11:39:40:053 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=SodCashValue currency=UsDollar value=*****
+2026-08-17 11:39:40:053 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=SodLiquidatingValue currency=UsDollar value=*****
+2026-08-17 11:39:40:053 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=TotalCashBalance currency=UsDollar value=*****
+2026-08-17 11:39:40:053 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=WeeklyProfitLoss currency=UsDollar value=*****
+2026-08-17 11:39:40:053 (Playback) Cbi.Account.ResetSimulationAccount.End: account='PlaybackAccount1'
+2026-08-17 11:39:40:053 (Playback) Cbi.Account.ResetSimulationAccount.Start: account='PlaybackAccount2'
+2026-08-17 11:39:40:054 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=BuyingPower currency=UsDollar value=*****
+2026-08-17 11:39:40:054 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=CashValue currency=UsDollar value=*****
+2026-08-17 11:39:40:054 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=Commission currency=UsDollar value=*****
+2026-08-17 11:39:40:054 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=Fee currency=UsDollar value=*****
+2026-08-17 11:39:40:054 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=GrossRealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:39:40:054 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:39:40:054 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=InitialMargin currency=UsDollar value=*****
+2026-08-17 11:39:40:054 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=IntradayMargin currency=UsDollar value=*****
+2026-08-17 11:39:40:054 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=LongOptionValue currency=UsDollar value=*****
+2026-08-17 11:39:40:054 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=LookAheadMaintenanceMargin currency=UsDollar value=*****
+2026-08-17 11:39:40:054 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=LongStockValue currency=UsDollar value=*****
+2026-08-17 11:39:40:054 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=MaintenanceMargin currency=UsDollar value=*****
+2026-08-17 11:39:40:054 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=NetLiquidationByCurrency currency=UsDollar value=*****
+2026-08-17 11:39:40:054 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=PositionMargin currency=UsDollar value=*****
+2026-08-17 11:39:40:054 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:39:40:054 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=ShortOptionValue currency=UsDollar value=*****
+2026-08-17 11:39:40:054 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=ShortStockValue currency=UsDollar value=*****
+2026-08-17 11:39:40:054 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=SodCashValue currency=UsDollar value=*****
+2026-08-17 11:39:40:054 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=SodLiquidatingValue currency=UsDollar value=*****
+2026-08-17 11:39:40:054 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=TotalCashBalance currency=UsDollar value=*****
+2026-08-17 11:39:40:054 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=WeeklyProfitLoss currency=UsDollar value=*****
+2026-08-17 11:39:40:054 (Playback) Cbi.Account.ResetSimulationAccount.End: account='PlaybackAccount2'
+2026-08-17 11:39:40:054 (Playback) Cbi.Account.ResetSimulationAccount.Start: account='PlaybackAccount4'
+2026-08-17 11:39:40:055 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=BuyingPower currency=UsDollar value=*****
+2026-08-17 11:39:40:055 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=CashValue currency=UsDollar value=*****
+2026-08-17 11:39:40:055 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=Commission currency=UsDollar value=*****
+2026-08-17 11:39:40:055 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=Fee currency=UsDollar value=*****
+2026-08-17 11:39:40:055 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=GrossRealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:39:40:055 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:39:40:055 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=InitialMargin currency=UsDollar value=*****
+2026-08-17 11:39:40:055 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=IntradayMargin currency=UsDollar value=*****
+2026-08-17 11:39:40:055 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=LongOptionValue currency=UsDollar value=*****
+2026-08-17 11:39:40:055 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=LookAheadMaintenanceMargin currency=UsDollar value=*****
+2026-08-17 11:39:40:055 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=LongStockValue currency=UsDollar value=*****
+2026-08-17 11:39:40:055 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=MaintenanceMargin currency=UsDollar value=*****
+2026-08-17 11:39:40:055 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=NetLiquidationByCurrency currency=UsDollar value=*****
+2026-08-17 11:39:40:055 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=PositionMargin currency=UsDollar value=*****
+2026-08-17 11:39:40:055 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:39:40:055 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=ShortOptionValue currency=UsDollar value=*****
+2026-08-17 11:39:40:055 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=ShortStockValue currency=UsDollar value=*****
+2026-08-17 11:39:40:055 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=SodCashValue currency=UsDollar value=*****
+2026-08-17 11:39:40:055 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=SodLiquidatingValue currency=UsDollar value=*****
+2026-08-17 11:39:40:055 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=TotalCashBalance currency=UsDollar value=*****
+2026-08-17 11:39:40:055 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=WeeklyProfitLoss currency=UsDollar value=*****
+2026-08-17 11:39:40:055 (Playback) Cbi.Account.ResetSimulationAccount.End: account='PlaybackAccount4'
+2026-08-17 11:39:41:071 (Playback) Gui.ControlCenter.OnDisconnect
+2026-08-17 11:39:41:079 (Playback) Cbi.Connection.Disconnect
+2026-08-17 11:39:41:083 (Playback) Cbi.Connection.ConnectionStatusCallback: status=Disconnecting priceStatus=Disconnecting previousStatus=Connected previousPriceStatus=Connected errorCode=NoError nativeError=''
+2026-08-17 11:39:41:083 (Playback) Cbi.Account.OnConnectionStatus: account='Playback101' fcm='' status=Disconnecting previousStatus=Connected message=''
+2026-08-17 11:39:41:083 (Playback) Cbi.Account.OnConnectionStatus: account='PlaybackAccount1' fcm='' status=Disconnecting previousStatus=Connected message=''
+2026-08-17 11:39:41:084 (Playback) Cbi.Account.OnConnectionStatus: account='PlaybackAccount2' fcm='' status=Disconnecting previousStatus=Connected message=''
+2026-08-17 11:39:41:084 (Playback) Cbi.Account.OnConnectionStatus: account='PlaybackAccount4' fcm='' status=Disconnecting previousStatus=Connected message=''
+2026-08-17 11:39:41:092 (Playback) NinjaTrader.Gui.ControlCenter.OnConnectionStatus: Playback status=Disconnecting priceStatus=Disconnecting previousStatus=Connected previousPriceStatus=Connected errorCode=NoError nativeError=''
+2026-08-17 11:39:41:092 (Playback) Cbi.Connection.ConnectionStatusCallback.Close1
+2026-08-17 11:39:41:112 (Playback) Cbi.Connection.ConnectionStatusCallback.Close3
+2026-08-17 11:39:41:112 (Playback) Cbi.Connection.ConnectionStatusCallback.Close4
+2026-08-17 11:39:41:112 (Playback) Cbi.Connection.ConnectionStatusCallback.Close5
+2026-08-17 11:39:41:112 (Playback) Cbi.Connection.ConnectionStatusCallback.Close6a
+2026-08-17 11:39:41:113 (Playback) Cbi.Connection.ConnectionStatusCallback.Close7
+2026-08-17 11:39:41:115 (Playback) Cbi.Connection.ConnectionStatusCallback: status=Disconnected priceStatus=Disconnected previousStatus=Disconnecting previousPriceStatus=Disconnecting errorCode=NoError nativeError=''
+2026-08-17 11:39:41:115 (Playback) Cbi.Account.OnConnectionStatus: account='Playback101' fcm='' status=Disconnected previousStatus=Disconnecting message=''
+2026-08-17 11:39:41:119 (Playback) Cbi.Account.OnConnectionStatus: account='PlaybackAccount1' fcm='' status=Disconnected previousStatus=Disconnecting message=''
+2026-08-17 11:39:41:119 (Playback) Cbi.Account.OnConnectionStatus: account='PlaybackAccount2' fcm='' status=Disconnected previousStatus=Disconnecting message=''
+2026-08-17 11:39:41:119 (Playback) Cbi.Account.OnConnectionStatus: account='PlaybackAccount4' fcm='' status=Disconnected previousStatus=Disconnecting message=''
+2026-08-17 11:39:41:134 (Playback) NinjaTrader.Gui.ControlCenter.OnConnectionStatus.DispatcherInvoke: Playback status=Disconnecting priceStatus=Disconnecting previousStatus=Connected previousPriceStatus=Connected errorCode=NoError nativeError=''
+2026-08-17 11:39:41:134 (Playback) Gui.ControlCenter.OnConnectionStatus.Adding: provider=Playback status=Disconnected priceStatus=Disconnected
+2026-08-17 11:39:41:134 NinjaTrader.Gui.ControlCenter.OnConnectionStatus: foundPriceLoss=False foundTradeLoss=False foundConnectingStatus=False foundConnected=False
+2026-08-17 11:39:41:134 NinjaTrader.Gui.ControlCenter.OnConnectionStatus: Status=Disconnected
+2026-08-17 11:39:41:150 Flushing DB thread
+2026-08-17 11:39:41:152 (Playback) NinjaTrader.Gui.ControlCenter.OnConnectionStatus: Playback status=Disconnected priceStatus=Disconnected previousStatus=Disconnecting previousPriceStatus=Disconnecting errorCode=NoError nativeError=''
+2026-08-17 11:39:41:152 (Playback) NinjaTrader.Gui.ControlCenter.OnConnectionStatus.DispatcherInvoke: Playback status=Disconnected priceStatus=Disconnected previousStatus=Disconnecting previousPriceStatus=Disconnecting errorCode=NoError nativeError=''
+2026-08-17 11:39:41:152 NinjaTrader.Gui.ControlCenter.OnConnectionStatus: Using args status=Disconnected
+2026-08-17 11:39:41:190 (Playback) Cbi.Connection.ConnectionStatusCallback.Close8
+2026-08-17 11:39:42:169 (Playback) Gui.ControlCenter.OnConnect
+2026-08-17 11:39:43:155 (Playback) Cbi.Connection.Connect0: status=Disconnected assembly=8.1.8.2 date=2026-08-17 runAsProcess=False
+2026-08-17 11:39:43:155 (Playback) Cbi.Connection.ConnectionStatusCallback: status=Connecting priceStatus=Connecting previousStatus=Disconnected previousPriceStatus=Disconnected errorCode=NoError nativeError=''
+2026-08-17 11:39:43:156 (Playback) NinjaTrader.Gui.ControlCenter.OnConnectionStatus: Playback status=Connecting priceStatus=Connecting previousStatus=Disconnected previousPriceStatus=Disconnected errorCode=NoError nativeError=''
+2026-08-17 11:39:43:156 (Playback) Cbi.Connection.Connect1
+2026-08-17 11:39:43:157 (Playback) Cbi.Connection.Connect2
+2026-08-17 11:39:43:158 (Playback) Cbi.Connection.Connect3
+2026-08-17 11:39:43:158 (Playback) Cbi.Connection.CreateAccount: account='Playback101' displayName='Playback101' fcm='' denomination=UsDollar forexLotSize=0
+2026-08-17 11:39:43:158 (Playback) Cbi.Account.OnConnectionStatus: account='Playback101' fcm='' status=Connecting previousStatus=Disconnected message=''
+2026-08-17 11:39:43:158 (Playback) Cbi.Account.OnConnectionStatus.PositionExecutions: account='Playback101'
+2026-08-17 11:39:43:158 (Playback) Cbi.Connection.CreateAccount: account='PlaybackAccount1' displayName='PlaybackAccount1' fcm='' denomination=UsDollar forexLotSize=1000
+2026-08-17 11:39:43:158 (Playback) Cbi.Account.OnConnectionStatus: account='PlaybackAccount1' fcm='' status=Connecting previousStatus=Disconnected message=''
+2026-08-17 11:39:43:158 (Playback) Cbi.Account.OnConnectionStatus.PositionExecutions: account='PlaybackAccount1'
+2026-08-17 11:39:43:158 (Playback) Cbi.Connection.CreateAccount: account='PlaybackAccount2' displayName='PlaybackAccount2' fcm='' denomination=UsDollar forexLotSize=1000
+2026-08-17 11:39:43:158 (Playback) Cbi.Account.OnConnectionStatus: account='PlaybackAccount2' fcm='' status=Connecting previousStatus=Disconnected message=''
+2026-08-17 11:39:43:158 (Playback) Cbi.Account.OnConnectionStatus.PositionExecutions: account='PlaybackAccount2'
+2026-08-17 11:39:43:158 (Playback) Cbi.Connection.CreateAccount: account='PlaybackAccount4' displayName='PlaybackAccount4' fcm='' denomination=UsDollar forexLotSize=1000
+2026-08-17 11:39:43:158 (Playback) Cbi.Account.OnConnectionStatus: account='PlaybackAccount4' fcm='' status=Connecting previousStatus=Disconnected message=''
+2026-08-17 11:39:43:158 (Playback) Cbi.Account.OnConnectionStatus.PositionExecutions: account='PlaybackAccount4'
+2026-08-17 11:39:43:158 (Playback) Cbi.Connection.Connect4
+2026-08-17 11:39:43:158 (Playback) Cbi.Connection.Connect5
+2026-08-17 11:39:43:158 (Playback) Adapter.PlaybackAdapter.Connect
+2026-08-17 11:39:43:163 (Playback) NinjaTrader.Gui.ControlCenter.OnConnectionStatus.DispatcherInvoke: Playback status=Connecting priceStatus=Connecting previousStatus=Disconnected previousPriceStatus=Disconnected errorCode=NoError nativeError=''
+2026-08-17 11:39:43:163 (Playback) Gui.ControlCenter.OnConnectionStatus.Adding: provider=Playback status=Connecting priceStatus=Connecting
+2026-08-17 11:39:43:163 NinjaTrader.Gui.ControlCenter.OnConnectionStatus: foundPriceLoss=False foundTradeLoss=False foundConnectingStatus=True foundConnected=False
+2026-08-17 11:39:43:163 NinjaTrader.Gui.ControlCenter.OnConnectionStatus: Status=Connecting
+2026-08-17 11:39:43:204 (Playback) Cbi.Connection.ConnectionStatusCallback: status=Connected priceStatus=Connected previousStatus=Connecting previousPriceStatus=Connecting errorCode=NoError nativeError=''
+2026-08-17 11:39:43:204 (Playback) Cbi.Account.OnConnectionStatus: account='Playback101' fcm='' status=Connected previousStatus=Connecting message=''
+2026-08-17 11:39:43:205 (Playback) Cbi.Account.OnConnectionStatus: account='PlaybackAccount1' fcm='' status=Connected previousStatus=Connecting message=''
+2026-08-17 11:39:43:205 (Playback) Cbi.Account.OnConnectionStatus: account='PlaybackAccount2' fcm='' status=Connected previousStatus=Connecting message=''
+2026-08-17 11:39:43:205 (Playback) Cbi.Account.OnConnectionStatus: account='PlaybackAccount4' fcm='' status=Connected previousStatus=Connecting message=''
+2026-08-17 11:39:43:208 (Playback) Core.Connection.Statistics: connectAttempts=2/495.8ms
+2026-08-17 11:39:43:209 (Playback) Cbi.Connection.ConnectionStatusCallback: autoClosePositionTime='11/04/2024 00:00:00' autoClosePosition=False
+2026-08-17 11:39:43:209 Server.HdsClient.Connect: type=HDS server='hds-us-nt-020.ninjatrader.com' port=31655 system='' useSsl=True
+2026-08-17 11:39:43:230 (Playback) NinjaTrader.Gui.ControlCenter.OnConnectionStatus: Playback status=Connected priceStatus=Connected previousStatus=Connecting previousPriceStatus=Connecting errorCode=NoError nativeError=''
+2026-08-17 11:39:43:231 (Playback) Cbi.Connection.Connect9 ok
+2026-08-17 11:39:43:231 (Playback) NinjaTrader.Gui.ControlCenter.OnConnectionStatus.DispatcherInvoke: Playback status=Connected priceStatus=Connected previousStatus=Connecting previousPriceStatus=Connecting errorCode=NoError nativeError=''
+2026-08-17 11:39:43:231 (Playback) Gui.ControlCenter.OnConnectionStatus.Adding: provider=Playback status=Connected priceStatus=Connected
+2026-08-17 11:39:43:231 NinjaTrader.Gui.ControlCenter.OnConnectionStatus: foundPriceLoss=False foundTradeLoss=False foundConnectingStatus=False foundConnected=True
+2026-08-17 11:39:43:231 NinjaTrader.Gui.ControlCenter.OnConnectionStatus: Status=Connected
+2026-08-17 11:39:43:332 (Playback) Cbi.Account.ResetSimulationAccount.Start: account='Playback101'
+2026-08-17 11:39:43:334 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=BuyingPower currency=UsDollar value=*****
+2026-08-17 11:39:43:334 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=CashValue currency=UsDollar value=*****
+2026-08-17 11:39:43:334 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=Commission currency=UsDollar value=*****
+2026-08-17 11:39:43:334 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=Fee currency=UsDollar value=*****
+2026-08-17 11:39:43:334 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=GrossRealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:39:43:334 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:39:43:334 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=InitialMargin currency=UsDollar value=*****
+2026-08-17 11:39:43:334 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=IntradayMargin currency=UsDollar value=*****
+2026-08-17 11:39:43:334 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=LongOptionValue currency=UsDollar value=*****
+2026-08-17 11:39:43:334 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=LookAheadMaintenanceMargin currency=UsDollar value=*****
+2026-08-17 11:39:43:334 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=LongStockValue currency=UsDollar value=*****
+2026-08-17 11:39:43:334 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=MaintenanceMargin currency=UsDollar value=*****
+2026-08-17 11:39:43:344 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=NetLiquidationByCurrency currency=UsDollar value=*****
+2026-08-17 11:39:43:344 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=PositionMargin currency=UsDollar value=*****
+2026-08-17 11:39:43:344 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:39:43:344 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=ShortOptionValue currency=UsDollar value=*****
+2026-08-17 11:39:43:344 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=ShortStockValue currency=UsDollar value=*****
+2026-08-17 11:39:43:344 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=SodCashValue currency=UsDollar value=*****
+2026-08-17 11:39:43:344 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=SodLiquidatingValue currency=UsDollar value=*****
+2026-08-17 11:39:43:344 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=TotalCashBalance currency=UsDollar value=*****
+2026-08-17 11:39:43:344 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=WeeklyProfitLoss currency=UsDollar value=*****
+2026-08-17 11:39:43:344 (Playback) Cbi.Account.ResetSimulationAccount.End: account='Playback101'
+2026-08-17 11:39:43:344 (Playback) Cbi.Account.ResetSimulationAccount.Start: account='PlaybackAccount1'
+2026-08-17 11:39:43:346 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=BuyingPower currency=UsDollar value=*****
+2026-08-17 11:39:43:346 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=CashValue currency=UsDollar value=*****
+2026-08-17 11:39:43:346 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=Commission currency=UsDollar value=*****
+2026-08-17 11:39:43:346 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=Fee currency=UsDollar value=*****
+2026-08-17 11:39:43:346 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=GrossRealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:39:43:346 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:39:43:346 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=InitialMargin currency=UsDollar value=*****
+2026-08-17 11:39:43:346 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=IntradayMargin currency=UsDollar value=*****
+2026-08-17 11:39:43:346 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=LongOptionValue currency=UsDollar value=*****
+2026-08-17 11:39:43:346 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=LookAheadMaintenanceMargin currency=UsDollar value=*****
+2026-08-17 11:39:43:346 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=LongStockValue currency=UsDollar value=*****
+2026-08-17 11:39:43:346 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=MaintenanceMargin currency=UsDollar value=*****
+2026-08-17 11:39:43:346 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=NetLiquidationByCurrency currency=UsDollar value=*****
+2026-08-17 11:39:43:346 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=PositionMargin currency=UsDollar value=*****
+2026-08-17 11:39:43:346 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:39:43:346 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=ShortOptionValue currency=UsDollar value=*****
+2026-08-17 11:39:43:346 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=ShortStockValue currency=UsDollar value=*****
+2026-08-17 11:39:43:346 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=SodCashValue currency=UsDollar value=*****
+2026-08-17 11:39:43:346 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=SodLiquidatingValue currency=UsDollar value=*****
+2026-08-17 11:39:43:346 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=TotalCashBalance currency=UsDollar value=*****
+2026-08-17 11:39:43:346 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=WeeklyProfitLoss currency=UsDollar value=*****
+2026-08-17 11:39:43:346 (Playback) Cbi.Account.ResetSimulationAccount.End: account='PlaybackAccount1'
+2026-08-17 11:39:43:346 (Playback) Cbi.Account.ResetSimulationAccount.Start: account='PlaybackAccount2'
+2026-08-17 11:39:43:347 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=BuyingPower currency=UsDollar value=*****
+2026-08-17 11:39:43:347 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=CashValue currency=UsDollar value=*****
+2026-08-17 11:39:43:347 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=Commission currency=UsDollar value=*****
+2026-08-17 11:39:43:347 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=Fee currency=UsDollar value=*****
+2026-08-17 11:39:43:347 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=GrossRealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:39:43:347 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:39:43:347 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=InitialMargin currency=UsDollar value=*****
+2026-08-17 11:39:43:347 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=IntradayMargin currency=UsDollar value=*****
+2026-08-17 11:39:43:347 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=LongOptionValue currency=UsDollar value=*****
+2026-08-17 11:39:43:347 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=LookAheadMaintenanceMargin currency=UsDollar value=*****
+2026-08-17 11:39:43:347 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=LongStockValue currency=UsDollar value=*****
+2026-08-17 11:39:43:347 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=MaintenanceMargin currency=UsDollar value=*****
+2026-08-17 11:39:43:347 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=NetLiquidationByCurrency currency=UsDollar value=*****
+2026-08-17 11:39:43:347 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=PositionMargin currency=UsDollar value=*****
+2026-08-17 11:39:43:347 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:39:43:347 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=ShortOptionValue currency=UsDollar value=*****
+2026-08-17 11:39:43:347 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=ShortStockValue currency=UsDollar value=*****
+2026-08-17 11:39:43:347 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=SodCashValue currency=UsDollar value=*****
+2026-08-17 11:39:43:347 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=SodLiquidatingValue currency=UsDollar value=*****
+2026-08-17 11:39:43:347 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=TotalCashBalance currency=UsDollar value=*****
+2026-08-17 11:39:43:347 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=WeeklyProfitLoss currency=UsDollar value=*****
+2026-08-17 11:39:43:347 (Playback) Cbi.Account.ResetSimulationAccount.End: account='PlaybackAccount2'
+2026-08-17 11:39:43:347 (Playback) Cbi.Account.ResetSimulationAccount.Start: account='PlaybackAccount4'
+2026-08-17 11:39:43:348 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=BuyingPower currency=UsDollar value=*****
+2026-08-17 11:39:43:348 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=CashValue currency=UsDollar value=*****
+2026-08-17 11:39:43:348 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=Commission currency=UsDollar value=*****
+2026-08-17 11:39:43:348 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=Fee currency=UsDollar value=*****
+2026-08-17 11:39:43:348 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=GrossRealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:39:43:348 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:39:43:348 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=InitialMargin currency=UsDollar value=*****
+2026-08-17 11:39:43:348 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=IntradayMargin currency=UsDollar value=*****
+2026-08-17 11:39:43:348 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=LongOptionValue currency=UsDollar value=*****
+2026-08-17 11:39:43:348 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=LookAheadMaintenanceMargin currency=UsDollar value=*****
+2026-08-17 11:39:43:348 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=LongStockValue currency=UsDollar value=*****
+2026-08-17 11:39:43:348 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=MaintenanceMargin currency=UsDollar value=*****
+2026-08-17 11:39:43:348 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=NetLiquidationByCurrency currency=UsDollar value=*****
+2026-08-17 11:39:43:348 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=PositionMargin currency=UsDollar value=*****
+2026-08-17 11:39:43:348 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:39:43:348 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=ShortOptionValue currency=UsDollar value=*****
+2026-08-17 11:39:43:348 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=ShortStockValue currency=UsDollar value=*****
+2026-08-17 11:39:43:348 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=SodCashValue currency=UsDollar value=*****
+2026-08-17 11:39:43:348 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=SodLiquidatingValue currency=UsDollar value=*****
+2026-08-17 11:39:43:348 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=TotalCashBalance currency=UsDollar value=*****
+2026-08-17 11:39:43:348 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=WeeklyProfitLoss currency=UsDollar value=*****
+2026-08-17 11:39:43:348 (Playback) Cbi.Account.ResetSimulationAccount.End: account='PlaybackAccount4'
+2026-08-17 11:39:45:502 Cbi.Instrument.RequestBars (to Provider): instrument='MNQ SEP26' from='2026-08-09 오후 11:00:00' to='2026-08-10 오후 11:59:59' period='1 Tick'
+2026-08-17 11:40:01:182 (Playback) Cbi.Account.ResetSimulationAccount.Start: account='Playback101'
+2026-08-17 11:40:01:184 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=BuyingPower currency=UsDollar value=*****
+2026-08-17 11:40:01:184 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=CashValue currency=UsDollar value=*****
+2026-08-17 11:40:01:184 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=Commission currency=UsDollar value=*****
+2026-08-17 11:40:01:184 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=Fee currency=UsDollar value=*****
+2026-08-17 11:40:01:184 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=GrossRealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:40:01:184 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:40:01:184 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=InitialMargin currency=UsDollar value=*****
+2026-08-17 11:40:01:184 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=IntradayMargin currency=UsDollar value=*****
+2026-08-17 11:40:01:184 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=LongOptionValue currency=UsDollar value=*****
+2026-08-17 11:40:01:184 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=LookAheadMaintenanceMargin currency=UsDollar value=*****
+2026-08-17 11:40:01:184 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=LongStockValue currency=UsDollar value=*****
+2026-08-17 11:40:01:184 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=MaintenanceMargin currency=UsDollar value=*****
+2026-08-17 11:40:01:184 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=NetLiquidationByCurrency currency=UsDollar value=*****
+2026-08-17 11:40:01:184 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=PositionMargin currency=UsDollar value=*****
+2026-08-17 11:40:01:184 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:40:01:184 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=ShortOptionValue currency=UsDollar value=*****
+2026-08-17 11:40:01:184 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=ShortStockValue currency=UsDollar value=*****
+2026-08-17 11:40:01:184 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=SodCashValue currency=UsDollar value=*****
+2026-08-17 11:40:01:184 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=SodLiquidatingValue currency=UsDollar value=*****
+2026-08-17 11:40:01:184 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=TotalCashBalance currency=UsDollar value=*****
+2026-08-17 11:40:01:184 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=WeeklyProfitLoss currency=UsDollar value=*****
+2026-08-17 11:40:01:184 (Playback) Cbi.Account.ResetSimulationAccount.End: account='Playback101'
+2026-08-17 11:40:01:184 (Playback) Cbi.Account.ResetSimulationAccount.Start: account='PlaybackAccount1'
+2026-08-17 11:40:01:185 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=BuyingPower currency=UsDollar value=*****
+2026-08-17 11:40:01:185 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=CashValue currency=UsDollar value=*****
+2026-08-17 11:40:01:185 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=Commission currency=UsDollar value=*****
+2026-08-17 11:40:01:185 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=Fee currency=UsDollar value=*****
+2026-08-17 11:40:01:185 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=GrossRealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:40:01:185 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:40:01:185 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=InitialMargin currency=UsDollar value=*****
+2026-08-17 11:40:01:185 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=IntradayMargin currency=UsDollar value=*****
+2026-08-17 11:40:01:185 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=LongOptionValue currency=UsDollar value=*****
+2026-08-17 11:40:01:185 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=LookAheadMaintenanceMargin currency=UsDollar value=*****
+2026-08-17 11:40:01:185 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=LongStockValue currency=UsDollar value=*****
+2026-08-17 11:40:01:185 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=MaintenanceMargin currency=UsDollar value=*****
+2026-08-17 11:40:01:185 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=NetLiquidationByCurrency currency=UsDollar value=*****
+2026-08-17 11:40:01:185 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=PositionMargin currency=UsDollar value=*****
+2026-08-17 11:40:01:185 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:40:01:185 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=ShortOptionValue currency=UsDollar value=*****
+2026-08-17 11:40:01:185 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=ShortStockValue currency=UsDollar value=*****
+2026-08-17 11:40:01:185 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=SodCashValue currency=UsDollar value=*****
+2026-08-17 11:40:01:185 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=SodLiquidatingValue currency=UsDollar value=*****
+2026-08-17 11:40:01:185 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=TotalCashBalance currency=UsDollar value=*****
+2026-08-17 11:40:01:185 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount1' accountItem=WeeklyProfitLoss currency=UsDollar value=*****
+2026-08-17 11:40:01:185 (Playback) Cbi.Account.ResetSimulationAccount.End: account='PlaybackAccount1'
+2026-08-17 11:40:01:185 (Playback) Cbi.Account.ResetSimulationAccount.Start: account='PlaybackAccount2'
+2026-08-17 11:40:01:186 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=BuyingPower currency=UsDollar value=*****
+2026-08-17 11:40:01:186 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=CashValue currency=UsDollar value=*****
+2026-08-17 11:40:01:186 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=Commission currency=UsDollar value=*****
+2026-08-17 11:40:01:186 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=Fee currency=UsDollar value=*****
+2026-08-17 11:40:01:186 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=GrossRealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:40:01:186 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:40:01:186 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=InitialMargin currency=UsDollar value=*****
+2026-08-17 11:40:01:186 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=IntradayMargin currency=UsDollar value=*****
+2026-08-17 11:40:01:186 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=LongOptionValue currency=UsDollar value=*****
+2026-08-17 11:40:01:186 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=LookAheadMaintenanceMargin currency=UsDollar value=*****
+2026-08-17 11:40:01:186 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=LongStockValue currency=UsDollar value=*****
+2026-08-17 11:40:01:186 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=MaintenanceMargin currency=UsDollar value=*****
+2026-08-17 11:40:01:186 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=NetLiquidationByCurrency currency=UsDollar value=*****
+2026-08-17 11:40:01:186 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=PositionMargin currency=UsDollar value=*****
+2026-08-17 11:40:01:186 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:40:01:186 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=ShortOptionValue currency=UsDollar value=*****
+2026-08-17 11:40:01:186 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=ShortStockValue currency=UsDollar value=*****
+2026-08-17 11:40:01:186 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=SodCashValue currency=UsDollar value=*****
+2026-08-17 11:40:01:186 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=SodLiquidatingValue currency=UsDollar value=*****
+2026-08-17 11:40:01:186 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=TotalCashBalance currency=UsDollar value=*****
+2026-08-17 11:40:01:186 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount2' accountItem=WeeklyProfitLoss currency=UsDollar value=*****
+2026-08-17 11:40:01:186 (Playback) Cbi.Account.ResetSimulationAccount.End: account='PlaybackAccount2'
+2026-08-17 11:40:01:186 (Playback) Cbi.Account.ResetSimulationAccount.Start: account='PlaybackAccount4'
+2026-08-17 11:40:01:187 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=BuyingPower currency=UsDollar value=*****
+2026-08-17 11:40:01:187 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=CashValue currency=UsDollar value=*****
+2026-08-17 11:40:01:187 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=Commission currency=UsDollar value=*****
+2026-08-17 11:40:01:187 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=Fee currency=UsDollar value=*****
+2026-08-17 11:40:01:187 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=GrossRealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:40:01:187 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:40:01:187 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=InitialMargin currency=UsDollar value=*****
+2026-08-17 11:40:01:187 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=IntradayMargin currency=UsDollar value=*****
+2026-08-17 11:40:01:187 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=LongOptionValue currency=UsDollar value=*****
+2026-08-17 11:40:01:187 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=LookAheadMaintenanceMargin currency=UsDollar value=*****
+2026-08-17 11:40:01:187 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=LongStockValue currency=UsDollar value=*****
+2026-08-17 11:40:01:187 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=MaintenanceMargin currency=UsDollar value=*****
+2026-08-17 11:40:01:187 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=NetLiquidationByCurrency currency=UsDollar value=*****
+2026-08-17 11:40:01:187 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=PositionMargin currency=UsDollar value=*****
+2026-08-17 11:40:01:187 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:40:01:187 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=ShortOptionValue currency=UsDollar value=*****
+2026-08-17 11:40:01:187 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=ShortStockValue currency=UsDollar value=*****
+2026-08-17 11:40:01:187 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=SodCashValue currency=UsDollar value=*****
+2026-08-17 11:40:01:187 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=SodLiquidatingValue currency=UsDollar value=*****
+2026-08-17 11:40:01:187 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=TotalCashBalance currency=UsDollar value=*****
+2026-08-17 11:40:01:187 (Playback) Cbi.Account.AccountItemUpdateCallback: account='PlaybackAccount4' accountItem=WeeklyProfitLoss currency=UsDollar value=*****
+2026-08-17 11:40:01:187 (Playback) Cbi.Account.ResetSimulationAccount.End: account='PlaybackAccount4'
+2026-08-17 11:40:03:248 Cbi.Instrument.RequestBars (to Provider): instrument='MNQ SEP26' from='2026-08-16 오후 6:00:00' to='2026-08-17 오후 11:59:59' period='1 Tick'
+2026-08-17 11:40:03:384 Cbi.Instrument.RequestBars (to Provider): instrument='MNQ SEP26' from='2026-08-17 오전 12:00:00' to='2026-08-17 오전 12:00:00' period='1 Minute'
+2026-08-17 11:40:03:385 Cbi.Instrument.RequestBars (to Provider): instrument='MNQ SEP26' from='2026-08-17 오전 3:00:00' to='2026-08-17 오후 11:59:59' period='1 Tick'
+2026-08-17 11:40:10:059 Cbi.Instrument.RequestBars (to Provider): instrument='MNQ SEP26' from='2026-08-17 오전 11:00:00' to='2026-08-17 오후 11:59:59' period='1 Tick'
+2026-08-17 11:43:01:319 (Playback) NinjaScript.AtmStrategy.SubmitEntryOrders: account='Playback101' instrument='MNQ SEP26' id='342165750' template='{"$id":"1","Brackets":[{"$id":"2","Quantity":1,"StopLoss":80,"StopStrategy":null,"Target":80}],"DisplayName":"Regular - 1","Template":"Regular"}'
+2026-08-17 11:43:01:330 (Playback) Cbi.Account.CreateOrder: orderId='4d8c04e379804696bb2fca1f0c133e41' account='Playback101' name='Entry' orderState=Initialized instrument='MNQ SEP26' orderAction=Buy orderType='Market' limitPrice=0 stopPrice=0 quantity=1 tif=Gtc oco='' filled=0 averageFillPrice=0 onBehalfOf='' id=27450 time='2026-08-17 10:11:54' gtd='2099-12-01' statementDate='2026-08-17' id=-1 comment=''
+2026-08-17 11:43:01:449 (Playback) Cbi.Account.Submit0: realOrderState=Initialized isPendingSubmit=False orderId='4d8c04e379804696bb2fca1f0c133e41' account='Playback101' name='Entry' orderState=Initialized instrument='MNQ SEP26' orderAction=Buy orderType='Market' limitPrice=0 stopPrice=0 quantity=1 tif=Gtc oco='' filled=0 averageFillPrice=0 onBehalfOf='' id=27450 time='2026-08-17 10:11:54' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:43:01:463 (Playback) Cbi.Account.Submit1: realOrderState=Initialized orderId='4d8c04e379804696bb2fca1f0c133e41' account='Playback101' name='Entry' orderState=Initialized instrument='MNQ SEP26' orderAction=Buy orderType='Market' limitPrice=0 stopPrice=0 quantity=1 tif=Gtc oco='' filled=0 averageFillPrice=0 onBehalfOf='' id=27450 time='2026-08-17 10:11:54' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:43:01:465 (Playback) Cbi.Simulator.Submit: realOrderState=Initialized orderId='4d8c04e379804696bb2fca1f0c133e41' account='Playback101' name='Entry' orderState=Initialized instrument='MNQ SEP26' orderAction=Buy orderType='Market' limitPrice=0 stopPrice=0 quantity=1 tif=Gtc oco='' filled=0 averageFillPrice=0 onBehalfOf='' id=27450 time='2026-08-17 10:11:54' gtd='2099-12-01' statementDate='2026-08-17' delay=0
+2026-08-17 11:43:01:482 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Submitted orderId='4d8c04e379804696bb2fca1f0c133e41' account='Playback101' name='Entry' orderState=Submitted instrument='MNQ SEP26' orderAction=Buy limitPrice=0 stopPrice=0 quantity=1 orderType='Market' filled=0 averageFillPrice=0 time='2026-08-17 10:11:54' statementDate='2026-08-17' error=NoError comment='' nr=-1
+2026-08-17 11:43:01:510 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Accepted orderId='4d8c04e379804696bb2fca1f0c133e41' account='Playback101' name='Entry' orderState=Accepted instrument='MNQ SEP26' orderAction=Buy limitPrice=0 stopPrice=0 quantity=1 orderType='Market' filled=0 averageFillPrice=0 time='2026-08-17 10:11:54' statementDate='2026-08-17' error=NoError comment='' nr=-1
+2026-08-17 11:43:01:512 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Working orderId='4d8c04e379804696bb2fca1f0c133e41' account='Playback101' name='Entry' orderState=Working instrument='MNQ SEP26' orderAction=Buy limitPrice=0 stopPrice=0 quantity=1 orderType='Market' filled=0 averageFillPrice=0 time='2026-08-17 10:11:54' statementDate='2026-08-17' error=NoError comment='' nr=-1
+2026-08-17 11:43:01:524 (Playback) Cbi.Simulator.Fill1: realOrderState=Working orderId='4d8c04e379804696bb2fca1f0c133e41' maxFillQuantity=1 price=30205 thread=12
+2026-08-17 11:43:01:524 (Playback) Cbi.Simulator.Fill2: realOrderState=Working orderId='4d8c04e379804696bb2fca1f0c133e41' fillQuantity=1 price=30205
+2026-08-17 11:43:01:524 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Filled orderId='4d8c04e379804696bb2fca1f0c133e41' account='Playback101' name='Entry' orderState=Filled instrument='MNQ SEP26' orderAction=Buy limitPrice=0 stopPrice=0 quantity=1 orderType='Market' filled=1 averageFillPrice=30205 time='2026-08-17 10:11:54' statementDate='2026-08-17' error=NoError comment='' nr=4
+2026-08-17 11:43:01:555 (Playback) NinjaScript.AtmStrategy.ManageBracketOrders0: account='Playback101' instrument='MNQ SEP26' id='342165750' filled=1 outstanding=0 stopTargetHandling=PerEntryExecution filledOrders='4d8c04e379804696bb2fca1f0c133e41+=1 ' outstandingOrders='' thread=12
+2026-08-17 11:43:01:556 (Playback) NinjaScript.AtmStrategy.ManageBracketOrders1: account='Playback101' instrument='MNQ SEP26' id='342165750' initialEntryOrderId='4d8c04e379804696bb2fca1f0c133e41' bracket=0 qty=1 stopOrdersOutstandingQuantity=0 quantity2Add=1 exitOrders=''
+2026-08-17 11:43:01:560 (Playback) NinjaScript.AtmStrategy.ManageStopOrder: account='Playback101' instrument='MNQ SEP26' id='342165750' idx=0 orderType=StopMarket quantity=1 limitPrice=0 stopPrice=30185 oco='476f960361d44ab28fbe25c0090983d8'
+2026-08-17 11:43:01:562 (Playback) Cbi.Account.CreateOrder: orderId='7cb3ee7416bb48f09243040f76cb02f9' account='Playback101' name='Stop1' orderState=Initialized instrument='MNQ SEP26' orderAction=Sell orderType='Stop Market' limitPrice=0 stopPrice=30185 quantity=1 tif=Gtc oco='476f960361d44ab28fbe25c0090983d8' filled=0 averageFillPrice=0 onBehalfOf='' id=27451 time='2026-08-17 10:11:54' gtd='2099-12-01' statementDate='2026-08-17' id=-1 comment=''
+2026-08-17 11:43:01:564 (Playback) Cbi.Account.Submit0: realOrderState=Initialized isPendingSubmit=False orderId='7cb3ee7416bb48f09243040f76cb02f9' account='Playback101' name='Stop1' orderState=Initialized instrument='MNQ SEP26' orderAction=Sell orderType='Stop Market' limitPrice=0 stopPrice=30185 quantity=1 tif=Gtc oco='476f960361d44ab28fbe25c0090983d8' filled=0 averageFillPrice=0 onBehalfOf='' id=27451 time='2026-08-17 10:11:54' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:43:01:565 (Playback) Cbi.Account.Submit1: realOrderState=Initialized orderId='7cb3ee7416bb48f09243040f76cb02f9' account='Playback101' name='Stop1' orderState=Initialized instrument='MNQ SEP26' orderAction=Sell orderType='Stop Market' limitPrice=0 stopPrice=30185 quantity=1 tif=Gtc oco='476f960361d44ab28fbe25c0090983d8' filled=0 averageFillPrice=0 onBehalfOf='' id=27451 time='2026-08-17 10:11:54' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:43:01:594 (Playback) Cbi.Simulator.Submit: realOrderState=Initialized orderId='7cb3ee7416bb48f09243040f76cb02f9' account='Playback101' name='Stop1' orderState=Submitted instrument='MNQ SEP26' orderAction=Sell orderType='Stop Market' limitPrice=0 stopPrice=30185 quantity=1 tif=Gtc oco='476f960361d44ab28fbe25c0090983d8' filled=0 averageFillPrice=0 onBehalfOf='' id=27451 time='2026-08-17 10:11:55' gtd='2099-12-01' statementDate='2026-08-17' delay=0
+2026-08-17 11:43:01:594 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Submitted orderId='7cb3ee7416bb48f09243040f76cb02f9' account='Playback101' name='Stop1' orderState=Submitted instrument='MNQ SEP26' orderAction=Sell limitPrice=0 stopPrice=30185 quantity=1 orderType='Stop Market' filled=0 averageFillPrice=0 time='2026-08-17 10:11:55' statementDate='2026-08-17' error=NoError comment='' nr=-1
+2026-08-17 11:43:01:597 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=IntradayMargin currency=UsDollar value=*****
+2026-08-17 11:43:01:604 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Accepted orderId='7cb3ee7416bb48f09243040f76cb02f9' account='Playback101' name='Stop1' orderState=Accepted instrument='MNQ SEP26' orderAction=Sell limitPrice=0 stopPrice=30185 quantity=1 orderType='Stop Market' filled=0 averageFillPrice=0 time='2026-08-17 10:11:55' statementDate='2026-08-17' error=NoError comment='' nr=-1
+2026-08-17 11:43:01:615 (Playback) Cbi.Account.CreateOrder: orderId='3328cd7d4602452cbaedc5d30ac5f3ca' account='Playback101' name='Target1' orderState=Initialized instrument='MNQ SEP26' orderAction=Sell orderType='Limit' limitPrice=30225 stopPrice=0 quantity=1 tif=Gtc oco='476f960361d44ab28fbe25c0090983d8' filled=0 averageFillPrice=0 onBehalfOf='' id=27452 time='2026-08-17 10:11:55' gtd='2099-12-01' statementDate='2026-08-17' id=-1 comment=''
+2026-08-17 11:43:01:618 (Playback) Cbi.Account.Submit0: realOrderState=Initialized isPendingSubmit=False orderId='3328cd7d4602452cbaedc5d30ac5f3ca' account='Playback101' name='Target1' orderState=Initialized instrument='MNQ SEP26' orderAction=Sell orderType='Limit' limitPrice=30225 stopPrice=0 quantity=1 tif=Gtc oco='476f960361d44ab28fbe25c0090983d8' filled=0 averageFillPrice=0 onBehalfOf='' id=27452 time='2026-08-17 10:11:55' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:43:01:618 (Playback) Cbi.Account.Submit1: realOrderState=Initialized orderId='3328cd7d4602452cbaedc5d30ac5f3ca' account='Playback101' name='Target1' orderState=Initialized instrument='MNQ SEP26' orderAction=Sell orderType='Limit' limitPrice=30225 stopPrice=0 quantity=1 tif=Gtc oco='476f960361d44ab28fbe25c0090983d8' filled=0 averageFillPrice=0 onBehalfOf='' id=27452 time='2026-08-17 10:11:55' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:43:01:618 (Playback) Cbi.Simulator.Submit: realOrderState=Initialized orderId='3328cd7d4602452cbaedc5d30ac5f3ca' account='Playback101' name='Target1' orderState=Submitted instrument='MNQ SEP26' orderAction=Sell orderType='Limit' limitPrice=30225 stopPrice=0 quantity=1 tif=Gtc oco='476f960361d44ab28fbe25c0090983d8' filled=0 averageFillPrice=0 onBehalfOf='' id=27452 time='2026-08-17 10:11:55' gtd='2099-12-01' statementDate='2026-08-17' delay=0
+2026-08-17 11:43:01:618 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Submitted orderId='3328cd7d4602452cbaedc5d30ac5f3ca' account='Playback101' name='Target1' orderState=Submitted instrument='MNQ SEP26' orderAction=Sell limitPrice=30225 stopPrice=0 quantity=1 orderType='Limit' filled=0 averageFillPrice=0 time='2026-08-17 10:11:55' statementDate='2026-08-17' error=NoError comment='' nr=-1
+2026-08-17 11:43:01:621 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Accepted orderId='3328cd7d4602452cbaedc5d30ac5f3ca' account='Playback101' name='Target1' orderState=Accepted instrument='MNQ SEP26' orderAction=Sell limitPrice=30225 stopPrice=0 quantity=1 orderType='Limit' filled=0 averageFillPrice=0 time='2026-08-17 10:11:55' statementDate='2026-08-17' error=NoError comment='' nr=-1
+2026-08-17 11:43:01:624 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Working orderId='3328cd7d4602452cbaedc5d30ac5f3ca' account='Playback101' name='Target1' orderState=Working instrument='MNQ SEP26' orderAction=Sell limitPrice=30225 stopPrice=0 quantity=1 orderType='Limit' filled=0 averageFillPrice=0 time='2026-08-17 10:11:55' statementDate='2026-08-17' error=NoError comment='' nr=-1
+2026-08-17 11:43:01:638 (Playback) Cbi.Account.ExecutionUpdateCallback: executionId='d22150e849a2457fb1985bfa64b71109' account='Playback101' instrument='MNQ SEP26' exchange=Globex price=30205 quantity=1 marketPosition=Long operation=Add orderID='4d8c04e379804696bb2fca1f0c133e41' isSod=False time='2026-08-17 10:11:55' statementDate='2026-08-17'
+2026-08-17 11:43:02:015 (Playback) Cbi.Account.PositionUpdateCallback: instrument='MNQ SEP26' account='Playback101' avgPrice=30205 quantity=1 marketPosition=Long operation=Add
+2026-08-17 11:43:02:033 (Playback) NinjaScript.AtmStrategy.SubmitEntryOrders: account='Playback101' instrument='MNQ SEP26' id='342165750' template='{"$id":"1","Brackets":[{"$id":"2","Quantity":1,"StopLoss":80,"StopStrategy":null,"Target":80}],"DisplayName":"Regular - 1","InitialTickSize":0.25,"Template":"Regular"}'
+2026-08-17 11:43:02:592 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=CashValue currency=UsDollar value=*****
+2026-08-17 11:43:02:592 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=Commission currency=UsDollar value=*****
+2026-08-17 11:43:02:592 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=InitialMargin currency=UsDollar value=*****
+2026-08-17 11:43:02:592 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=MaintenanceMargin currency=UsDollar value=*****
+2026-08-17 11:43:02:592 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=PositionMargin currency=UsDollar value=*****
+2026-08-17 11:43:02:592 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:44:03:265 (Playback) Cbi.Simulator.Fill1: realOrderState=Working orderId='3328cd7d4602452cbaedc5d30ac5f3ca' maxFillQuantity=1 price=30225 thread=37
+2026-08-17 11:44:03:265 (Playback) Cbi.Simulator.Fill2: realOrderState=Working orderId='3328cd7d4602452cbaedc5d30ac5f3ca' fillQuantity=1 price=30225
+2026-08-17 11:44:03:265 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Filled orderId='3328cd7d4602452cbaedc5d30ac5f3ca' account='Playback101' name='Target1' orderState=Filled instrument='MNQ SEP26' orderAction=Sell limitPrice=30225 stopPrice=0 quantity=1 orderType='Limit' filled=1 averageFillPrice=30225 time='2026-08-17 10:14:26' statementDate='2026-08-17' error=NoError comment='' nr=-1
+2026-08-17 11:44:03:282 (Playback) Cbi.Order.OrderUpdateCallback.HandleOco.TriggerCancel: realOrderState=Accepted orderId='7cb3ee7416bb48f09243040f76cb02f9' account='Playback101' name='Stop1' orderState=Cancelled instrument='MNQ SEP26' orderAction=Sell orderType='Stop Market' limitPrice=0 stopPrice=30185 quantity=1 tif=Gtc oco='476f960361d44ab28fbe25c0090983d8' filled=0 averageFillPrice=0 onBehalfOf='' id=27451 time='2026-08-17 10:14:26' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:44:03:282 (Playback) Cbi.Account.Cancel0: realOrderState=Accepted orderId='7cb3ee7416bb48f09243040f76cb02f9' account='Playback101' name='Stop1' orderState=Cancelled instrument='MNQ SEP26' orderAction=Sell orderType='Stop Market' limitPrice=0 stopPrice=30185 quantity=1 tif=Gtc oco='476f960361d44ab28fbe25c0090983d8' filled=0 averageFillPrice=0 onBehalfOf='' id=27451 time='2026-08-17 10:14:26' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:44:03:282 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=CancelPending orderId='7cb3ee7416bb48f09243040f76cb02f9' account='Playback101' name='Stop1' orderState=CancelPending instrument='MNQ SEP26' orderAction=Sell limitPrice=0 stopPrice=30185 quantity=1 orderType='Stop Market' filled=0 averageFillPrice=0 time='2026-08-17 10:14:26' statementDate='2026-08-17' error=NoError comment='' nr=3
+2026-08-17 11:44:03:282 (Playback) Cbi.Account.Cancel1: realOrderState=CancelPending orderId='7cb3ee7416bb48f09243040f76cb02f9' account='Playback101' name='Stop1' orderState=Cancelled instrument='MNQ SEP26' orderAction=Sell orderType='Stop Market' limitPrice=0 stopPrice=30185 quantity=1 tif=Gtc oco='476f960361d44ab28fbe25c0090983d8' filled=0 averageFillPrice=0 onBehalfOf='' id=27451 time='2026-08-17 10:14:26' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:44:03:284 (Playback) Cbi.Simulator.Cancel: realOrderState=CancelPending orderId='7cb3ee7416bb48f09243040f76cb02f9' account='Playback101' name='Stop1' orderState=Cancelled instrument='MNQ SEP26' orderAction=Sell orderType='Stop Market' limitPrice=0 stopPrice=30185 quantity=1 tif=Gtc oco='476f960361d44ab28fbe25c0090983d8' filled=0 averageFillPrice=0 onBehalfOf='' id=27451 time='2026-08-17 10:14:26' gtd='2099-12-01' statementDate='2026-08-17' delay=0
+2026-08-17 11:44:03:284 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=CancelSubmitted orderId='7cb3ee7416bb48f09243040f76cb02f9' account='Playback101' name='Stop1' orderState=CancelSubmitted instrument='MNQ SEP26' orderAction=Sell limitPrice=0 stopPrice=30185 quantity=1 orderType='Stop Market' filled=0 averageFillPrice=0 time='2026-08-17 10:14:26' statementDate='2026-08-17' error=NoError comment='' nr=4
+2026-08-17 11:44:03:285 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Cancelled orderId='7cb3ee7416bb48f09243040f76cb02f9' account='Playback101' name='Stop1' orderState=Cancelled instrument='MNQ SEP26' orderAction=Sell limitPrice=0 stopPrice=30185 quantity=1 orderType='Stop Market' filled=0 averageFillPrice=0 time='2026-08-17 10:14:26' statementDate='2026-08-17' error=NoError comment='' nr=5
+2026-08-17 11:44:03:288 (Playback) Cbi.Account.ExecutionUpdateCallback: executionId='864f6dffc76947be81e01415142f069e' account='Playback101' instrument='MNQ SEP26' exchange=Globex price=30225 quantity=1 marketPosition=Short operation=Add orderID='3328cd7d4602452cbaedc5d30ac5f3ca' isSod=False time='2026-08-17 10:14:26' statementDate='2026-08-17'
+2026-08-17 11:44:03:319 (Playback) NinjaScript.AtmStrategy.OnExecutionUpdate.Terminate1: account='Playback101' instrument='MNQ SEP26' id='342165750'
+2026-08-17 11:44:03:322 (Playback) Cbi.Account.OnAddTrade: entryId='d22150e849a2457fb1985bfa64b71109' exitId='864f6dffc76947be81e01415142f069e' profitCurrencyBeforeCommissionAndFees=40
+2026-08-17 11:44:03:322 (Playback) Cbi.Account.PositionUpdateCallback: instrument='MNQ SEP26' account='Playback101' avgPrice=0 quantity=0 marketPosition=Flat operation=Remove
+2026-08-17 11:44:03:377 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=CashValue currency=UsDollar value=*****
+2026-08-17 11:44:03:377 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=Commission currency=UsDollar value=*****
+2026-08-17 11:44:03:377 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=GrossRealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:44:03:377 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:44:03:377 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=InitialMargin currency=UsDollar value=*****
+2026-08-17 11:44:03:377 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=IntradayMargin currency=UsDollar value=*****
+2026-08-17 11:44:03:377 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=MaintenanceMargin currency=UsDollar value=*****
+2026-08-17 11:44:03:377 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=PositionMargin currency=UsDollar value=*****
+2026-08-17 11:44:03:377 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:48:27:703 (Playback) NinjaScript.AtmStrategy.SubmitEntryOrders: account='Playback101' instrument='MNQ SEP26' id='342165751' template='{"$id":"1","Brackets":[{"$id":"2","Quantity":1,"StopLoss":80,"StopStrategy":null,"Target":80}],"DisplayName":"Regular - 1","Template":"Regular"}'
+2026-08-17 11:48:27:707 (Playback) Cbi.Account.CreateOrder: orderId='75e9023739f8457081605e9468f0ebef' account='Playback101' name='Entry' orderState=Filled instrument='MNQ SEP26' orderAction=Sell orderType='Market' limitPrice=0 stopPrice=0 quantity=1 tif=Gtc oco='' filled=1 averageFillPrice=30173.25 onBehalfOf='' id=27453 time='2026-08-17 10:21:28' gtd='2099-12-01' statementDate='2026-08-17' id=-1 comment=''
+2026-08-17 11:48:27:720 (Playback) Cbi.Account.Submit0: realOrderState=Initialized isPendingSubmit=False orderId='75e9023739f8457081605e9468f0ebef' account='Playback101' name='Entry' orderState=Filled instrument='MNQ SEP26' orderAction=Sell orderType='Market' limitPrice=0 stopPrice=0 quantity=1 tif=Gtc oco='' filled=1 averageFillPrice=30173.25 onBehalfOf='' id=27453 time='2026-08-17 10:21:28' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:48:27:720 (Playback) Cbi.Account.Submit1: realOrderState=Initialized orderId='75e9023739f8457081605e9468f0ebef' account='Playback101' name='Entry' orderState=Filled instrument='MNQ SEP26' orderAction=Sell orderType='Market' limitPrice=0 stopPrice=0 quantity=1 tif=Gtc oco='' filled=1 averageFillPrice=30173.25 onBehalfOf='' id=27453 time='2026-08-17 10:21:28' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:48:27:720 (Playback) Cbi.Simulator.Submit: realOrderState=Initialized orderId='75e9023739f8457081605e9468f0ebef' account='Playback101' name='Entry' orderState=Filled instrument='MNQ SEP26' orderAction=Sell orderType='Market' limitPrice=0 stopPrice=0 quantity=1 tif=Gtc oco='' filled=1 averageFillPrice=30173.25 onBehalfOf='' id=27453 time='2026-08-17 10:21:28' gtd='2099-12-01' statementDate='2026-08-17' delay=0
+2026-08-17 11:48:27:720 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Submitted orderId='75e9023739f8457081605e9468f0ebef' account='Playback101' name='Entry' orderState=Submitted instrument='MNQ SEP26' orderAction=Sell limitPrice=0 stopPrice=0 quantity=1 orderType='Market' filled=0 averageFillPrice=0 time='2026-08-17 10:21:28' statementDate='2026-08-17' error=NoError comment='' nr=1
+2026-08-17 11:48:27:749 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Accepted orderId='75e9023739f8457081605e9468f0ebef' account='Playback101' name='Entry' orderState=Accepted instrument='MNQ SEP26' orderAction=Sell limitPrice=0 stopPrice=0 quantity=1 orderType='Market' filled=0 averageFillPrice=0 time='2026-08-17 10:21:28' statementDate='2026-08-17' error=NoError comment='' nr=2
+2026-08-17 11:48:27:753 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Working orderId='75e9023739f8457081605e9468f0ebef' account='Playback101' name='Entry' orderState=Working instrument='MNQ SEP26' orderAction=Sell limitPrice=0 stopPrice=0 quantity=1 orderType='Market' filled=0 averageFillPrice=0 time='2026-08-17 10:21:28' statementDate='2026-08-17' error=NoError comment='' nr=3
+2026-08-17 11:48:27:755 (Playback) Cbi.Simulator.Fill1: realOrderState=Working orderId='75e9023739f8457081605e9468f0ebef' maxFillQuantity=1 price=30173.25 thread=12
+2026-08-17 11:48:27:755 (Playback) Cbi.Simulator.Fill2: realOrderState=Working orderId='75e9023739f8457081605e9468f0ebef' fillQuantity=1 price=30173.25
+2026-08-17 11:48:27:755 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Filled orderId='75e9023739f8457081605e9468f0ebef' account='Playback101' name='Entry' orderState=Filled instrument='MNQ SEP26' orderAction=Sell limitPrice=0 stopPrice=0 quantity=1 orderType='Market' filled=1 averageFillPrice=30173.25 time='2026-08-17 10:21:28' statementDate='2026-08-17' error=NoError comment='' nr=4
+2026-08-17 11:48:27:774 (Playback) NinjaScript.AtmStrategy.ManageBracketOrders0: account='Playback101' instrument='MNQ SEP26' id='342165751' filled=1 outstanding=0 stopTargetHandling=PerEntryExecution filledOrders='75e9023739f8457081605e9468f0ebef+=1 ' outstandingOrders='' thread=12
+2026-08-17 11:48:27:774 (Playback) NinjaScript.AtmStrategy.ManageBracketOrders1: account='Playback101' instrument='MNQ SEP26' id='342165751' initialEntryOrderId='75e9023739f8457081605e9468f0ebef' bracket=0 qty=1 stopOrdersOutstandingQuantity=0 quantity2Add=1 exitOrders=''
+2026-08-17 11:48:27:774 (Playback) NinjaScript.AtmStrategy.ManageStopOrder: account='Playback101' instrument='MNQ SEP26' id='342165751' idx=0 orderType=StopMarket quantity=1 limitPrice=0 stopPrice=30193.25 oco='f8036813ca104d0895fae48289a4c865'
+2026-08-17 11:48:27:775 (Playback) Cbi.Account.CreateOrder: orderId='359af543b5e84d36813860aa77e505b3' account='Playback101' name='Stop1' orderState=Initialized instrument='MNQ SEP26' orderAction=BuyToCover orderType='Stop Market' limitPrice=0 stopPrice=30193.25 quantity=1 tif=Gtc oco='f8036813ca104d0895fae48289a4c865' filled=0 averageFillPrice=0 onBehalfOf='' id=27454 time='2026-08-17 10:21:28' gtd='2099-12-01' statementDate='2026-08-17' id=-1 comment=''
+2026-08-17 11:48:27:778 (Playback) Cbi.Account.Submit0: realOrderState=Initialized isPendingSubmit=False orderId='359af543b5e84d36813860aa77e505b3' account='Playback101' name='Stop1' orderState=Submitted instrument='MNQ SEP26' orderAction=BuyToCover orderType='Stop Market' limitPrice=0 stopPrice=30193.25 quantity=1 tif=Gtc oco='f8036813ca104d0895fae48289a4c865' filled=0 averageFillPrice=0 onBehalfOf='' id=27454 time='2026-08-17 10:21:28' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:48:27:778 (Playback) Cbi.Account.Submit1: realOrderState=Initialized orderId='359af543b5e84d36813860aa77e505b3' account='Playback101' name='Stop1' orderState=Submitted instrument='MNQ SEP26' orderAction=BuyToCover orderType='Stop Market' limitPrice=0 stopPrice=30193.25 quantity=1 tif=Gtc oco='f8036813ca104d0895fae48289a4c865' filled=0 averageFillPrice=0 onBehalfOf='' id=27454 time='2026-08-17 10:21:28' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:48:27:778 (Playback) Cbi.Simulator.Submit: realOrderState=Initialized orderId='359af543b5e84d36813860aa77e505b3' account='Playback101' name='Stop1' orderState=Submitted instrument='MNQ SEP26' orderAction=BuyToCover orderType='Stop Market' limitPrice=0 stopPrice=30193.25 quantity=1 tif=Gtc oco='f8036813ca104d0895fae48289a4c865' filled=0 averageFillPrice=0 onBehalfOf='' id=27454 time='2026-08-17 10:21:28' gtd='2099-12-01' statementDate='2026-08-17' delay=0
+2026-08-17 11:48:27:778 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Submitted orderId='359af543b5e84d36813860aa77e505b3' account='Playback101' name='Stop1' orderState=Submitted instrument='MNQ SEP26' orderAction=BuyToCover limitPrice=0 stopPrice=30193.25 quantity=1 orderType='Stop Market' filled=0 averageFillPrice=0 time='2026-08-17 10:21:28' statementDate='2026-08-17' error=NoError comment='' nr=-1
+2026-08-17 11:48:27:781 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Accepted orderId='359af543b5e84d36813860aa77e505b3' account='Playback101' name='Stop1' orderState=Accepted instrument='MNQ SEP26' orderAction=BuyToCover limitPrice=0 stopPrice=30193.25 quantity=1 orderType='Stop Market' filled=0 averageFillPrice=0 time='2026-08-17 10:21:28' statementDate='2026-08-17' error=NoError comment='' nr=-1
+2026-08-17 11:48:27:786 (Playback) Cbi.Account.CreateOrder: orderId='6265edea7f984e2f881157f2bbe614b1' account='Playback101' name='Target1' orderState=Initialized instrument='MNQ SEP26' orderAction=BuyToCover orderType='Limit' limitPrice=30153.25 stopPrice=0 quantity=1 tif=Gtc oco='f8036813ca104d0895fae48289a4c865' filled=0 averageFillPrice=0 onBehalfOf='' id=27455 time='2026-08-17 10:21:28' gtd='2099-12-01' statementDate='2026-08-17' id=-1 comment=''
+2026-08-17 11:48:27:788 (Playback) Cbi.Account.Submit0: realOrderState=Initialized isPendingSubmit=False orderId='6265edea7f984e2f881157f2bbe614b1' account='Playback101' name='Target1' orderState=Submitted instrument='MNQ SEP26' orderAction=BuyToCover orderType='Limit' limitPrice=30153.25 stopPrice=0 quantity=1 tif=Gtc oco='f8036813ca104d0895fae48289a4c865' filled=0 averageFillPrice=0 onBehalfOf='' id=27455 time='2026-08-17 10:21:28' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:48:27:789 (Playback) Cbi.Account.Submit1: realOrderState=Initialized orderId='6265edea7f984e2f881157f2bbe614b1' account='Playback101' name='Target1' orderState=Submitted instrument='MNQ SEP26' orderAction=BuyToCover orderType='Limit' limitPrice=30153.25 stopPrice=0 quantity=1 tif=Gtc oco='f8036813ca104d0895fae48289a4c865' filled=0 averageFillPrice=0 onBehalfOf='' id=27455 time='2026-08-17 10:21:28' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:48:27:789 (Playback) Cbi.Simulator.Submit: realOrderState=Initialized orderId='6265edea7f984e2f881157f2bbe614b1' account='Playback101' name='Target1' orderState=Submitted instrument='MNQ SEP26' orderAction=BuyToCover orderType='Limit' limitPrice=30153.25 stopPrice=0 quantity=1 tif=Gtc oco='f8036813ca104d0895fae48289a4c865' filled=0 averageFillPrice=0 onBehalfOf='' id=27455 time='2026-08-17 10:21:28' gtd='2099-12-01' statementDate='2026-08-17' delay=0
+2026-08-17 11:48:27:789 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Submitted orderId='6265edea7f984e2f881157f2bbe614b1' account='Playback101' name='Target1' orderState=Submitted instrument='MNQ SEP26' orderAction=BuyToCover limitPrice=30153.25 stopPrice=0 quantity=1 orderType='Limit' filled=0 averageFillPrice=0 time='2026-08-17 10:21:28' statementDate='2026-08-17' error=NoError comment='' nr=1
+2026-08-17 11:48:27:791 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Accepted orderId='6265edea7f984e2f881157f2bbe614b1' account='Playback101' name='Target1' orderState=Accepted instrument='MNQ SEP26' orderAction=BuyToCover limitPrice=30153.25 stopPrice=0 quantity=1 orderType='Limit' filled=0 averageFillPrice=0 time='2026-08-17 10:21:28' statementDate='2026-08-17' error=NoError comment='' nr=-1
+2026-08-17 11:48:27:797 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Working orderId='6265edea7f984e2f881157f2bbe614b1' account='Playback101' name='Target1' orderState=Working instrument='MNQ SEP26' orderAction=BuyToCover limitPrice=30153.25 stopPrice=0 quantity=1 orderType='Limit' filled=0 averageFillPrice=0 time='2026-08-17 10:21:28' statementDate='2026-08-17' error=NoError comment='' nr=-1
+2026-08-17 11:48:27:799 (Playback) Cbi.Account.ExecutionUpdateCallback: executionId='658c092588d14f61a4b99946f6b10420' account='Playback101' instrument='MNQ SEP26' exchange=Globex price=30173.25 quantity=1 marketPosition=Short operation=Add orderID='75e9023739f8457081605e9468f0ebef' isSod=False time='2026-08-17 10:21:28' statementDate='2026-08-17'
+2026-08-17 11:48:27:800 (Playback) Cbi.Account.PositionUpdateCallback: instrument='MNQ SEP26' account='Playback101' avgPrice=30173.25 quantity=1 marketPosition=Short operation=Add
+2026-08-17 11:48:27:800 (Playback) NinjaScript.AtmStrategy.SubmitEntryOrders: account='Playback101' instrument='MNQ SEP26' id='342165751' template='{"$id":"1","Brackets":[{"$id":"2","Quantity":1,"StopLoss":80,"StopStrategy":null,"Target":80}],"DisplayName":"Regular - 1","InitialTickSize":0.25,"Template":"Regular"}'
+2026-08-17 11:48:28:038 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=CashValue currency=UsDollar value=*****
+2026-08-17 11:48:28:038 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=Commission currency=UsDollar value=*****
+2026-08-17 11:48:28:038 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=InitialMargin currency=UsDollar value=*****
+2026-08-17 11:48:28:038 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=IntradayMargin currency=UsDollar value=*****
+2026-08-17 11:48:28:038 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=MaintenanceMargin currency=UsDollar value=*****
+2026-08-17 11:48:28:038 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=PositionMargin currency=UsDollar value=*****
+2026-08-17 11:48:28:038 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:49:21:978 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Working orderId='359af543b5e84d36813860aa77e505b3' account='Playback101' name='Stop1' orderState=Working instrument='MNQ SEP26' orderAction=BuyToCover limitPrice=0 stopPrice=30193.25 quantity=1 orderType='Stop Market' filled=0 averageFillPrice=0 time='2026-08-17 10:29:29' statementDate='2026-08-17' error=NoError comment='' nr=-1
+2026-08-17 11:49:21:980 (Playback) Cbi.Simulator.Fill1: realOrderState=Working orderId='359af543b5e84d36813860aa77e505b3' maxFillQuantity=1 price=30193.25 thread=37
+2026-08-17 11:49:21:980 (Playback) Cbi.Simulator.Fill2: realOrderState=Working orderId='359af543b5e84d36813860aa77e505b3' fillQuantity=1 price=30193.25
+2026-08-17 11:49:21:980 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Filled orderId='359af543b5e84d36813860aa77e505b3' account='Playback101' name='Stop1' orderState=Filled instrument='MNQ SEP26' orderAction=BuyToCover limitPrice=0 stopPrice=30193.25 quantity=1 orderType='Stop Market' filled=1 averageFillPrice=30193.25 time='2026-08-17 10:29:29' statementDate='2026-08-17' error=NoError comment='' nr=-1
+2026-08-17 11:49:21:996 (Playback) Cbi.Order.OrderUpdateCallback.HandleOco.TriggerCancel: realOrderState=Working orderId='6265edea7f984e2f881157f2bbe614b1' account='Playback101' name='Target1' orderState=Cancelled instrument='MNQ SEP26' orderAction=BuyToCover orderType='Limit' limitPrice=30153.25 stopPrice=0 quantity=1 tif=Gtc oco='f8036813ca104d0895fae48289a4c865' filled=0 averageFillPrice=0 onBehalfOf='' id=27455 time='2026-08-17 10:29:29' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:49:21:996 (Playback) Cbi.Account.Cancel0: realOrderState=Working orderId='6265edea7f984e2f881157f2bbe614b1' account='Playback101' name='Target1' orderState=Cancelled instrument='MNQ SEP26' orderAction=BuyToCover orderType='Limit' limitPrice=30153.25 stopPrice=0 quantity=1 tif=Gtc oco='f8036813ca104d0895fae48289a4c865' filled=0 averageFillPrice=0 onBehalfOf='' id=27455 time='2026-08-17 10:29:29' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:49:21:996 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=CancelPending orderId='6265edea7f984e2f881157f2bbe614b1' account='Playback101' name='Target1' orderState=CancelPending instrument='MNQ SEP26' orderAction=BuyToCover limitPrice=30153.25 stopPrice=0 quantity=1 orderType='Limit' filled=0 averageFillPrice=0 time='2026-08-17 10:29:29' statementDate='2026-08-17' error=NoError comment='' nr=4
+2026-08-17 11:49:21:996 (Playback) Cbi.Account.Cancel1: realOrderState=CancelPending orderId='6265edea7f984e2f881157f2bbe614b1' account='Playback101' name='Target1' orderState=Cancelled instrument='MNQ SEP26' orderAction=BuyToCover orderType='Limit' limitPrice=30153.25 stopPrice=0 quantity=1 tif=Gtc oco='f8036813ca104d0895fae48289a4c865' filled=0 averageFillPrice=0 onBehalfOf='' id=27455 time='2026-08-17 10:29:29' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:49:21:996 (Playback) Cbi.Simulator.Cancel: realOrderState=CancelPending orderId='6265edea7f984e2f881157f2bbe614b1' account='Playback101' name='Target1' orderState=Cancelled instrument='MNQ SEP26' orderAction=BuyToCover orderType='Limit' limitPrice=30153.25 stopPrice=0 quantity=1 tif=Gtc oco='f8036813ca104d0895fae48289a4c865' filled=0 averageFillPrice=0 onBehalfOf='' id=27455 time='2026-08-17 10:29:29' gtd='2099-12-01' statementDate='2026-08-17' delay=0
+2026-08-17 11:49:21:996 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=CancelSubmitted orderId='6265edea7f984e2f881157f2bbe614b1' account='Playback101' name='Target1' orderState=CancelSubmitted instrument='MNQ SEP26' orderAction=BuyToCover limitPrice=30153.25 stopPrice=0 quantity=1 orderType='Limit' filled=0 averageFillPrice=0 time='2026-08-17 10:29:29' statementDate='2026-08-17' error=NoError comment='' nr=5
+2026-08-17 11:49:21:996 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Cancelled orderId='6265edea7f984e2f881157f2bbe614b1' account='Playback101' name='Target1' orderState=Cancelled instrument='MNQ SEP26' orderAction=BuyToCover limitPrice=30153.25 stopPrice=0 quantity=1 orderType='Limit' filled=0 averageFillPrice=0 time='2026-08-17 10:29:29' statementDate='2026-08-17' error=NoError comment='' nr=6
+2026-08-17 11:49:21:996 (Playback) Cbi.Account.ExecutionUpdateCallback: executionId='e4ef4ed4bf1d4f5bb7dd938cd52cbe68' account='Playback101' instrument='MNQ SEP26' exchange=Globex price=30193.25 quantity=1 marketPosition=Long operation=Add orderID='359af543b5e84d36813860aa77e505b3' isSod=False time='2026-08-17 10:29:29' statementDate='2026-08-17'
+2026-08-17 11:49:21:998 (Playback) NinjaScript.AtmStrategy.OnExecutionUpdate.Terminate1: account='Playback101' instrument='MNQ SEP26' id='342165751'
+2026-08-17 11:49:22:007 (Playback) Cbi.Account.OnAddTrade: entryId='658c092588d14f61a4b99946f6b10420' exitId='e4ef4ed4bf1d4f5bb7dd938cd52cbe68' profitCurrencyBeforeCommissionAndFees=-40
+2026-08-17 11:49:22:007 (Playback) Cbi.Account.PositionUpdateCallback: instrument='MNQ SEP26' account='Playback101' avgPrice=0 quantity=0 marketPosition=Flat operation=Remove
+2026-08-17 11:49:22:066 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=CashValue currency=UsDollar value=*****
+2026-08-17 11:49:22:066 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=Commission currency=UsDollar value=*****
+2026-08-17 11:49:22:066 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=GrossRealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:49:22:066 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:49:22:066 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=InitialMargin currency=UsDollar value=*****
+2026-08-17 11:49:22:066 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=IntradayMargin currency=UsDollar value=*****
+2026-08-17 11:49:22:066 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=MaintenanceMargin currency=UsDollar value=*****
+2026-08-17 11:49:22:066 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=PositionMargin currency=UsDollar value=*****
+2026-08-17 11:49:22:066 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:49:58:643 (Playback) NinjaScript.AtmStrategy.SubmitEntryOrders: account='Playback101' instrument='MNQ SEP26' id='342165752' template='{"$id":"1","Brackets":[{"$id":"2","Quantity":1,"StopLoss":80,"StopStrategy":null,"Target":80}],"DisplayName":"Regular - 1","Template":"Regular"}'
+2026-08-17 11:49:58:647 (Playback) Cbi.Account.CreateOrder: orderId='1440216022a14633b6edb5a269b6a059' account='Playback101' name='Entry' orderState=Filled instrument='MNQ SEP26' orderAction=Sell orderType='Market' limitPrice=0 stopPrice=0 quantity=1 tif=Gtc oco='' filled=1 averageFillPrice=30202.5 onBehalfOf='' id=27456 time='2026-08-17 10:31:57' gtd='2099-12-01' statementDate='2026-08-17' id=-1 comment=''
+2026-08-17 11:49:58:673 (Playback) Cbi.Account.Submit0: realOrderState=Initialized isPendingSubmit=False orderId='1440216022a14633b6edb5a269b6a059' account='Playback101' name='Entry' orderState=Filled instrument='MNQ SEP26' orderAction=Sell orderType='Market' limitPrice=0 stopPrice=0 quantity=1 tif=Gtc oco='' filled=1 averageFillPrice=30202.5 onBehalfOf='' id=27456 time='2026-08-17 10:31:57' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:49:58:673 (Playback) Cbi.Account.Submit1: realOrderState=Initialized orderId='1440216022a14633b6edb5a269b6a059' account='Playback101' name='Entry' orderState=Filled instrument='MNQ SEP26' orderAction=Sell orderType='Market' limitPrice=0 stopPrice=0 quantity=1 tif=Gtc oco='' filled=1 averageFillPrice=30202.5 onBehalfOf='' id=27456 time='2026-08-17 10:31:57' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:49:58:673 (Playback) Cbi.Simulator.Submit: realOrderState=Initialized orderId='1440216022a14633b6edb5a269b6a059' account='Playback101' name='Entry' orderState=Filled instrument='MNQ SEP26' orderAction=Sell orderType='Market' limitPrice=0 stopPrice=0 quantity=1 tif=Gtc oco='' filled=1 averageFillPrice=30202.5 onBehalfOf='' id=27456 time='2026-08-17 10:31:57' gtd='2099-12-01' statementDate='2026-08-17' delay=0
+2026-08-17 11:49:58:673 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Submitted orderId='1440216022a14633b6edb5a269b6a059' account='Playback101' name='Entry' orderState=Submitted instrument='MNQ SEP26' orderAction=Sell limitPrice=0 stopPrice=0 quantity=1 orderType='Market' filled=0 averageFillPrice=0 time='2026-08-17 10:31:57' statementDate='2026-08-17' error=NoError comment='' nr=1
+2026-08-17 11:49:58:703 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Accepted orderId='1440216022a14633b6edb5a269b6a059' account='Playback101' name='Entry' orderState=Accepted instrument='MNQ SEP26' orderAction=Sell limitPrice=0 stopPrice=0 quantity=1 orderType='Market' filled=0 averageFillPrice=0 time='2026-08-17 10:31:57' statementDate='2026-08-17' error=NoError comment='' nr=2
+2026-08-17 11:49:58:706 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Working orderId='1440216022a14633b6edb5a269b6a059' account='Playback101' name='Entry' orderState=Working instrument='MNQ SEP26' orderAction=Sell limitPrice=0 stopPrice=0 quantity=1 orderType='Market' filled=0 averageFillPrice=0 time='2026-08-17 10:31:57' statementDate='2026-08-17' error=NoError comment='' nr=3
+2026-08-17 11:49:58:711 (Playback) Cbi.Simulator.Fill1: realOrderState=Working orderId='1440216022a14633b6edb5a269b6a059' maxFillQuantity=1 price=30202.5 thread=12
+2026-08-17 11:49:58:711 (Playback) Cbi.Simulator.Fill2: realOrderState=Working orderId='1440216022a14633b6edb5a269b6a059' fillQuantity=1 price=30202.5
+2026-08-17 11:49:58:711 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Filled orderId='1440216022a14633b6edb5a269b6a059' account='Playback101' name='Entry' orderState=Filled instrument='MNQ SEP26' orderAction=Sell limitPrice=0 stopPrice=0 quantity=1 orderType='Market' filled=1 averageFillPrice=30202.5 time='2026-08-17 10:31:57' statementDate='2026-08-17' error=NoError comment='' nr=4
+2026-08-17 11:49:58:737 (Playback) NinjaScript.AtmStrategy.ManageBracketOrders0: account='Playback101' instrument='MNQ SEP26' id='342165752' filled=1 outstanding=0 stopTargetHandling=PerEntryExecution filledOrders='1440216022a14633b6edb5a269b6a059+=1 ' outstandingOrders='' thread=12
+2026-08-17 11:49:58:737 (Playback) NinjaScript.AtmStrategy.ManageBracketOrders1: account='Playback101' instrument='MNQ SEP26' id='342165752' initialEntryOrderId='1440216022a14633b6edb5a269b6a059' bracket=0 qty=1 stopOrdersOutstandingQuantity=0 quantity2Add=1 exitOrders=''
+2026-08-17 11:49:58:737 (Playback) NinjaScript.AtmStrategy.ManageStopOrder: account='Playback101' instrument='MNQ SEP26' id='342165752' idx=0 orderType=StopMarket quantity=1 limitPrice=0 stopPrice=30222.5 oco='e104466a65b940adac2d25423b31fbd7'
+2026-08-17 11:49:58:738 (Playback) Cbi.Account.CreateOrder: orderId='7f2d553107d14b629e6db53e1c705257' account='Playback101' name='Stop1' orderState=Initialized instrument='MNQ SEP26' orderAction=BuyToCover orderType='Stop Market' limitPrice=0 stopPrice=30222.5 quantity=1 tif=Gtc oco='e104466a65b940adac2d25423b31fbd7' filled=0 averageFillPrice=0 onBehalfOf='' id=27457 time='2026-08-17 10:31:57' gtd='2099-12-01' statementDate='2026-08-17' id=-1 comment=''
+2026-08-17 11:49:58:742 (Playback) Cbi.Account.Submit0: realOrderState=Initialized isPendingSubmit=False orderId='7f2d553107d14b629e6db53e1c705257' account='Playback101' name='Stop1' orderState=Initialized instrument='MNQ SEP26' orderAction=BuyToCover orderType='Stop Market' limitPrice=0 stopPrice=30222.5 quantity=1 tif=Gtc oco='e104466a65b940adac2d25423b31fbd7' filled=0 averageFillPrice=0 onBehalfOf='' id=27457 time='2026-08-17 10:31:57' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:49:58:742 (Playback) Cbi.Account.Submit1: realOrderState=Initialized orderId='7f2d553107d14b629e6db53e1c705257' account='Playback101' name='Stop1' orderState=Initialized instrument='MNQ SEP26' orderAction=BuyToCover orderType='Stop Market' limitPrice=0 stopPrice=30222.5 quantity=1 tif=Gtc oco='e104466a65b940adac2d25423b31fbd7' filled=0 averageFillPrice=0 onBehalfOf='' id=27457 time='2026-08-17 10:31:57' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:49:58:742 (Playback) Cbi.Simulator.Submit: realOrderState=Initialized orderId='7f2d553107d14b629e6db53e1c705257' account='Playback101' name='Stop1' orderState=Submitted instrument='MNQ SEP26' orderAction=BuyToCover orderType='Stop Market' limitPrice=0 stopPrice=30222.5 quantity=1 tif=Gtc oco='e104466a65b940adac2d25423b31fbd7' filled=0 averageFillPrice=0 onBehalfOf='' id=27457 time='2026-08-17 10:31:57' gtd='2099-12-01' statementDate='2026-08-17' delay=0
+2026-08-17 11:49:58:742 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Submitted orderId='7f2d553107d14b629e6db53e1c705257' account='Playback101' name='Stop1' orderState=Submitted instrument='MNQ SEP26' orderAction=BuyToCover limitPrice=0 stopPrice=30222.5 quantity=1 orderType='Stop Market' filled=0 averageFillPrice=0 time='2026-08-17 10:31:57' statementDate='2026-08-17' error=NoError comment='' nr=-1
+2026-08-17 11:49:58:747 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Accepted orderId='7f2d553107d14b629e6db53e1c705257' account='Playback101' name='Stop1' orderState=Accepted instrument='MNQ SEP26' orderAction=BuyToCover limitPrice=0 stopPrice=30222.5 quantity=1 orderType='Stop Market' filled=0 averageFillPrice=0 time='2026-08-17 10:31:57' statementDate='2026-08-17' error=NoError comment='' nr=-1
+2026-08-17 11:49:58:750 (Playback) Cbi.Account.CreateOrder: orderId='8dfa5f48ee814fc7b0661f2da64451b5' account='Playback101' name='Target1' orderState=Initialized instrument='MNQ SEP26' orderAction=BuyToCover orderType='Limit' limitPrice=30182.5 stopPrice=0 quantity=1 tif=Gtc oco='e104466a65b940adac2d25423b31fbd7' filled=0 averageFillPrice=0 onBehalfOf='' id=27458 time='2026-08-17 10:31:57' gtd='2099-12-01' statementDate='2026-08-17' id=-1 comment=''
+2026-08-17 11:49:58:753 (Playback) Cbi.Account.Submit0: realOrderState=Initialized isPendingSubmit=False orderId='8dfa5f48ee814fc7b0661f2da64451b5' account='Playback101' name='Target1' orderState=Submitted instrument='MNQ SEP26' orderAction=BuyToCover orderType='Limit' limitPrice=30182.5 stopPrice=0 quantity=1 tif=Gtc oco='e104466a65b940adac2d25423b31fbd7' filled=0 averageFillPrice=0 onBehalfOf='' id=27458 time='2026-08-17 10:31:57' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:49:58:753 (Playback) Cbi.Account.Submit1: realOrderState=Initialized orderId='8dfa5f48ee814fc7b0661f2da64451b5' account='Playback101' name='Target1' orderState=Submitted instrument='MNQ SEP26' orderAction=BuyToCover orderType='Limit' limitPrice=30182.5 stopPrice=0 quantity=1 tif=Gtc oco='e104466a65b940adac2d25423b31fbd7' filled=0 averageFillPrice=0 onBehalfOf='' id=27458 time='2026-08-17 10:31:57' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:49:58:753 (Playback) Cbi.Simulator.Submit: realOrderState=Initialized orderId='8dfa5f48ee814fc7b0661f2da64451b5' account='Playback101' name='Target1' orderState=Submitted instrument='MNQ SEP26' orderAction=BuyToCover orderType='Limit' limitPrice=30182.5 stopPrice=0 quantity=1 tif=Gtc oco='e104466a65b940adac2d25423b31fbd7' filled=0 averageFillPrice=0 onBehalfOf='' id=27458 time='2026-08-17 10:31:57' gtd='2099-12-01' statementDate='2026-08-17' delay=0
+2026-08-17 11:49:58:753 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Submitted orderId='8dfa5f48ee814fc7b0661f2da64451b5' account='Playback101' name='Target1' orderState=Submitted instrument='MNQ SEP26' orderAction=BuyToCover limitPrice=30182.5 stopPrice=0 quantity=1 orderType='Limit' filled=0 averageFillPrice=0 time='2026-08-17 10:31:57' statementDate='2026-08-17' error=NoError comment='' nr=-1
+2026-08-17 11:49:58:756 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Accepted orderId='8dfa5f48ee814fc7b0661f2da64451b5' account='Playback101' name='Target1' orderState=Accepted instrument='MNQ SEP26' orderAction=BuyToCover limitPrice=30182.5 stopPrice=0 quantity=1 orderType='Limit' filled=0 averageFillPrice=0 time='2026-08-17 10:31:57' statementDate='2026-08-17' error=NoError comment='' nr=-1
+2026-08-17 11:49:58:758 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Working orderId='8dfa5f48ee814fc7b0661f2da64451b5' account='Playback101' name='Target1' orderState=Working instrument='MNQ SEP26' orderAction=BuyToCover limitPrice=30182.5 stopPrice=0 quantity=1 orderType='Limit' filled=0 averageFillPrice=0 time='2026-08-17 10:31:57' statementDate='2026-08-17' error=NoError comment='' nr=-1
+2026-08-17 11:49:58:761 (Playback) Cbi.Account.ExecutionUpdateCallback: executionId='aac2e9ec48eb44768d2a95af2b7b7f8b' account='Playback101' instrument='MNQ SEP26' exchange=Globex price=30202.5 quantity=1 marketPosition=Short operation=Add orderID='1440216022a14633b6edb5a269b6a059' isSod=False time='2026-08-17 10:31:57' statementDate='2026-08-17'
+2026-08-17 11:49:58:761 (Playback) Cbi.Account.PositionUpdateCallback: instrument='MNQ SEP26' account='Playback101' avgPrice=30202.5 quantity=1 marketPosition=Short operation=Add
+2026-08-17 11:49:58:761 (Playback) NinjaScript.AtmStrategy.SubmitEntryOrders: account='Playback101' instrument='MNQ SEP26' id='342165752' template='{"$id":"1","Brackets":[{"$id":"2","Quantity":1,"StopLoss":80,"StopStrategy":null,"Target":80}],"DisplayName":"Regular - 1","InitialTickSize":0.25,"Template":"Regular"}'
+2026-08-17 11:49:59:457 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=CashValue currency=UsDollar value=*****
+2026-08-17 11:49:59:457 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=Commission currency=UsDollar value=*****
+2026-08-17 11:49:59:457 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=InitialMargin currency=UsDollar value=*****
+2026-08-17 11:49:59:457 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=IntradayMargin currency=UsDollar value=*****
+2026-08-17 11:49:59:457 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=MaintenanceMargin currency=UsDollar value=*****
+2026-08-17 11:49:59:457 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=PositionMargin currency=UsDollar value=*****
+2026-08-17 11:49:59:457 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:50:45:356 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Working orderId='7f2d553107d14b629e6db53e1c705257' account='Playback101' name='Stop1' orderState=Working instrument='MNQ SEP26' orderAction=BuyToCover limitPrice=0 stopPrice=30222.5 quantity=1 orderType='Stop Market' filled=0 averageFillPrice=0 time='2026-08-17 10:48:05' statementDate='2026-08-17' error=NoError comment='' nr=-1
+2026-08-17 11:50:45:358 (Playback) Cbi.Simulator.Fill1: realOrderState=Working orderId='7f2d553107d14b629e6db53e1c705257' maxFillQuantity=1 price=30222.5 thread=37
+2026-08-17 11:50:45:358 (Playback) Cbi.Simulator.Fill2: realOrderState=Working orderId='7f2d553107d14b629e6db53e1c705257' fillQuantity=1 price=30222.5
+2026-08-17 11:50:45:358 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Filled orderId='7f2d553107d14b629e6db53e1c705257' account='Playback101' name='Stop1' orderState=Filled instrument='MNQ SEP26' orderAction=BuyToCover limitPrice=0 stopPrice=30222.5 quantity=1 orderType='Stop Market' filled=1 averageFillPrice=30222.5 time='2026-08-17 10:48:05' statementDate='2026-08-17' error=NoError comment='' nr=-1
+2026-08-17 11:50:45:373 (Playback) Cbi.Order.OrderUpdateCallback.HandleOco.TriggerCancel: realOrderState=Working orderId='8dfa5f48ee814fc7b0661f2da64451b5' account='Playback101' name='Target1' orderState=Cancelled instrument='MNQ SEP26' orderAction=BuyToCover orderType='Limit' limitPrice=30182.5 stopPrice=0 quantity=1 tif=Gtc oco='e104466a65b940adac2d25423b31fbd7' filled=0 averageFillPrice=0 onBehalfOf='' id=27458 time='2026-08-17 10:48:05' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:50:45:374 (Playback) Cbi.Account.Cancel0: realOrderState=Working orderId='8dfa5f48ee814fc7b0661f2da64451b5' account='Playback101' name='Target1' orderState=Cancelled instrument='MNQ SEP26' orderAction=BuyToCover orderType='Limit' limitPrice=30182.5 stopPrice=0 quantity=1 tif=Gtc oco='e104466a65b940adac2d25423b31fbd7' filled=0 averageFillPrice=0 onBehalfOf='' id=27458 time='2026-08-17 10:48:05' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:50:45:375 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=CancelPending orderId='8dfa5f48ee814fc7b0661f2da64451b5' account='Playback101' name='Target1' orderState=CancelPending instrument='MNQ SEP26' orderAction=BuyToCover limitPrice=30182.5 stopPrice=0 quantity=1 orderType='Limit' filled=0 averageFillPrice=0 time='2026-08-17 10:48:05' statementDate='2026-08-17' error=NoError comment='' nr=-1
+2026-08-17 11:50:45:375 (Playback) Cbi.Account.Cancel1: realOrderState=CancelPending orderId='8dfa5f48ee814fc7b0661f2da64451b5' account='Playback101' name='Target1' orderState=Cancelled instrument='MNQ SEP26' orderAction=BuyToCover orderType='Limit' limitPrice=30182.5 stopPrice=0 quantity=1 tif=Gtc oco='e104466a65b940adac2d25423b31fbd7' filled=0 averageFillPrice=0 onBehalfOf='' id=27458 time='2026-08-17 10:48:05' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:50:45:375 (Playback) Cbi.Simulator.Cancel: realOrderState=CancelPending orderId='8dfa5f48ee814fc7b0661f2da64451b5' account='Playback101' name='Target1' orderState=Cancelled instrument='MNQ SEP26' orderAction=BuyToCover orderType='Limit' limitPrice=30182.5 stopPrice=0 quantity=1 tif=Gtc oco='e104466a65b940adac2d25423b31fbd7' filled=0 averageFillPrice=0 onBehalfOf='' id=27458 time='2026-08-17 10:48:05' gtd='2099-12-01' statementDate='2026-08-17' delay=0
+2026-08-17 11:50:45:375 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=CancelSubmitted orderId='8dfa5f48ee814fc7b0661f2da64451b5' account='Playback101' name='Target1' orderState=CancelSubmitted instrument='MNQ SEP26' orderAction=BuyToCover limitPrice=30182.5 stopPrice=0 quantity=1 orderType='Limit' filled=0 averageFillPrice=0 time='2026-08-17 10:48:05' statementDate='2026-08-17' error=NoError comment='' nr=-1
+2026-08-17 11:50:45:375 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Cancelled orderId='8dfa5f48ee814fc7b0661f2da64451b5' account='Playback101' name='Target1' orderState=Cancelled instrument='MNQ SEP26' orderAction=BuyToCover limitPrice=30182.5 stopPrice=0 quantity=1 orderType='Limit' filled=0 averageFillPrice=0 time='2026-08-17 10:48:05' statementDate='2026-08-17' error=NoError comment='' nr=-1
+2026-08-17 11:50:45:375 (Playback) Cbi.Account.ExecutionUpdateCallback: executionId='ecb3c85715fe4a4c9f535690e287812e' account='Playback101' instrument='MNQ SEP26' exchange=Globex price=30222.5 quantity=1 marketPosition=Long operation=Add orderID='7f2d553107d14b629e6db53e1c705257' isSod=False time='2026-08-17 10:48:05' statementDate='2026-08-17'
+2026-08-17 11:50:45:377 (Playback) NinjaScript.AtmStrategy.OnExecutionUpdate.Terminate1: account='Playback101' instrument='MNQ SEP26' id='342165752'
+2026-08-17 11:50:45:378 (Playback) Cbi.Account.OnAddTrade: entryId='aac2e9ec48eb44768d2a95af2b7b7f8b' exitId='ecb3c85715fe4a4c9f535690e287812e' profitCurrencyBeforeCommissionAndFees=-40
+2026-08-17 11:50:45:378 (Playback) Cbi.Account.PositionUpdateCallback: instrument='MNQ SEP26' account='Playback101' avgPrice=0 quantity=0 marketPosition=Flat operation=Remove
+2026-08-17 11:50:45:449 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=CashValue currency=UsDollar value=*****
+2026-08-17 11:50:45:449 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=Commission currency=UsDollar value=*****
+2026-08-17 11:50:45:449 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=GrossRealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:50:45:449 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:50:45:449 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=InitialMargin currency=UsDollar value=*****
+2026-08-17 11:50:45:449 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=IntradayMargin currency=UsDollar value=*****
+2026-08-17 11:50:45:449 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=MaintenanceMargin currency=UsDollar value=*****
+2026-08-17 11:50:45:449 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=PositionMargin currency=UsDollar value=*****
+2026-08-17 11:50:45:449 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:53:08:684 (Playback) NinjaScript.AtmStrategy.SubmitEntryOrders: account='Playback101' instrument='MNQ SEP26' id='342165753' template='{"$id":"1","Brackets":[{"$id":"2","Quantity":1,"StopLoss":80,"StopStrategy":null,"Target":80}],"DisplayName":"Regular - 1","Template":"Regular"}'
+2026-08-17 11:53:08:696 (Playback) Cbi.Account.CreateOrder: orderId='302fba2a5e4f460d97dbec4d45bc2879' account='Playback101' name='Entry' orderState=Filled instrument='MNQ SEP26' orderAction=Sell orderType='Market' limitPrice=0 stopPrice=0 quantity=1 tif=Gtc oco='' filled=1 averageFillPrice=30230.25 onBehalfOf='' id=27459 time='2026-08-17 10:51:33' gtd='2099-12-01' statementDate='2026-08-17' id=-1 comment=''
+2026-08-17 11:53:08:718 (Playback) Cbi.Account.Submit0: realOrderState=Initialized isPendingSubmit=False orderId='302fba2a5e4f460d97dbec4d45bc2879' account='Playback101' name='Entry' orderState=Filled instrument='MNQ SEP26' orderAction=Sell orderType='Market' limitPrice=0 stopPrice=0 quantity=1 tif=Gtc oco='' filled=1 averageFillPrice=30230.25 onBehalfOf='' id=27459 time='2026-08-17 10:51:33' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:53:08:718 (Playback) Cbi.Account.Submit1: realOrderState=Initialized orderId='302fba2a5e4f460d97dbec4d45bc2879' account='Playback101' name='Entry' orderState=Filled instrument='MNQ SEP26' orderAction=Sell orderType='Market' limitPrice=0 stopPrice=0 quantity=1 tif=Gtc oco='' filled=1 averageFillPrice=30230.25 onBehalfOf='' id=27459 time='2026-08-17 10:51:33' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:53:08:718 (Playback) Cbi.Simulator.Submit: realOrderState=Initialized orderId='302fba2a5e4f460d97dbec4d45bc2879' account='Playback101' name='Entry' orderState=Filled instrument='MNQ SEP26' orderAction=Sell orderType='Market' limitPrice=0 stopPrice=0 quantity=1 tif=Gtc oco='' filled=1 averageFillPrice=30230.25 onBehalfOf='' id=27459 time='2026-08-17 10:51:33' gtd='2099-12-01' statementDate='2026-08-17' delay=0
+2026-08-17 11:53:08:718 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Submitted orderId='302fba2a5e4f460d97dbec4d45bc2879' account='Playback101' name='Entry' orderState=Submitted instrument='MNQ SEP26' orderAction=Sell limitPrice=0 stopPrice=0 quantity=1 orderType='Market' filled=0 averageFillPrice=0 time='2026-08-17 10:51:33' statementDate='2026-08-17' error=NoError comment='' nr=1
+2026-08-17 11:53:08:746 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Accepted orderId='302fba2a5e4f460d97dbec4d45bc2879' account='Playback101' name='Entry' orderState=Accepted instrument='MNQ SEP26' orderAction=Sell limitPrice=0 stopPrice=0 quantity=1 orderType='Market' filled=0 averageFillPrice=0 time='2026-08-17 10:51:33' statementDate='2026-08-17' error=NoError comment='' nr=2
+2026-08-17 11:53:08:749 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Working orderId='302fba2a5e4f460d97dbec4d45bc2879' account='Playback101' name='Entry' orderState=Working instrument='MNQ SEP26' orderAction=Sell limitPrice=0 stopPrice=0 quantity=1 orderType='Market' filled=0 averageFillPrice=0 time='2026-08-17 10:51:33' statementDate='2026-08-17' error=NoError comment='' nr=3
+2026-08-17 11:53:08:751 (Playback) Cbi.Simulator.Fill1: realOrderState=Working orderId='302fba2a5e4f460d97dbec4d45bc2879' maxFillQuantity=1 price=30230.25 thread=12
+2026-08-17 11:53:08:751 (Playback) Cbi.Simulator.Fill2: realOrderState=Working orderId='302fba2a5e4f460d97dbec4d45bc2879' fillQuantity=1 price=30230.25
+2026-08-17 11:53:08:751 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Filled orderId='302fba2a5e4f460d97dbec4d45bc2879' account='Playback101' name='Entry' orderState=Filled instrument='MNQ SEP26' orderAction=Sell limitPrice=0 stopPrice=0 quantity=1 orderType='Market' filled=1 averageFillPrice=30230.25 time='2026-08-17 10:51:33' statementDate='2026-08-17' error=NoError comment='' nr=4
+2026-08-17 11:53:08:770 (Playback) NinjaScript.AtmStrategy.ManageBracketOrders0: account='Playback101' instrument='MNQ SEP26' id='342165753' filled=1 outstanding=0 stopTargetHandling=PerEntryExecution filledOrders='302fba2a5e4f460d97dbec4d45bc2879+=1 ' outstandingOrders='' thread=12
+2026-08-17 11:53:08:770 (Playback) NinjaScript.AtmStrategy.ManageBracketOrders1: account='Playback101' instrument='MNQ SEP26' id='342165753' initialEntryOrderId='302fba2a5e4f460d97dbec4d45bc2879' bracket=0 qty=1 stopOrdersOutstandingQuantity=0 quantity2Add=1 exitOrders=''
+2026-08-17 11:53:08:770 (Playback) NinjaScript.AtmStrategy.ManageStopOrder: account='Playback101' instrument='MNQ SEP26' id='342165753' idx=0 orderType=StopMarket quantity=1 limitPrice=0 stopPrice=30250.25 oco='df96088366444ba8b217de9050e13835'
+2026-08-17 11:53:08:772 (Playback) Cbi.Account.CreateOrder: orderId='c1962b70e14c4bf795b97b586e9721f4' account='Playback101' name='Stop1' orderState=Accepted instrument='MNQ SEP26' orderAction=BuyToCover orderType='Stop Market' limitPrice=0 stopPrice=30250.25 quantity=1 tif=Gtc oco='df96088366444ba8b217de9050e13835' filled=0 averageFillPrice=0 onBehalfOf='' id=27460 time='2026-08-17 10:51:33' gtd='2099-12-01' statementDate='2026-08-17' id=-1 comment=''
+2026-08-17 11:53:08:774 (Playback) Cbi.Account.Submit0: realOrderState=Initialized isPendingSubmit=False orderId='c1962b70e14c4bf795b97b586e9721f4' account='Playback101' name='Stop1' orderState=Accepted instrument='MNQ SEP26' orderAction=BuyToCover orderType='Stop Market' limitPrice=0 stopPrice=30250.25 quantity=1 tif=Gtc oco='df96088366444ba8b217de9050e13835' filled=0 averageFillPrice=0 onBehalfOf='' id=27460 time='2026-08-17 10:51:33' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:53:08:774 (Playback) Cbi.Account.Submit1: realOrderState=Initialized orderId='c1962b70e14c4bf795b97b586e9721f4' account='Playback101' name='Stop1' orderState=Accepted instrument='MNQ SEP26' orderAction=BuyToCover orderType='Stop Market' limitPrice=0 stopPrice=30250.25 quantity=1 tif=Gtc oco='df96088366444ba8b217de9050e13835' filled=0 averageFillPrice=0 onBehalfOf='' id=27460 time='2026-08-17 10:51:33' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:53:08:774 (Playback) Cbi.Simulator.Submit: realOrderState=Initialized orderId='c1962b70e14c4bf795b97b586e9721f4' account='Playback101' name='Stop1' orderState=Accepted instrument='MNQ SEP26' orderAction=BuyToCover orderType='Stop Market' limitPrice=0 stopPrice=30250.25 quantity=1 tif=Gtc oco='df96088366444ba8b217de9050e13835' filled=0 averageFillPrice=0 onBehalfOf='' id=27460 time='2026-08-17 10:51:33' gtd='2099-12-01' statementDate='2026-08-17' delay=0
+2026-08-17 11:53:08:774 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Submitted orderId='c1962b70e14c4bf795b97b586e9721f4' account='Playback101' name='Stop1' orderState=Submitted instrument='MNQ SEP26' orderAction=BuyToCover limitPrice=0 stopPrice=30250.25 quantity=1 orderType='Stop Market' filled=0 averageFillPrice=0 time='2026-08-17 10:51:33' statementDate='2026-08-17' error=NoError comment='' nr=1
+2026-08-17 11:53:08:777 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Accepted orderId='c1962b70e14c4bf795b97b586e9721f4' account='Playback101' name='Stop1' orderState=Accepted instrument='MNQ SEP26' orderAction=BuyToCover limitPrice=0 stopPrice=30250.25 quantity=1 orderType='Stop Market' filled=0 averageFillPrice=0 time='2026-08-17 10:51:33' statementDate='2026-08-17' error=NoError comment='' nr=2
+2026-08-17 11:53:08:781 (Playback) Cbi.Account.CreateOrder: orderId='1b224134f98942939fee4899031b1879' account='Playback101' name='Target1' orderState=Working instrument='MNQ SEP26' orderAction=BuyToCover orderType='Limit' limitPrice=30210.25 stopPrice=0 quantity=1 tif=Gtc oco='df96088366444ba8b217de9050e13835' filled=0 averageFillPrice=0 onBehalfOf='' id=27461 time='2026-08-17 10:51:33' gtd='2099-12-01' statementDate='2026-08-17' id=-1 comment=''
+2026-08-17 11:53:08:785 (Playback) Cbi.Account.Submit0: realOrderState=Initialized isPendingSubmit=False orderId='1b224134f98942939fee4899031b1879' account='Playback101' name='Target1' orderState=Working instrument='MNQ SEP26' orderAction=BuyToCover orderType='Limit' limitPrice=30210.25 stopPrice=0 quantity=1 tif=Gtc oco='df96088366444ba8b217de9050e13835' filled=0 averageFillPrice=0 onBehalfOf='' id=27461 time='2026-08-17 10:51:33' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:53:08:785 (Playback) Cbi.Account.Submit1: realOrderState=Initialized orderId='1b224134f98942939fee4899031b1879' account='Playback101' name='Target1' orderState=Working instrument='MNQ SEP26' orderAction=BuyToCover orderType='Limit' limitPrice=30210.25 stopPrice=0 quantity=1 tif=Gtc oco='df96088366444ba8b217de9050e13835' filled=0 averageFillPrice=0 onBehalfOf='' id=27461 time='2026-08-17 10:51:33' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:53:08:785 (Playback) Cbi.Simulator.Submit: realOrderState=Initialized orderId='1b224134f98942939fee4899031b1879' account='Playback101' name='Target1' orderState=Working instrument='MNQ SEP26' orderAction=BuyToCover orderType='Limit' limitPrice=30210.25 stopPrice=0 quantity=1 tif=Gtc oco='df96088366444ba8b217de9050e13835' filled=0 averageFillPrice=0 onBehalfOf='' id=27461 time='2026-08-17 10:51:33' gtd='2099-12-01' statementDate='2026-08-17' delay=0
+2026-08-17 11:53:08:785 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Submitted orderId='1b224134f98942939fee4899031b1879' account='Playback101' name='Target1' orderState=Submitted instrument='MNQ SEP26' orderAction=BuyToCover limitPrice=30210.25 stopPrice=0 quantity=1 orderType='Limit' filled=0 averageFillPrice=0 time='2026-08-17 10:51:33' statementDate='2026-08-17' error=NoError comment='' nr=1
+2026-08-17 11:53:08:787 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Accepted orderId='1b224134f98942939fee4899031b1879' account='Playback101' name='Target1' orderState=Accepted instrument='MNQ SEP26' orderAction=BuyToCover limitPrice=30210.25 stopPrice=0 quantity=1 orderType='Limit' filled=0 averageFillPrice=0 time='2026-08-17 10:51:33' statementDate='2026-08-17' error=NoError comment='' nr=2
+2026-08-17 11:53:08:791 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Working orderId='1b224134f98942939fee4899031b1879' account='Playback101' name='Target1' orderState=Working instrument='MNQ SEP26' orderAction=BuyToCover limitPrice=30210.25 stopPrice=0 quantity=1 orderType='Limit' filled=0 averageFillPrice=0 time='2026-08-17 10:51:33' statementDate='2026-08-17' error=NoError comment='' nr=3
+2026-08-17 11:53:08:794 (Playback) Cbi.Account.ExecutionUpdateCallback: executionId='1f80b9a9b72a45a9884e25c6f9808869' account='Playback101' instrument='MNQ SEP26' exchange=Globex price=30230.25 quantity=1 marketPosition=Short operation=Add orderID='302fba2a5e4f460d97dbec4d45bc2879' isSod=False time='2026-08-17 10:51:33' statementDate='2026-08-17'
+2026-08-17 11:53:08:801 (Playback) Cbi.Account.PositionUpdateCallback: instrument='MNQ SEP26' account='Playback101' avgPrice=30230.25 quantity=1 marketPosition=Short operation=Add
+2026-08-17 11:53:08:802 (Playback) NinjaScript.AtmStrategy.SubmitEntryOrders: account='Playback101' instrument='MNQ SEP26' id='342165753' template='{"$id":"1","Brackets":[{"$id":"2","Quantity":1,"StopLoss":80,"StopStrategy":null,"Target":80}],"DisplayName":"Regular - 1","InitialTickSize":0.25,"Template":"Regular"}'
+2026-08-17 11:53:09:311 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=CashValue currency=UsDollar value=*****
+2026-08-17 11:53:09:312 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=Commission currency=UsDollar value=*****
+2026-08-17 11:53:09:312 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=InitialMargin currency=UsDollar value=*****
+2026-08-17 11:53:09:312 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=IntradayMargin currency=UsDollar value=*****
+2026-08-17 11:53:09:312 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=MaintenanceMargin currency=UsDollar value=*****
+2026-08-17 11:53:09:312 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=PositionMargin currency=UsDollar value=*****
+2026-08-17 11:53:09:312 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:53:40:950 (Playback) Cbi.Simulator.Fill1: realOrderState=Working orderId='1b224134f98942939fee4899031b1879' maxFillQuantity=1 price=30210.25 thread=37
+2026-08-17 11:53:40:950 (Playback) Cbi.Simulator.Fill2: realOrderState=Working orderId='1b224134f98942939fee4899031b1879' fillQuantity=1 price=30210.25
+2026-08-17 11:53:40:950 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Filled orderId='1b224134f98942939fee4899031b1879' account='Playback101' name='Target1' orderState=Filled instrument='MNQ SEP26' orderAction=BuyToCover limitPrice=30210.25 stopPrice=0 quantity=1 orderType='Limit' filled=1 averageFillPrice=30210.25 time='2026-08-17 10:53:03' statementDate='2026-08-17' error=NoError comment='' nr=-1
+2026-08-17 11:53:40:963 (Playback) Cbi.Order.OrderUpdateCallback.HandleOco.TriggerCancel: realOrderState=Accepted orderId='c1962b70e14c4bf795b97b586e9721f4' account='Playback101' name='Stop1' orderState=Cancelled instrument='MNQ SEP26' orderAction=BuyToCover orderType='Stop Market' limitPrice=0 stopPrice=30250.25 quantity=1 tif=Gtc oco='df96088366444ba8b217de9050e13835' filled=0 averageFillPrice=0 onBehalfOf='' id=27460 time='2026-08-17 10:53:03' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:53:40:963 (Playback) Cbi.Account.Cancel0: realOrderState=Accepted orderId='c1962b70e14c4bf795b97b586e9721f4' account='Playback101' name='Stop1' orderState=Cancelled instrument='MNQ SEP26' orderAction=BuyToCover orderType='Stop Market' limitPrice=0 stopPrice=30250.25 quantity=1 tif=Gtc oco='df96088366444ba8b217de9050e13835' filled=0 averageFillPrice=0 onBehalfOf='' id=27460 time='2026-08-17 10:53:03' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:53:40:963 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=CancelPending orderId='c1962b70e14c4bf795b97b586e9721f4' account='Playback101' name='Stop1' orderState=CancelPending instrument='MNQ SEP26' orderAction=BuyToCover limitPrice=0 stopPrice=30250.25 quantity=1 orderType='Stop Market' filled=0 averageFillPrice=0 time='2026-08-17 10:53:03' statementDate='2026-08-17' error=NoError comment='' nr=-1
+2026-08-17 11:53:40:963 (Playback) Cbi.Account.Cancel1: realOrderState=CancelPending orderId='c1962b70e14c4bf795b97b586e9721f4' account='Playback101' name='Stop1' orderState=Cancelled instrument='MNQ SEP26' orderAction=BuyToCover orderType='Stop Market' limitPrice=0 stopPrice=30250.25 quantity=1 tif=Gtc oco='df96088366444ba8b217de9050e13835' filled=0 averageFillPrice=0 onBehalfOf='' id=27460 time='2026-08-17 10:53:03' gtd='2099-12-01' statementDate='2026-08-17'
+2026-08-17 11:53:40:963 (Playback) Cbi.Simulator.Cancel: realOrderState=CancelPending orderId='c1962b70e14c4bf795b97b586e9721f4' account='Playback101' name='Stop1' orderState=Cancelled instrument='MNQ SEP26' orderAction=BuyToCover orderType='Stop Market' limitPrice=0 stopPrice=30250.25 quantity=1 tif=Gtc oco='df96088366444ba8b217de9050e13835' filled=0 averageFillPrice=0 onBehalfOf='' id=27460 time='2026-08-17 10:53:03' gtd='2099-12-01' statementDate='2026-08-17' delay=0
+2026-08-17 11:53:40:963 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=CancelSubmitted orderId='c1962b70e14c4bf795b97b586e9721f4' account='Playback101' name='Stop1' orderState=CancelSubmitted instrument='MNQ SEP26' orderAction=BuyToCover limitPrice=0 stopPrice=30250.25 quantity=1 orderType='Stop Market' filled=0 averageFillPrice=0 time='2026-08-17 10:53:03' statementDate='2026-08-17' error=NoError comment='' nr=-1
+2026-08-17 11:53:40:963 (Playback) Cbi.Account.OrderUpdateCallback: realOrderState=Cancelled orderId='c1962b70e14c4bf795b97b586e9721f4' account='Playback101' name='Stop1' orderState=Cancelled instrument='MNQ SEP26' orderAction=BuyToCover limitPrice=0 stopPrice=30250.25 quantity=1 orderType='Stop Market' filled=0 averageFillPrice=0 time='2026-08-17 10:53:03' statementDate='2026-08-17' error=NoError comment='' nr=-1
+2026-08-17 11:53:40:963 (Playback) Cbi.Account.ExecutionUpdateCallback: executionId='85d2b3175b364b739911bd6d22e38605' account='Playback101' instrument='MNQ SEP26' exchange=Globex price=30210.25 quantity=1 marketPosition=Long operation=Add orderID='1b224134f98942939fee4899031b1879' isSod=False time='2026-08-17 10:53:03' statementDate='2026-08-17'
+2026-08-17 11:53:40:965 (Playback) NinjaScript.AtmStrategy.OnExecutionUpdate.Terminate1: account='Playback101' instrument='MNQ SEP26' id='342165753'
+2026-08-17 11:53:40:965 (Playback) Cbi.Account.OnAddTrade: entryId='1f80b9a9b72a45a9884e25c6f9808869' exitId='85d2b3175b364b739911bd6d22e38605' profitCurrencyBeforeCommissionAndFees=40
+2026-08-17 11:53:40:965 (Playback) Cbi.Account.PositionUpdateCallback: instrument='MNQ SEP26' account='Playback101' avgPrice=0 quantity=0 marketPosition=Flat operation=Remove
+2026-08-17 11:53:41:040 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=CashValue currency=UsDollar value=*****
+2026-08-17 11:53:41:040 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=Commission currency=UsDollar value=*****
+2026-08-17 11:53:41:040 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=GrossRealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:53:41:040 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:53:41:040 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=InitialMargin currency=UsDollar value=*****
+2026-08-17 11:53:41:040 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=IntradayMargin currency=UsDollar value=*****
+2026-08-17 11:53:41:040 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=MaintenanceMargin currency=UsDollar value=*****
+2026-08-17 11:53:41:040 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=PositionMargin currency=UsDollar value=*****
+2026-08-17 11:53:41:040 (Playback) Cbi.Account.AccountItemUpdateCallback: account='Playback101' accountItem=RealizedProfitLoss currency=UsDollar value=*****
+2026-08-17 11:55:34:905 Finalizing addon 'NinjaTrader.NinjaScript.AddOns.AiDrawingExporter'
+2026-08-17 11:55:34:905 Finalizing addon 'NinjaTrader.NinjaScript.AddOns.FlowBots.ReplikantoFramework'
+2026-08-17 11:55:34:961 Finalizing addon 'NinjaTrader.NinjaScript.AddOns.RiskMaster.RiskMaster'
+2026-08-17 11:55:34:978 Finalizing addon 'NinjaTrader.NinjaScript.AddOns.RiskMaster.UIInteractionManager'
+2026-08-17 11:55:34:978 Finalizing addon 'NinjaTrader.NinjaScript.AddOns.RiskMaster.EventHandlers'
+2026-08-17 11:55:34:978 Finalizing addon 'NinjaTrader.NinjaScript.AddOns.RiskMaster.TradeRestrictionsManager'
+2026-08-17 11:55:34:978 Finalizing addon 'NinjaTrader.NinjaScript.AddOns.RiskMaster.Models.AccountManager'
+2026-08-17 11:55:40:483 Shutting down NinjaTrader
+2026-08-17 11:55:40:483 Disconnecting 'Playback'
+2026-08-17 11:55:40:483 (Playback) Cbi.Connection.Disconnect
+2026-08-17 11:55:40:483 (Playback) Cbi.Connection.ConnectionStatusCallback: status=Disconnecting priceStatus=Disconnecting previousStatus=Connected previousPriceStatus=Connected errorCode=NoError nativeError=''
+2026-08-17 11:55:40:483 (Playback) Cbi.Account.OnConnectionStatus: account='PlaybackAccount2' fcm='' status=Disconnecting previousStatus=Connected message=''
+2026-08-17 11:55:40:483 (Playback) Cbi.Account.OnConnectionStatus: account='PlaybackAccount1' fcm='' status=Disconnecting previousStatus=Connected message=''
+2026-08-17 11:55:40:483 (Playback) Cbi.Account.OnConnectionStatus: account='PlaybackAccount4' fcm='' status=Disconnecting previousStatus=Connected message=''
+2026-08-17 11:55:40:483 (Playback) Cbi.Account.OnConnectionStatus: account='Playback101' fcm='' status=Disconnecting previousStatus=Connected message=''
+2026-08-17 11:55:40:484 (Playback) Cbi.Connection.ConnectionStatusCallback.Close1
+2026-08-17 11:55:40:484 (Playback) Cbi.Connection.ConnectionStatusCallback.Close3
+2026-08-17 11:55:40:484 (Playback) Cbi.Connection.ConnectionStatusCallback.Close4
+2026-08-17 11:55:40:484 (Playback) Cbi.Connection.ConnectionStatusCallback.Close5
+2026-08-17 11:55:40:484 (Playback) Cbi.Connection.ConnectionStatusCallback.Close6a
+2026-08-17 11:55:40:484 (Playback) Cbi.Connection.ConnectionStatusCallback.Close7
+2026-08-17 11:55:40:484 (Playback) Cbi.Connection.ConnectionStatusCallback: status=Disconnected priceStatus=Disconnected previousStatus=Disconnecting previousPriceStatus=Disconnecting errorCode=NoError nativeError=''
+2026-08-17 11:55:40:484 (Playback) Cbi.Account.OnConnectionStatus: account='Playback101' fcm='' status=Disconnected previousStatus=Disconnecting message=''
+2026-08-17 11:55:40:484 (Playback) Cbi.Account.OnConnectionStatus: account='PlaybackAccount1' fcm='' status=Disconnected previousStatus=Disconnecting message=''
+2026-08-17 11:55:40:484 (Playback) Cbi.Account.OnConnectionStatus: account='PlaybackAccount2' fcm='' status=Disconnected previousStatus=Disconnecting message=''
+2026-08-17 11:55:40:484 (Playback) Cbi.Account.OnConnectionStatus: account='PlaybackAccount4' fcm='' status=Disconnected previousStatus=Disconnecting message=''
+2026-08-17 11:55:40:484 Flushing DB thread
+2026-08-17 11:55:40:484 (Playback) Cbi.Connection.ConnectionStatusCallback.Close8
+2026-08-17 11:55:40:484 Shutting down instrument management
+2026-08-17 11:55:40:485 Shutting down instrument threads
+2026-08-17 11:55:40:486 Shutting down recorder
+2026-08-17 11:55:40:491 Shutting down file type watcher
+2026-08-17 11:55:40:491 Shutting down ATI server
+2026-08-17 11:55:40:503 Shutting down auto trade component
+2026-08-17 11:55:40:504 Shutting down SMTP server
+2026-08-17 11:55:40:521 Shutting down adapter server
+2026-08-17 11:55:40:534 Shutting down server(s)
+2026-08-17 11:55:40:538 Shutting down mail thread
+2026-08-17 11:55:40:538 Shutting down sound thread
+2026-08-17 11:55:40:538 Shutting down timer
+2026-08-17 11:55:40:538 Shutting down alerts timer
+2026-08-17 11:55:40:538 Shutting down message timer
+2026-08-17 11:55:40:538 Shutting down db
+2026-08-17 11:55:40:538 Flushing DB thread
+2026-08-17 11:55:40:653 Shutting down bars dictionary
+2026-08-17 11:55:40:700 Shutting down user entitlement threads
+2026-08-17 11:55:40:712 Shutting down logs
+2026-08-17 11:55:40:722 Shutting down bars types
+2026-08-17 11:55:40:723 Shutting down UI threads
+2026-08-17 11:55:40:725 ************************ Session End ************************
