@@ -1,0 +1,2 @@
+******************* Session Start (Version 8.1.8.2) *******************
+2026-08-17 22:42:38:332 PrimaryMonitorWPFDPIScale=0.80
