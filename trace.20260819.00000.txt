@@ -1,0 +1,173 @@
+******************* Session Start (Version 8.1.8.2) *******************
+2026-08-19 10:08:31:724 Cbi.Globals.MachineId: True/True 61E5D250E3A79DFB4A4EB19D0B3450B6
+2026-08-19 10:08:31:962 NinjaTrader.Gui.LoginInternal user='' mode='Simulation'
+2026-08-19 10:08:34:413 Core.Instrumentation.ActivitySource: enabled=False randomPercent=41.22453 enabledSessionsPercent=-1 chartMs=250 enabledTypes=''
+2026-08-19 10:08:38:152 (Simulation) NinjaTrader.Core.Authentication.GetAccessToken6
+2026-08-19 10:08:39:204 Cbi.UserEntitlement.VerifyAsync.0 apiUrl='https://live.tradovateapi.com'
+2026-08-19 10:08:40:113 Cbi.UserEntitlement.VerifyAsync.98: Evaluation expiration=2100-01-01
+2026-08-19 10:08:40:151 (Simulation) Cbi.AuthenticatedUser.RunSchedulerAsync: user='Google:103410224232927036006:NTB' sleep='3600.0s' expiration='2026-08-19T15:28:37.0840000Z'
+2026-08-19 10:08:40:157 FeatureFlagsService: Starting initialization...
+2026-08-19 10:08:40:172 FeatureFlagsService: Context - UserId: 3783991
+2026-08-19 10:08:40:358 FeatureFlagsService: LaunchDarkly mobile key configured (40 chars)
+2026-08-19 10:08:40:413 FlagService: Starting initialization...
+2026-08-19 10:08:42:289 PrimaryMonitorWPFDPIScale=0.80
+2026-08-19 10:08:44:173 FlagService: Initialization complete. Status: True
+2026-08-19 10:08:44:225 FeatureFlagsService: Registered LaunchDarkly provider.
+2026-08-19 10:08:44:516 FlagService: Starting Statsig initialization...
+2026-08-19 10:08:45:135 Cbi.UserEntitlement.VerifyAsync.99: subscription=Free licensedProviders='Playback Simulator NinjaTrader NinjaTrader Continuum NinjaTrader FXCM IQFeed E-Signal External FOREX.com Interactive Brokers Barchart.com Kinetick FXCM Coinbase cTrader Schwab Rithmic for NinjaTrader Brokerage Custom0 Custom2 Custom3 Custom4 Custom6 Custom7 Custom8 Custom9 Custom10 Provider13 Custom14 Provider26 Custom15 Custom16 Custom17 Custom18 Custom19 Custom20 Custom21 Custom22 Custom23 Custom24 Custom25 Custom26 Custom27 Custom28 Custom29 Custom30 Custom31 Custom32 Custom33 Custom34 Custom35 Custom36 Custom37 Custom38 Custom39 Custom40 Custom41'
+2026-08-19 10:08:46:090 InstallDir='C:\Program Files\NinjaTrader 8\'
+2026-08-19 10:08:46:090 UserDataDir='C:\Users\PC\Documents\NinjaTrader 8\'
+2026-08-19 10:08:46:090 MachineId='61E5D250E3A79DFB4A4EB19D0B3450B6'
+2026-08-19 10:08:46:090 MachineId2='0ecc0595109e410a90c3324814ac3ca2'
+2026-08-19 10:08:46:090 OS='Microsoft Windows NT 10.0.19045.0'/'Win32NT'
+2026-08-19 10:08:46:090 OSLanguage='ko-KR'
+2026-08-19 10:08:46:090 OSEnvironment='64bit'
+2026-08-19 10:08:46:091 Processors=4
+2026-08-19 10:08:46:091 ThreadPool: minWorkerThreads=4 maxWorkerThreads=32767 minCompletionPortThreads=4 maxCompletionPortThreads=1000
+2026-08-19 10:08:47:252 ProcessorSpeed=3.5 GHz
+2026-08-19 10:08:47:255 PhysicalMemory=12288 MB
+2026-08-19 10:08:47:923 FlagService: Statsig initialization complete. Status: True
+2026-08-19 10:08:47:924 FeatureFlagsService: Registered Statsig provider.
+2026-08-19 10:08:47:925 FeatureFlagsService: Initialization completed. Default provider initialized: True
+2026-08-19 10:08:47:925 FeatureFlagsService: Initialization result: True
+2026-08-19 10:08:47:962 DisplayAdapters=1/NVIDIA GeForce GTX 970
+2026-08-19 10:08:47:962 Monitors=2/2560x1440|2400x1350
+2026-08-19 10:08:47:962 .NET/CLR Version='4.8'/64bit
+2026-08-19 10:08:47:963 SQLiteVersion='2.0.2.0'
+2026-08-19 10:08:47:963 ApplicationTimezone=EST +0 hour(s)
+2026-08-19 10:08:47:963 ApplicationTimezone=UTC -4 hour(s)
+2026-08-19 10:08:47:963 LocalTimezone=EST +13 hour(s)
+2026-08-19 10:08:47:963 LocalTimezone=UTC +9 hour(s)
+2026-08-19 10:08:53:913 DirectXRenderingHW
+2026-08-19 10:08:53:914 Copying custom assemblies...
+2026-08-19 10:08:54:045 Loading custom assemblies...
+2026-08-19 10:08:54:046 Loading C:\Users\PC\Documents\NinjaTrader 8\bin\Custom\NinjaTrader.Custom.dll...
+2026-08-19 10:08:56:152 Loading C:\Users\PC\Documents\NinjaTrader 8\bin\Custom\NinjaTrader.Vendor.dll...
+2026-08-19 10:08:57:247 Deleting temporary files...
+2026-08-19 10:09:01:329 Copying db and restoring templates...
+2026-08-19 10:09:01:407 Loading third party assemblies...
+2026-08-19 10:09:03:595 Loading 3rd party C:\Users\PC\Documents\NinjaTrader 8\bin\Custom\Replikanto.dll...
+2026-08-19 10:09:07:561 Cbi.VendorLicense.Verify.1: trying 'https://license.ninjatrader.com/vendorlicensenew/FlowBots/Replikanto/6/R-61E5D250E3A79DFB4A4EB19D0B3450B6-Jayden.xml' ...
+2026-08-19 10:09:09:371 Cbi.VendorLicense.Verify.1: good
+2026-08-19 10:09:09:622 Loading 3rd party C:\Users\PC\Documents\NinjaTrader 8\bin\Custom\RiskMaster.VMRuntime.dll...
+2026-08-19 10:09:09:622 Loading 3rd party C:\Users\PC\Documents\NinjaTrader 8\bin\Custom\RiskMaster_v1.3.0.1.dll...
+2026-08-19 10:09:16:864 Initializing database...
+2026-08-19 10:09:16:864 Loading master instruments...
+2026-08-19 10:09:27:144 (Db) Cbi.DB.get_Current.CreateConnection.Start
+2026-08-19 10:09:27:147 (Db) Cbi.DB: connectionString='Data Source="C:\Users\PC\Documents\NinjaTrader 8\db\NinjaTrader.sqlite";Version=3;Synchronous=Full;Journal Mode=Off;Pooling=True;Max Pool Size=100;foreign keys=true;'
+2026-08-19 10:09:29:908 (Db) Cbi.DB.get_Current.CreateConnection.End
+2026-08-19 10:09:30:384 Loading instruments...
+2026-08-19 10:09:31:962 Loading accounts...
+2026-08-19 10:09:32:567 Loading users...
+2026-08-19 10:09:32:655 Downloading server info...
+2026-08-19 10:09:32:655 Starting instrument management...
+2026-08-19 10:09:32:719 Starting timer...
+2026-08-19 10:09:32:719 Creating file type watcher...
+2026-08-19 10:09:32:720 Setting ATI...
+2026-08-19 10:09:32:900 Connecting ATI server...
+2026-08-19 10:09:32:939 Server.AtiServer.Connect0
+2026-08-19 10:09:32:946 Server.HdsClient.Connect: type=IS server='is-us-nt-006.ninjatrader.com' port=31658 system='NT' useSsl=True
+2026-08-19 10:09:32:950 Starting adapter server...
+2026-08-19 10:09:32:988 Server.AtiServer.Connect1: Port='36973'
+2026-08-19 10:09:32:994 Server.AtiServer.Connect2
+2026-08-19 10:09:33:102 Starting bars dictionary...
+2026-08-19 10:09:33:117 Starting recorder...
+2026-08-19 10:09:33:127 Starting server(s)...
+2026-08-19 10:09:33:233 Core.Globals.ApplicationStart.Commission: minVersion=1 maxVersion=3156
+2026-08-19 10:09:33:234 Core.Globals.ApplicationStart.InstrumentList: minVersion=-442 maxVersion=493
+2026-08-19 10:09:33:234 Core.Globals.ApplicationStart.MasterInstrument: minVersion=1 maxVersion=10205
+2026-08-19 10:09:33:234 Core.Globals.ApplicationStart.Risk: minVersion=1 maxVersion=16474
+2026-08-19 10:09:33:234 Core.Globals.ApplicationStart.TradingHours: minVersion=1 maxVersion=5143
+2026-08-19 10:09:35:277 ChartHotKeys: Alerts='' DisableAllAlerts='' EnableAllAlerts='' DataSeries='' Indicators='' Strategies='' Properties='' CrosshairPointer='' CrosshairLocal='' CrosshairGlobal='' CrosshairGlobal2='' CrosshairLock='' AutoScaleAndReturn='' CyclePlotExecutions='' ReloadHistoricalData='' ReloadNinjaScript='' SaveChartImage='' ShowDataBox='' ShowChartTrader='' ShowChartTraderHidden='' ShowIndicators='' ShowScrollBar='' SnapModeBar='' SnapModeBarTick='' SnapModeBarObject='' SnapModeDisabled='' SnapModeTick='' StayInDrawMode='' ZoomIn='' ZoomOut='' BarSpacingPlus='' BarSpacingMinus='' BarWidthPlus='' BarWidthMinus='' Arc='' AndrewsPitchfork='' ArrowDown='F6' ArrowLine='' ArrowUp='F5' Diamond='F7' Dot='' Ellipse='' ExtendedLine='' FibonacciCircle='' FibonacciExtension='' FibonacciRetracement='' FibonacciTimeExtension='' GannFan='' HorizontalLine='F9' Line='' Path='' Polygon='' VolumeProfile='' VWAP='' Ray='' Rectangle='F10' RegressionChannel='' HideDrawingObjects='' RemoveDrawingObjects='' RegionHighlightX='F8' RegionHighlightY='F11' RiskReward='' Ruler='' Square='' Text='F12' TimeCycles='' TrendChannel='' Triangle='' TriangleDown='' TriangleUp='' VerticalLine=''
+2026-08-19 10:09:35:290 GlobalHotKeys: CloseWorkspace='' NextWorkspace='' PreviousWorkspace='' SaveWorkspace='' SaveAllWorkspaces='' NewAccountData='' NewTradePerformance='' NewAlertsLog='' NewBasicEntry='' NewChart='' NewFxBoard='' NewFxPro='' NewHotListAnalyzer='' NewLevel2='' NewMarketAnalyzer='' NewMarketWatch='' NewNews='' NewNinjaScriptEditor='' NewNinjaScriptOutput='' NewOrderTicket='' NewStrategyAnalyzer='' NewDynamicDom='' NewStaticDom='' NewTimeAndSales='' CancelAllOrders='' FlattenEverything='' OpenInstrumentManager='' OpenInstrumentList='' OpenDatabase='' OpenHotKeyManager='' OpenHistoricalData='' OpenCommission='' OpenRisk='' OpenTradingHoursManager='' OpenRemoveNinjaScript='' CloseOtherTabs='' CloseTab='' DuplicateInNewTab='' DuplicateInNewWindow='' Export='' Find='' MoveToNewWindow='' Print='' Replace='' Share='' LoadTemplate='' SaveTemplate='' SaveTemplateAsDefault=''
+2026-08-19 10:09:35:291 MarketAnalyzerHotKeys: AddBlankRow='' AddLabelRow='' Columns='' Alerts='' EnableAllAlerts='' DisableAllAlerts='' AutoSort='' RowFilter='' ReloadHistorical='' ReloadNinjaScript=''
+2026-08-19 10:09:35:292 NinjaScriptEditorHotKeys: InsertCodeSnippet='' FindNext='' Compile='' GoToLine='' CommentSelection='' InlineSyntaxChecking='' CollapseToDefinitions='' ExpandAllOutlining='' StartOutlining='' StopOutlining='' HideSelection='' StopHidingSelection='' ToggleAllOutlining='' ToggleOutlining='' Save='' Undo='' Redo=''
+2026-08-19 10:09:35:295 OrderEntryHotKeys: BuyAsk='' BuyBid='' BuyMarket='F2' SellAsk='' SellBid='' SellMarket='F3' BreakevenAtmStrategy='' BreakevenPosition='' CancelLastOrder='' CloseAtmStrategy='' ClosePosition='F4' DecreaseLastOrderPrice='' IncreaseLastOrderPrice='' ModifyLastOrder2Fill='' Reverse='' OcoOrder='' SimulatedOrder=''
+2026-08-19 10:09:35:295 SuperDomHotKeys: Center='' Columns='' Indicators='' ReloadAllHistoricalData='' ReloadNinjaScript=''
+2026-08-19 10:09:35:295 OrderEntryHotKeys=enabled
+2026-08-19 10:09:35:298 AutoClose=disabled
+2026-08-19 10:09:38:007 Server.HdsClient.ProcessStartupInfo.Info0: Commissions=0 InstrumentLists=11 MasterInstruments=0 Messages=6 Risks=1 RolloverCollection=361 TradingHours=0
+2026-08-19 10:10:04:117 Server.HdsClient.ProcessStartupInfo.Info1: Commissions=0.01ms InstrumentLists=1.17ms MasterInstruments=0.08ms Messages=1.31ms Risks=24.53ms RolloverCollection=26078.33ms TradingHours=0.10ms
+2026-08-19 10:11:28:165 Starting server message polling timer with interval 3600 seconds...
+2026-08-19 10:11:31:804 3 Chart Chart1Tab1 1 Ser 1 Ind 0 DrawObj Chart2Tab1 1 Ser 3 Ind 12 DrawObj Chart3Tab1 1 Ser 3 Ind 11 DrawObj 
+2026-08-19 10:12:01:985 (MFFU) Gui.ControlCenter.OnConnect
+2026-08-19 10:12:02:058 (MFFU) Cbi.Connection.Connect0: status=Disconnected assembly=8.1.8.2 date=2026-08-19 runAsProcess=False
+2026-08-19 10:12:02:086 (MFFU) Cbi.Connection.ConnectionStatusCallback: status=Connecting priceStatus=Connecting previousStatus=Disconnected previousPriceStatus=Disconnected errorCode=NoError nativeError=''
+2026-08-19 10:12:02:090 (MFFU) NinjaTrader.Gui.ControlCenter.OnConnectionStatus: Provider31 status=Connecting priceStatus=Connecting previousStatus=Disconnected previousPriceStatus=Disconnected errorCode=NoError nativeError=''
+2026-08-19 10:12:02:131 (MFFU) Cbi.Connection.Connect1
+2026-08-19 10:12:02:177 (MFFU) Cbi.Connection.Connect2
+2026-08-19 10:12:02:177 (MFFU) Cbi.Connection.Connect3
+2026-08-19 10:12:02:186 (MFFU) Cbi.Connection.CreateAccount: account='Sim101' displayName='Sim101' fcm='' denomination=UsDollar forexLotSize=0
+2026-08-19 10:12:02:192 (MFFU) Cbi.Account.OnConnectionStatus: account='Sim101' fcm='' status=Connecting previousStatus=Disconnected message=''
+2026-08-19 10:12:02:195 (MFFU) NinjaTrader.Gui.ControlCenter.OnConnectionStatus.DispatcherInvoke: Provider31 status=Connecting priceStatus=Connecting previousStatus=Disconnected previousPriceStatus=Disconnected errorCode=NoError nativeError=''
+2026-08-19 10:12:02:196 (MFFU) Gui.ControlCenter.OnConnectionStatus.Adding: provider=Provider31 status=Connecting priceStatus=Connecting
+2026-08-19 10:12:02:196 (MFFU) Cbi.Account.OnConnectionStatus.PositionExecutions: account='Sim101'
+2026-08-19 10:12:02:238 (MFFU) Cbi.Connection.CreateAccount: account='SimTester' displayName='SimTester' fcm='' denomination=UsDollar forexLotSize=1000
+2026-08-19 10:12:02:238 (MFFU) Cbi.Account.OnConnectionStatus: account='SimTester' fcm='' status=Connecting previousStatus=Disconnected message=''
+2026-08-19 10:12:02:238 (MFFU) Cbi.Account.OnConnectionStatus.PositionExecutions: account='SimTester'
+2026-08-19 10:12:02:238 (MFFU) Cbi.Connection.CreateAccount: account='SimATM copy' displayName='SimATM copy' fcm='' denomination=UsDollar forexLotSize=1000
+2026-08-19 10:12:02:238 (MFFU) Cbi.Account.OnConnectionStatus: account='SimATM copy' fcm='' status=Connecting previousStatus=Disconnected message=''
+2026-08-19 10:12:02:238 (MFFU) Cbi.Account.OnConnectionStatus.PositionExecutions: account='SimATM copy'
+2026-08-19 10:12:02:238 (MFFU) Cbi.Connection.CreateAccount: account='SimMarketOnly' displayName='SimMarketOnly' fcm='' denomination=UsDollar forexLotSize=1000
+2026-08-19 10:12:02:238 (MFFU) Cbi.Account.OnConnectionStatus: account='SimMarketOnly' fcm='' status=Connecting previousStatus=Disconnected message=''
+2026-08-19 10:12:02:238 (MFFU) Cbi.Account.OnConnectionStatus.PositionExecutions: account='SimMarketOnly'
+2026-08-19 10:12:02:238 (MFFU) Cbi.Connection.CreateAccount: account='SimExactAmount' displayName='SimExactAmount' fcm='' denomination=UsDollar forexLotSize=1000
+2026-08-19 10:12:02:238 (MFFU) Cbi.Account.OnConnectionStatus: account='SimExactAmount' fcm='' status=Connecting previousStatus=Disconnected message=''
+2026-08-19 10:12:02:238 (MFFU) Cbi.Account.OnConnectionStatus.PositionExecutions: account='SimExactAmount'
+2026-08-19 10:12:02:238 (MFFU) Cbi.Connection.Connect4
+2026-08-19 10:12:02:498 NinjaTrader.Gui.ControlCenter.OnConnectionStatus: foundPriceLoss=False foundTradeLoss=False foundConnectingStatus=True foundConnected=False
+2026-08-19 10:12:02:499 NinjaTrader.Gui.ControlCenter.OnConnectionStatus: Status=Connecting
+2026-08-19 10:12:02:661 (MFFU) Cbi.Connection.Connect5
+2026-08-19 10:12:02:672 (MFFU) Tradovate.Adapter.Connect: user='MFFUwClXMxAYeN' accountType='Simulation' useLocalOcoSimulation=True
+2026-08-19 10:12:02:712 (MFFU) Tradovate.Adapter.Connect.1: TradeUrlDemo Url='https://demo.tradovateapi.com' IP=34.117.68.229 TradeUrlLive Url='https://live.tradovateapi.com' IP=34.120.3.201 SocketUrlTradeDemo Url='wss://demo.tradovateapi.com/v1/websocket' IP=34.117.68.229 SocketUrlMarketDataDemo Url='wss://md-demo.tradovateapi.com/v1/websocket' IP=34.117.68.229
+2026-08-19 10:12:03:040 (MFFU) Cbi.Connection.Connect9 ok
+2026-08-19 10:12:03:507 (MFFU) NinjaTrader.Core.Authentication.GetAccessToken6
+2026-08-19 10:12:03:549 (MFFU) Cbi.AuthenticatedUser.RunSchedulerAsync: user='MFFUwClXMxAYeN' sleep='3600.0s' expiration='2026-08-19T15:32:03.3910000Z'
+2026-08-19 10:12:03:920 (MFFU) Tradovate.Adapter.StartTradeWebSocket
+2026-08-19 10:12:04:164 (MFFU) Tradovate.Adapter.StartTradeWebSocket1
+2026-08-19 10:12:04:165 (MFFU) Tradovate.Adapter.StartWebSocketTradeSendWorker
+2026-08-19 10:12:04:189 (MFFU) Tradovate.Adapter.StartWebSocketTradeReceiveWorker
+2026-08-19 10:12:04:197 (MFFU) Tradovate.Adapter.ReceiveWebSocketTradeMessage
+2026-08-19 10:12:05:177 (MFFU) Tradovate.Adapter.StartMarketDataWebSocket
+2026-08-19 10:12:05:482 (MFFU) Tradovate.Adapter.StartMarketDataWebSocket1
+2026-08-19 10:12:05:483 (MFFU) Tradovate.Adapter.StartWebSocketMarketDataSendWorker
+2026-08-19 10:12:05:540 (MFFU) Tradovate.Adapter.StartWebSocketMarketDataReceiveWorker
+2026-08-19 10:12:05:594 (MFFU) Tradovate.Adapter.ReceiveWebSocketMarketDataMessage
+2026-08-19 10:12:09:293 (MFFU) Cbi.Connection.CreateAccount: account='MFFUEVBLDR200521023' displayName='MFFUEVBLDR200521023' fcm='' denomination=UsDollar forexLotSize=1
+2026-08-19 10:12:09:293 (MFFU) Cbi.Account.OnConnectionStatus: account='MFFUEVBLDR200521023' fcm='' status=Connecting previousStatus=Disconnected message=''
+2026-08-19 10:12:09:293 (MFFU) Cbi.Account.OnConnectionStatus.PositionExecutions: account='MFFUEVBLDR200521023'
+2026-08-19 10:12:09:299 (MFFU) Cbi.Connection.CreateAccount: account='MFFUEVBLDR200521024' displayName='MFFUEVBLDR200521024' fcm='' denomination=UsDollar forexLotSize=1
+2026-08-19 10:12:09:299 (MFFU) Cbi.Account.OnConnectionStatus: account='MFFUEVBLDR200521024' fcm='' status=Connecting previousStatus=Disconnected message=''
+2026-08-19 10:12:09:299 (MFFU) Cbi.Account.OnConnectionStatus.PositionExecutions: account='MFFUEVBLDR200521024'
+2026-08-19 10:12:09:322 (MFFU) Cbi.Account.AccountItemUpdateCallback: account='MFFUEVBLDR200521023' accountItem=CashValue currency=UsDollar value=*****
+2026-08-19 10:12:09:323 (MFFU) Cbi.Account.AccountItemUpdateCallback: account='MFFUEVBLDR200521023' accountItem=WeeklyProfitLoss currency=UsDollar value=*****
+2026-08-19 10:12:09:323 (MFFU) Cbi.Account.AccountItemUpdateCallback: account='MFFUEVBLDR200521024' accountItem=CashValue currency=UsDollar value=*****
+2026-08-19 10:12:09:323 (MFFU) Cbi.Account.AccountItemUpdateCallback: account='MFFUEVBLDR200521024' accountItem=WeeklyProfitLoss currency=UsDollar value=*****
+2026-08-19 10:12:09:398 (MFFU) Tradovate.Adapter.QueryAccountLockoutStatusAsync: accountIds='61035029,62391167'
+2026-08-19 10:12:09:632 (MFFU) Tradovate.Adapter.SetupUnrealizedPnlCalc0
+2026-08-19 10:12:09:718 (MFFU) Cbi.Connection.ConnectionStatusCallback: status=Connected priceStatus=Connected previousStatus=Connecting previousPriceStatus=Connecting errorCode=NoError nativeError=''
+2026-08-19 10:12:09:722 (MFFU) Cbi.Account.OnConnectionStatus: account='Sim101' fcm='' status=Connected previousStatus=Connecting message=''
+2026-08-19 10:12:09:727 (MFFU) Cbi.Account.OnConnectionStatus: account='SimTester' fcm='' status=Connected previousStatus=Connecting message=''
+2026-08-19 10:12:09:729 (MFFU) Tradovate.Adapter.SetupUnrealizedPnlCalc1
+2026-08-19 10:12:09:737 (MFFU) Cbi.Account.OnConnectionStatus: account='SimATM copy' fcm='' status=Connected previousStatus=Connecting message=''
+2026-08-19 10:12:09:737 (MFFU) Cbi.Account.OnConnectionStatus: account='SimMarketOnly' fcm='' status=Connected previousStatus=Connecting message=''
+2026-08-19 10:12:09:737 (MFFU) Cbi.Account.OnConnectionStatus: account='SimExactAmount' fcm='' status=Connected previousStatus=Connecting message=''
+2026-08-19 10:12:09:738 (MFFU) Cbi.Account.OnConnectionStatus: account='MFFUEVBLDR200521023' fcm='' status=Connected previousStatus=Connecting message=''
+2026-08-19 10:12:09:738 (MFFU) Cbi.Account.OnConnectionStatus: account='MFFUEVBLDR200521024' fcm='' status=Connected previousStatus=Connecting message=''
+2026-08-19 10:12:09:942 (MFFU) Cbi.Account.Restore.Start: account='Sim101' fcm=''
+2026-08-19 10:12:09:949 (MFFU) Cbi.Account.Restore.Start: account='SimTester' fcm=''
+2026-08-19 10:12:09:950 (MFFU) Cbi.Account.Restore.Start: account='SimMarketOnly' fcm=''
+2026-08-19 10:12:09:955 (MFFU) Cbi.Account.Restore.Start: account='SimATM copy' fcm=''
+2026-08-19 10:12:09:956 (MFFU) Cbi.Account.Restore.Start: account='MFFUEVBLDR200521023' fcm=''
+2026-08-19 10:12:09:956 (MFFU) Cbi.Account.Restore.Start: account='SimExactAmount' fcm=''
+2026-08-19 10:12:09:957 (MFFU) Cbi.Account.Restore.Start: account='MFFUEVBLDR200521024' fcm=''
+2026-08-19 10:12:10:700 (MFFU) Cbi.Account.Restore.End: account='Sim101' fcm=''
+2026-08-19 10:12:10:710 (MFFU) Cbi.Account.Restore.End: account='SimExactAmount' fcm=''
+2026-08-19 10:12:10:726 (MFFU) Cbi.Account.Restore.End: account='SimTester' fcm=''
+2026-08-19 10:12:10:749 (MFFU) Cbi.Account.Restore.End: account='SimMarketOnly' fcm=''
+2026-08-19 10:12:10:799 (MFFU) Cbi.Account.Restore.End: account='MFFUEVBLDR200521024' fcm=''
+2026-08-19 10:12:10:821 (MFFU) Cbi.Account.Restore.End: account='MFFUEVBLDR200521023' fcm=''
+2026-08-19 10:12:12:717 (MFFU) Tradovate.Adapter.MarketDataSubscribeResponse: instrument='MNQ SEP26' mode='RealTime'
+2026-08-19 10:12:13:599 [2026-08-19 23:12:13.5995734] System.Data.SQLite (Log): SQLite error (17): statement aborts at 50: database schema has changed; [SELECT Id,Account,BarIndex,Commission,Exchange,ExecutionId,Fee,Instrument,IsEntry,IsEntryStrategy,IsExit,IsExitStrategy,LotSize,MarketPosition,MaxPrice,MinPrice,Name,OrderId,Position,PositionStrategy,Price,Quantity,Rate,ServerName,StatementDate,Time FROM Executions WHERE Account=? AND Instrument=? AND Time>=? AND Time<=?]
+2026-08-19 10:12:44:332 (MFFU) Tradovate.Adapter.CheckConnectionLatency: Connection latency is SLOW. Ping reply is 26,117 ms
+2026-08-19 10:12:44:333 WARNING: Your connection is experiencing high latency: 26,117 ms. This may negatively impact trading and market data services.
