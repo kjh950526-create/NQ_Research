@@ -107,16 +107,13 @@ namespace NinjaTrader.NinjaScript.Indicators
 				statusText = "대기";
 			}
 
-			// ── 시각 표시: 거래창 종료(10:30)까지 갱신, 이후엔 표시 중단 ──
-			if (tod <= new TimeSpan(10, 30, 0))
+			// ── 시각 표시: 11:00까지 갱신 (10:30까지 거래창, 10:30-11:00 시간외), 이후 중단 ──
+			if (tod <= new TimeSpan(11, 0, 0))
 			{
-				lastTickTime = t;          // 10:30까지 현재시각 계속 갱신
-				windowEnded = false;
+				lastTickTime = t;          // 11:00까지 현재시각 계속 갱신
+				windowEnded = tod > new TimeSpan(10, 30, 0);  // 10:30 넘으면 거래창 종료(시간외 진입)
 			}
-			else
-			{
-				windowEnded = true;        // 10:30 넘음 → "거래창 종료" 표시
-			}
+			// 11:00 넘으면 lastTickTime 갱신 안함 → 표시 중단 (windowEnded는 마지막값 유지)
 
 			// ── 무거운 작업(버퍼링·앙상블 계산)은 미터창 구간(9:59:50~10:11)에서만 ──
 			if (tod < new TimeSpan(9, 59, 50) || tod > new TimeSpan(10, 11, 0))
@@ -330,10 +327,13 @@ namespace NinjaTrader.NinjaScript.Indicators
 				line1 = string.Format("CHAOS {0:0.0}  [{1}]", meterValue, sig);
 			}
 			string line3;
-			if (windowEnded)
-				line3 = "거래창 종료 (10:30)";
-			else if (lastTickTime == DateTime.MinValue)
+			if (lastTickTime == DateTime.MinValue)
 				line3 = "";
+			else if (lastTickTime.TimeOfDay > new TimeSpan(11, 0, 0))
+				line3 = "시간외 종료 (11:00)";
+			else if (windowEnded)
+				// 10:30 넘음 = 시간외 구간. 현재시각 계속 표시 (11:00까지)
+				line3 = string.Format("시간외 {0:HH:mm:ss}", lastTickTime);
 			else
 				line3 = string.Format("time {0:HH:mm:ss}", lastTickTime);
 
