@@ -9,12 +9,10 @@ NQ/MNQ 마이크로 선물 인트라데이 재량 스캘핑 전략의 엣지 검
 
 ## 폴더 구조
 ```
-Journal_v3 - journal.csv   시트(구글드라이브 백업, 본체/시간외 거래# 태그) - 루트 정위치
-chaos_meter_log.csv        인디케이터 자동 출력 미터 로그 - 루트 정위치
-README.md
+README.md                  (루트엔 이것만)
 
 docs/          RESEARCH_LOG.md (마스터 기록, backbone)
-daily_merged/  merged_log.csv (PD+판단 통합 마스터 데이터), 미터 데이터
+daily_merged/  merged_log.csv (마스터 데이터), chaos_meter_log.csv (인디 로그), 미터 데이터
 pd/            일별 거래기록 (YYMMDD_pd.csv, NinjaTrader)
 raw/           일별 1초봉 (raw_MNQ_[계약]_[YYYYMMDD].csv)
 traces/        NinjaTrader 시스템 로그 (trace.YYYYMMDD.*.txt)
@@ -22,7 +20,7 @@ indicators/    ChaosMeter.cs (카오스미터 인디, 최신본), verify
 scripts/       분석 파이썬 스크립트 (zones2, daily_checklist, 슬립/트레이스 파서 등)
 research_data/  참고 데이터 (legacy 1초봉 235일, trend, bar_research, legacy)
 archive/       zip 백업, 인디 구버전
-journal/       decision_journal_light.xlsx (시트 백업본)
+journal/       Journal_v3 - journal.csv (시트, 거래자 업로드), decision_journal_light.xlsx
 ```
 
 ## 현재 단계 (2026-08)
