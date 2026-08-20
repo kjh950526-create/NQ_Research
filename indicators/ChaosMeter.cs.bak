@@ -54,11 +54,6 @@ namespace NinjaTrader.NinjaScript.Indicators
 		// 현재시각 표시용 (데이터 기반)
 		private DateTime lastTickTime = DateTime.MinValue;
 		private bool windowEnded = false;   // 10:30 지남 → 거래창 종료 표시
-		private int lastWinTicks = 0;       // ★ 마지막 계산창 틱 개수 (완전성 표시용)
-
-		// ★ 안전장치 상수(§6.124)
-		private const int MinWindowTicks  = 550;  // 창 전체 최소 1초틱 (완전=600, 여유 550)
-		private const int MinBarsPerMeter = 50;   // 미터당 최소 10초봉 (완전=60, 여유 50)
 
 		protected override void OnStateChange()
 		{
@@ -157,18 +152,6 @@ namespace NinjaTrader.NinjaScript.Indicators
 		// ── 앙상블 계산: 격자 0~9초 이동한 10개 미터 평균
 		private double ComputeEnsemble(TimeSpan start, TimeSpan end)
 		{
-			// ★ 안전장치(§6.124): 창 전체 1초 틱 완전성 체크
-			//   완전한 10분 = 600초. 로딩 지연/렉으로 틱이 드문드문 들어오면
-			//   적은 데이터로 crossing이 낮게(초록) 나와 확정 고정되는 버그 방지.
-			//   충분한 틱(기본 550개+)이 없으면 계산 거부 → NaN(데이터 부족 표시).
-			DateTime ds0 = curDay + start;
-			DateTime de0 = curDay + end;
-			int winTicks = 0;
-			foreach (Tick tk in buffer)
-				if (tk.T > ds0 && tk.T <= de0) winTicks++;
-			lastWinTicks = winTicks;   // 패널 표시용
-			if (winTicks < MinWindowTicks) return double.NaN;   // ★ 불완전 데이터 → 계산 거부
-
 			List<int> meters = new List<int>();
 			for (int off = 0; off < 10; off++)
 			{
@@ -219,7 +202,7 @@ namespace NinjaTrader.NinjaScript.Indicators
 				}
 			}
 
-			if (bars.Count < MinBarsPerMeter) return -1;   // ★ 강화(§6.124): 6→50, 불완전창 거부
+			if (bars.Count < 6) return -1;
 
 			// 중심선 = (창 전체 최고 + 최저)/2
 			double hi = double.MinValue, lo = double.MaxValue;
@@ -315,20 +298,9 @@ namespace NinjaTrader.NinjaScript.Indicators
 				default:       bg = new SharpDX.Color(90, 90, 90, 200); break;
 			}
 
-			// ★ 안전장치(§6.124): NaN이면 데이터 부족 경고 + 틱 개수 표시
-			//   로딩 지연/렉으로 불완전 계산된 경우 명확히 알림 (초록 오판 방지)
-			string line1;
-			if (double.IsNaN(meterValue))
-			{
-				if (finalizedToday)
-					line1 = string.Format("CHAOS: 데이터부족! ({0}틱<{1})", lastWinTicks, MinWindowTicks);
-				else
-					line1 = string.Format("CHAOS: {0}", statusText);
-			}
-			else
-			{
-				line1 = string.Format("CHAOS {0:0.0}  [{1}]", meterValue, sig);
-			}
+			string line1 = double.IsNaN(meterValue)
+				? string.Format("CHAOS: {0}", statusText)
+				: string.Format("CHAOS {0:0.0}  [{1}]", meterValue, sig);
 			string line3;
 			if (windowEnded)
 				line3 = "거래창 종료 (10:30)";
