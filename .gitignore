@@ -1,4 +1,5 @@
-_unzip/
+*.tmp_none
+*.tmp
+/tmp/
+__pycache__/
 *.pyc
-_work/
-*.pkl
