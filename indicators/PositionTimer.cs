@@ -259,6 +259,7 @@ namespace NinjaTrader.NinjaScript.Indicators
 				lightLocked = false;
 				entryPrice  = 0.0;
 				posSign     = 0;
+				try { ForceRefresh(); } catch {}   // 즉시 화면갱신
 			}
 			// 방향 전환 (Long→Short 등, 드묾): 진입시각 갱신
 			else if (curPos != MarketPosition.Flat && newPos != MarketPosition.Flat && curPos != newPos)
@@ -305,6 +306,38 @@ namespace NinjaTrader.NinjaScript.Indicators
 				}
 			}
 
+			// ★ 청산 감지 이중안전: 이벤트를 놓쳐도 매 틱 실제 포지션 직접확인.
+			//   Playback 등에서 PositionUpdate가 안오거나 늦어도 여기서 동기화.
+			if (watchedAccount != null && Instrument != null && BarsInProgress == 1)
+			{
+				MarketPosition actual = MarketPosition.Flat;
+				double actualAvg = 0.0;
+				lock (watchedAccount.Positions)
+				{
+					var pp = watchedAccount.Positions.FirstOrDefault(x =>
+						x.Instrument != null && x.Instrument.FullName == Instrument.FullName);
+					if (pp != null) { actual = pp.MarketPosition; actualAvg = pp.AveragePrice; }
+				}
+				// 실제는 Flat인데 화면은 포지션중 = 청산 놓침 → 리셋
+				if (actual == MarketPosition.Flat && inPosition)
+				{
+					curPos = MarketPosition.Flat; inPosition = false;
+					entryTime = DateTime.MinValue; entryDataTime = DateTime.MinValue;
+					elapsedSec = 0; posText = "FLAT";
+					lightState = 0; lightLocked = false; entryPrice = 0.0; posSign = 0;
+					ForceRefresh();   // 화면 즉시 갱신(틱 안와도 패널 사라지게)
+				}
+				// 실제는 포지션인데 화면은 Flat = 진입 놓침 → 세팅
+				else if (actual != MarketPosition.Flat && !inPosition)
+				{
+					curPos = actual; inPosition = true;
+					entryTime = DateTime.Now; entryDataTime = lastDataTime;
+					posText = actual == MarketPosition.Long ? "LONG" : "SHORT";
+					entryPrice = actualAvg; posSign = actual == MarketPosition.Long ? 1 : -1;
+					lightState = 0; lightLocked = false;
+				}
+			}
+
 			// 경과 시간 갱신: 데이터 시각 기준(재생 대응).
 			if (inPosition)
 			{
@@ -340,7 +373,7 @@ namespace NinjaTrader.NinjaScript.Indicators
 			{
 				bg = new SharpDX.Color(70, 70, 70, 200);
 				line1 = "TIMER: FLAT";
-				line2 = "[" + acctLabel + "]";
+				line2 = "";
 			}
 			else
 			{
@@ -348,7 +381,7 @@ namespace NinjaTrader.NinjaScript.Indicators
 				int s = elapsedSec;
 				int mm = s / 60, ss = s % 60;
 				line1 = string.Format("{0} {1}:{2:00}", posText, mm, ss);
-				line2 = string.Format("{0}s  [{1}]", s, acctLabel);
+				line2 = string.Format("{0}s", s);
 			}
 
 			var tf = new SharpDX.DirectWrite.TextFormat(
