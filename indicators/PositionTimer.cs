@@ -50,6 +50,13 @@ namespace NinjaTrader.NinjaScript.Indicators
 		// ★ 어느 계좌를 감시중인지 화면표시용 (여러 계좌 동시운용 대비)
 		private volatile string acctLabel = "?";
 
+		// ★ 신호등(§6.153): 60초 시점 net<-5면 빨강, 아니면 초록, 60초전 회색.
+		//   한번 정해지면(60초 통과) 청산까지 고정.
+		private double entryPrice   = 0.0;         // 진입가
+		private int    posSign      = 0;           // +1 롱, -1 숏
+		private volatile int lightState = 0;       // 0=회색(판단전) 1=초록 2=빨강
+		private bool   lightLocked  = false;       // 60초 지나 신호등 확정됨
+
 		protected override void OnStateChange()
 		{
 			if (State == State.SetDefaults)
@@ -65,8 +72,8 @@ namespace NinjaTrader.NinjaScript.Indicators
 				AccountName  = "";     // 비우면 자동선택
 				PanelCorner  = 1;      // 0=좌상 1=우상 2=좌하 3=우하
 				FontSizePx   = 22;
-				Warn1Sec     = 60;     // 첫 경고(노랑) 초
-				Warn2Sec     = 90;     // 둘째 경고(주황) 초
+				SignalSec    = 60;     // 신호등 확정 시점(초)
+				BadThreshold = 5;      // 이 시점 net < -이값 이면 빨강 (기본 -5pt)
 			}
 			else if (State == State.Configure)
 			{
@@ -202,6 +209,11 @@ namespace NinjaTrader.NinjaScript.Indicators
 				entryTime     = DateTime.Now;
 				entryDataTime = lastDataTime;   // 데이터 시각 기준
 				posText    = curPos == MarketPosition.Long ? "LONG" : "SHORT";
+				// ★ 진입가·방향 (이미 보유중이던 포지션)
+				entryPrice  = p.AveragePrice;
+				posSign     = curPos == MarketPosition.Long ? 1 : -1;
+				lightState  = 0;
+				lightLocked = false;
 			}
 			else
 			{
@@ -228,6 +240,11 @@ namespace NinjaTrader.NinjaScript.Indicators
 				entryDataTime = lastDataTime;
 				inPosition = true;
 				posText    = newPos == MarketPosition.Long ? "LONG" : "SHORT";
+				// ★ 진입가·방향 기록 + 신호등 초기화
+				entryPrice  = e.Position.AveragePrice;
+				posSign     = newPos == MarketPosition.Long ? 1 : -1;
+				lightState  = 0;      // 회색(판단전)
+				lightLocked = false;
 			}
 			// 포지션 → Flat = 청산 (타이머 리셋)
 			else if (curPos != MarketPosition.Flat && newPos == MarketPosition.Flat)
@@ -237,6 +254,11 @@ namespace NinjaTrader.NinjaScript.Indicators
 				entryDataTime = DateTime.MinValue;
 				elapsedSec = 0;
 				posText    = "FLAT";
+				// ★ 신호등 리셋
+				lightState  = 0;
+				lightLocked = false;
+				entryPrice  = 0.0;
+				posSign     = 0;
 			}
 			// 방향 전환 (Long→Short 등, 드묾): 진입시각 갱신
 			else if (curPos != MarketPosition.Flat && newPos != MarketPosition.Flat && curPos != newPos)
@@ -245,6 +267,11 @@ namespace NinjaTrader.NinjaScript.Indicators
 				entryDataTime = lastDataTime;
 				inPosition = true;
 				posText    = newPos == MarketPosition.Long ? "LONG" : "SHORT";
+				// ★ 새 포지션이므로 진입가·신호등 재설정
+				entryPrice  = e.Position.AveragePrice;
+				posSign     = newPos == MarketPosition.Long ? 1 : -1;
+				lightState  = 0;
+				lightLocked = false;
 			}
 
 			curPos = newPos;
@@ -286,6 +313,17 @@ namespace NinjaTrader.NinjaScript.Indicators
 					elapsedSec = (int)Math.Max(0, (lastDataTime - entryDataTime).TotalSeconds);
 				else if (entryTime != DateTime.MinValue)
 					elapsedSec = (int)Math.Max(0, (DateTime.Now - entryTime).TotalSeconds);
+
+				// ★ 신호등: 60초 도달 순간 net 측정해 확정(이후 고정).
+				//   net = (현재가 - 진입가) * 방향. net < -Threshold면 빨강, 아니면 초록.
+				if (!lightLocked && elapsedSec >= SignalSec && entryPrice > 0 && posSign != 0
+					&& BarsInProgress == 1 && CurrentBars[1] >= 0)
+				{
+					double px  = Closes[1][0];              // 1초봉 현재가
+					double net = (px - entryPrice) * posSign;
+					lightState  = (net < -BadThreshold) ? 2 : 1;   // 2=빨강 1=초록
+					lightLocked = true;
+				}
 			}
 		}
 
@@ -294,29 +332,23 @@ namespace NinjaTrader.NinjaScript.Indicators
 			base.OnRender(chartControl, chartScale);
 			if (chartControl == null) return;
 
-			// 배경색: 포지션 없으면 회색, 있으면 경과에 따라 초록→노랑→주황
+			// 배경색: 시간과 무관하게 중립. (신호는 작은 라이트로 표시)
 			SharpDX.Color bg;
 			string line1, line2;
 
 			if (!inPosition)
 			{
-				bg = new SharpDX.Color(90, 90, 90, 200);
+				bg = new SharpDX.Color(70, 70, 70, 200);
 				line1 = "TIMER: FLAT";
 				line2 = "[" + acctLabel + "]";
 			}
 			else
 			{
+				bg = new SharpDX.Color(55, 65, 80, 210);   // 진행중 중립(청회색)
 				int s = elapsedSec;
-				if (s >= Warn2Sec)      bg = new SharpDX.Color(220, 120, 20, 230);  // 주황(90초+)
-				else if (s >= Warn1Sec) bg = new SharpDX.Color(200, 170, 30, 230);  // 노랑(60초+)
-				else                    bg = new SharpDX.Color(30, 160, 70, 220);   // 초록(진행중)
-
 				int mm = s / 60, ss = s % 60;
 				line1 = string.Format("{0} {1}:{2:00}", posText, mm, ss);
-
-				// 2번째 줄: 경과초 + 계좌 (어느 계좌인지 항상 보이게)
-				string warn = s >= Warn2Sec ? " !!" : (s >= Warn1Sec ? " !" : "");
-				line2 = string.Format("{0}s{1}  [{2}]", s, warn, acctLabel);
+				line2 = string.Format("{0}s  [{1}]", s, acctLabel);
 			}
 
 			var tf = new SharpDX.DirectWrite.TextFormat(
@@ -349,6 +381,27 @@ namespace NinjaTrader.NinjaScript.Indicators
 			var layoutRect = new SharpDX.RectangleF(x + 8, y + 6, w - 12, h - 8);
 			RenderTarget.DrawText(text, tf, layoutRect, brushTx);
 
+			// ★ 신호등 라이트 (작은 원): 우측에 표시.
+			//   0=회색(60초전/판단전) 1=초록(60초net양호) 2=빨강(60초 net<-5).
+			SharpDX.Color lightCol;
+			switch (lightState)
+			{
+				case 1:  lightCol = new SharpDX.Color(40, 200, 80, 255);  break;  // 초록
+				case 2:  lightCol = new SharpDX.Color(230, 40, 40, 255);  break;  // 빨강
+				default: lightCol = new SharpDX.Color(120, 120, 120, 180); break; // 회색
+			}
+			float r  = 9f;                          // 반지름
+			float cx = x + w - r - 12;              // 패널 우측
+			float cy = y + h * 0.5f;
+			var lightBrush = new SharpDX.Direct2D1.SolidColorBrush(RenderTarget, lightCol);
+			var ellipse = new SharpDX.Direct2D1.Ellipse(new SharpDX.Vector2(cx, cy), r, r);
+			RenderTarget.FillEllipse(ellipse, lightBrush);
+			// 테두리(살짝 어둡게)
+			var ringBrush = new SharpDX.Direct2D1.SolidColorBrush(RenderTarget, new SharpDX.Color(20, 20, 20, 200));
+			RenderTarget.DrawEllipse(ellipse, ringBrush, 1.5f);
+			lightBrush.Dispose();
+			ringBrush.Dispose();
+
 			brushBg.Dispose();
 			brushTx.Dispose();
 			tf.Dispose();
@@ -371,13 +424,13 @@ namespace NinjaTrader.NinjaScript.Indicators
 
 		[NinjaScriptProperty]
 		[Range(1, 600)]
-		[Display(Name = "1차 경고(노랑) 초", Order = 4, GroupName = "설정")]
-		public int Warn1Sec { get; set; }
+		[Display(Name = "신호등 확정 시점(초)", Order = 4, GroupName = "설정")]
+		public int SignalSec { get; set; }
 
 		[NinjaScriptProperty]
-		[Range(1, 600)]
-		[Display(Name = "2차 경고(주황) 초", Order = 5, GroupName = "설정")]
-		public int Warn2Sec { get; set; }
+		[Range(0.0, 50.0)]
+		[Display(Name = "빨강 임계(net<-이값 pt)", Order = 5, GroupName = "설정")]
+		public double BadThreshold { get; set; }
 		#endregion
 	}
 }

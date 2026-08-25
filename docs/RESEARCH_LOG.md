@@ -4009,6 +4009,18 @@ ATR 4.3+ 나쁨(§6.114) + CPI날 나쁨 + 틱튐날 나쁨(8/18) = 공통점 "�
 - 우선순위: (1)AccountName 수동지정(오버라이드) → (2)차트트레이더 선택계좌 → (3)폴백(상품포지션 계좌→non-Sim첫계좌).
 - ★미검증: ChartTrader 리플렉션 경로는 NT8 버전따라 다를수. 컴파일후 CT계좌 인식되는지 확인필요. 안되면 실제 속성명 알려주면 수정(또는 AccountName 수동지정으로 확실히).
 
+### ★★★ 신호등 방식으로 변경 (거래자 요청)
+- 거래자: 시간기반 색(60/90초 노랑주황) 말고, 60초 시점에 net<-5면 빨강 아니면 초록. 패널 배경 다바꾸지말고 작은 신호등 라이트만.
+- 확정방식(거래자선택): 60초 딱 그 순간 net 측정해 고정(이후 안바뀜). 60초전엔 회색(중립).
+- 구현:
+  - 진입시 entryPrice(AveragePrice)+posSign(롱+1/숏-1) 기록.
+  - OnBarUpdate서 elapsedSec>=SignalSec(60) 첫순간: net=(Closes[1][0]-entryPrice)*posSign. net<-BadThreshold(5)면 빨강(2), 아니면 초록(1). lightLocked로 1회고정.
+  - 청산시 신호등 리셋(회색).
+  - 렌더: 패널배경 중립(청회색), 우측에 작은 원(FillEllipse r=9) 라이트. 0회색/1초록/2빨강.
+  - 설정: SignalSec(기본60), BadThreshold(기본5pt). Warn1/2Sec 제거.
+- ★net은 pt단위((가격차)*방향). NQ/MNQ 1pt=1.0가격. 정확.
+- 미검증: Closes[1] BIP==1 접근+ChartTrader 리플렉션, NT8 컴파일 확인필요.
+
 ### 상태
 - 계좌선택 보완완료(위)
 - 코드작성완료+API논리검증(NT8 Account/Position API 확인). 괄호균형 OK.
@@ -4184,6 +4196,8 @@ ATR 4.3+ 나쁨(§6.114) + CPI날 나쁨 + 틱튐날 나쁨(8/18) = 공통점 "�
 (구글 Drive 파일생성 도구가 일시적 에러 → 시트는 거래자가 CSV 가져오기로 생성 후 프로젝트 소스 공유, fileId 받으면 Claude가 읽음.)
 
 ## 9. 업데이트 로그
+
+- **2026-08-24 (v185):** 6.155보완3 타이머 신호등(거래자요청). 시간기반색(60/90초) 제거→60초 시점 net<-5면 빨강 아니면 초록, 60초전 회색. 작은 원 라이트만(패널배경 중립). 60초 딱 그순간 고정(거래자선택). entryPrice(AveragePrice)+posSign 기록, net=(Closes[1][0]-entry)*sign. 설정 SignalSec(60)/BadThreshold(5). ★Closes[1]접근+CT리플렉션 컴파일확인 필요.
 
 - **2026-08-24 (v184):** 6.155보완2 타이머 차트트레이더 계좌추종(거래자 아이디어, 더나음). 계좌명 손입력 대신 그 차트 ChartTrader 선택계좌 따라감(차트표시와 항상일치, CT서 바꾸면 추종). ChartControl.OwnerChart.ChartTrader.Account 리플렉션(NT8버전차 대비 방법1/2+폴백). 우선순위: 수동AccountName>CT계좌>폴백. 라벨 CT:계좌명. ★리플렉션 경로 NT버전차로 미검증-컴파일후 확인필요.
 
