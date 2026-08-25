@@ -84,18 +84,17 @@ namespace NinjaTrader.NinjaScript.Indicators
 		}
 
 		// ── 감시할 계좌 결정
-		//   여러 계좌 동시운용 대비: 지정을 강력 권장. 자동선택은 폴백이며 화면에 명시.
+		//   우선순위: (1)AccountName 지정 → (2)차트트레이더 선택계좌 → (3)폴백
 		private void ResolveAccount()
 		{
 			lock (Account.All)
 			{
-				// 1) 이름 지정 시 정확히 그 계좌
+				// 1) 이름 지정 시 정확히 그 계좌 (수동 오버라이드)
 				if (!string.IsNullOrEmpty(AccountName))
 				{
 					watchedAccount = Account.All.FirstOrDefault(a => a.Name == AccountName);
 					if (watchedAccount == null)
 					{
-						// 지정했으나 못찾음 = 오타/미연결. 경고표시, 자동선택 안함(엉뚱계좌 방지).
 						acctLabel = "!" + AccountName + "?";
 						return;
 					}
@@ -103,28 +102,69 @@ namespace NinjaTrader.NinjaScript.Indicators
 				}
 				else
 				{
-					// 2) 미지정 폴백: 이 차트 상품의 포지션을 가진 계좌 우선,
-					//    없으면 non-Sim 첫 계좌. 어느걸 골랐는지 라벨에 명시.
-					Account pick = null;
-					if (Instrument != null)
+					// 2) ★차트트레이더가 선택한 계좌 따라가기 (차트에 보이는 그 계좌)
+					Account ct = TryGetChartTraderAccount();
+					if (ct != null)
 					{
-						pick = Account.All.FirstOrDefault(a =>
-						{
-							lock (a.Positions)
-								return a.Positions.Any(x => x.Instrument != null
-									&& x.Instrument.FullName == Instrument.FullName
-									&& x.MarketPosition != MarketPosition.Flat);
-						});
+						watchedAccount = ct;
+						acctLabel = "CT:" + ct.Name;
 					}
-					if (pick == null)
-						pick = Account.All.FirstOrDefault(a => !a.Name.ToLower().Contains("sim"))
-							?? Account.All.FirstOrDefault();
-
-					watchedAccount = pick;
-					acctLabel = watchedAccount != null ? "auto:" + watchedAccount.Name : "?";
+					else
+					{
+						// 3) 폴백: 이차트 상품 포지션 가진 계좌 → non-Sim 첫계좌
+						Account pick = null;
+						if (Instrument != null)
+						{
+							pick = Account.All.FirstOrDefault(a =>
+							{
+								lock (a.Positions)
+									return a.Positions.Any(x => x.Instrument != null
+										&& x.Instrument.FullName == Instrument.FullName
+										&& x.MarketPosition != MarketPosition.Flat);
+							});
+						}
+						if (pick == null)
+							pick = Account.All.FirstOrDefault(a => !a.Name.ToLower().Contains("sim"))
+								?? Account.All.FirstOrDefault();
+						watchedAccount = pick;
+						acctLabel = watchedAccount != null ? "auto:" + watchedAccount.Name : "?";
+					}
 				}
 			}
 			Subscribe();
+		}
+
+		// ★ 차트트레이더가 현재 선택한 계좌를 가져오기.
+		//   NT8 버전에 따라 접근경로가 달라 여러 방법 시도(리플렉션 폴백).
+		private Account TryGetChartTraderAccount()
+		{
+			try
+			{
+				if (ChartControl == null || ChartControl.OwnerChart == null) return null;
+				var owner = ChartControl.OwnerChart;
+
+				// 방법1: OwnerChart.ChartTrader.Account (속성 직접)
+				var ctProp = owner.GetType().GetProperty("ChartTrader");
+				object ctObj = ctProp != null ? ctProp.GetValue(owner) : null;
+				if (ctObj != null)
+				{
+					var accProp = ctObj.GetType().GetProperty("Account");
+					var acc = accProp != null ? accProp.GetValue(ctObj) as Account : null;
+					if (acc != null) return acc;
+				}
+
+				// 방법2: OwnerChart.ChartTraderControl.Account
+				var ctcProp = owner.GetType().GetProperty("ChartTraderControl");
+				object ctcObj = ctcProp != null ? ctcProp.GetValue(owner) : null;
+				if (ctcObj != null)
+				{
+					var accProp = ctcObj.GetType().GetProperty("Account");
+					var acc = accProp != null ? accProp.GetValue(ctcObj) as Account : null;
+					if (acc != null) return acc;
+				}
+			}
+			catch { /* 접근 실패 시 폴백으로 */ }
+			return null;
 		}
 
 		private void Subscribe()
@@ -221,9 +261,24 @@ namespace NinjaTrader.NinjaScript.Indicators
 			{
 				ResolveAccount();
 			}
+			// ★ AccountName 미지정(=차트트레이더 추종) 시, 사용자가 CT 계좌를
+			//   바꿨을 수 있으니 주기적으로 재확인. 바뀌었으면 재구독.
+			else if (string.IsNullOrEmpty(AccountName) && BarsInProgress == 1)
+			{
+				Account ct = TryGetChartTraderAccount();
+				if (ct != null && ct.Name != watchedAccount.Name)
+				{
+					Unsubscribe();
+					watchedAccount = ct;
+					acctLabel = "CT:" + ct.Name;
+					// 포지션 상태 초기화 후 새 계좌로 재구독
+					curPos = MarketPosition.Flat; inPosition = false;
+					entryDataTime = DateTime.MinValue; elapsedSec = 0; posText = "FLAT";
+					Subscribe();
+				}
+			}
 
 			// 경과 시간 갱신: 데이터 시각 기준(재생 대응).
-			//   entryDataTime이 유효하면 데이터시각차, 아니면 DateTime.Now 폴백(라이브 즉시진입 대비).
 			if (inPosition)
 			{
 				if (entryDataTime != DateTime.MinValue && lastDataTime != DateTime.MinValue
@@ -301,7 +356,7 @@ namespace NinjaTrader.NinjaScript.Indicators
 
 		#region Properties
 		[NinjaScriptProperty]
-		[Display(Name = "감시 계좌명(비우면 자동)", Order = 1, GroupName = "설정")]
+		[Display(Name = "감시 계좌명(비우면 차트트레이더 추종)", Order = 1, GroupName = "설정")]
 		public string AccountName { get; set; }
 
 		[NinjaScriptProperty]
