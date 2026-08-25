@@ -47,6 +47,9 @@ namespace NinjaTrader.NinjaScript.Indicators
 		private DateTime lastDataTime  = DateTime.MinValue;  // 최신 틱의 시각
 		private DateTime entryDataTime = DateTime.MinValue;  // 진입 순간의 데이터 시각
 
+		// ★ 어느 계좌를 감시중인지 화면표시용 (여러 계좌 동시운용 대비)
+		private volatile string acctLabel = "?";
+
 		protected override void OnStateChange()
 		{
 			if (State == State.SetDefaults)
@@ -81,19 +84,45 @@ namespace NinjaTrader.NinjaScript.Indicators
 		}
 
 		// ── 감시할 계좌 결정
+		//   여러 계좌 동시운용 대비: 지정을 강력 권장. 자동선택은 폴백이며 화면에 명시.
 		private void ResolveAccount()
 		{
 			lock (Account.All)
 			{
+				// 1) 이름 지정 시 정확히 그 계좌
 				if (!string.IsNullOrEmpty(AccountName))
+				{
 					watchedAccount = Account.All.FirstOrDefault(a => a.Name == AccountName);
+					if (watchedAccount == null)
+					{
+						// 지정했으나 못찾음 = 오타/미연결. 경고표시, 자동선택 안함(엉뚱계좌 방지).
+						acctLabel = "!" + AccountName + "?";
+						return;
+					}
+					acctLabel = watchedAccount.Name;
+				}
+				else
+				{
+					// 2) 미지정 폴백: 이 차트 상품의 포지션을 가진 계좌 우선,
+					//    없으면 non-Sim 첫 계좌. 어느걸 골랐는지 라벨에 명시.
+					Account pick = null;
+					if (Instrument != null)
+					{
+						pick = Account.All.FirstOrDefault(a =>
+						{
+							lock (a.Positions)
+								return a.Positions.Any(x => x.Instrument != null
+									&& x.Instrument.FullName == Instrument.FullName
+									&& x.MarketPosition != MarketPosition.Flat);
+						});
+					}
+					if (pick == null)
+						pick = Account.All.FirstOrDefault(a => !a.Name.ToLower().Contains("sim"))
+							?? Account.All.FirstOrDefault();
 
-				// 지정 없거나 못찾으면: non-Sim 우선, 없으면 첫 계좌
-				if (watchedAccount == null)
-					watchedAccount = Account.All.FirstOrDefault(a => a.Connection != null
-						&& a.Connection.Options != null
-						&& !a.Name.ToLower().Contains("sim"))
-						?? Account.All.FirstOrDefault();
+					watchedAccount = pick;
+					acctLabel = watchedAccount != null ? "auto:" + watchedAccount.Name : "?";
+				}
 			}
 			Subscribe();
 		}
@@ -144,6 +173,9 @@ namespace NinjaTrader.NinjaScript.Indicators
 		private void OnPositionUpdate(object sender, PositionEventArgs e)
 		{
 			if (e.Position == null || e.Position.Instrument == null) return;
+			// ★ 이 이벤트가 감시중인 계좌 것인지 확인 (여러 계좌 동시운용 안전)
+			if (watchedAccount != null && e.Position.Account != null
+				&& e.Position.Account.Name != watchedAccount.Name) return;
 			// 이 차트의 상품만
 			if (Instrument == null || e.Position.Instrument.FullName != Instrument.FullName) return;
 
@@ -215,7 +247,7 @@ namespace NinjaTrader.NinjaScript.Indicators
 			{
 				bg = new SharpDX.Color(90, 90, 90, 200);
 				line1 = "TIMER: FLAT";
-				line2 = "포지션 없음";
+				line2 = "[" + acctLabel + "]";
 			}
 			else
 			{
@@ -225,11 +257,11 @@ namespace NinjaTrader.NinjaScript.Indicators
 				else                    bg = new SharpDX.Color(30, 160, 70, 220);   // 초록(진행중)
 
 				int mm = s / 60, ss = s % 60;
-				line1 = string.Format("{0}  {1}:{2:00}", posText, mm, ss);
+				line1 = string.Format("{0} {1}:{2:00}", posText, mm, ss);
 
-				if (s >= Warn2Sec)      line2 = string.Format("{0}초 경과 ⚠⚠", s);
-				else if (s >= Warn1Sec) line2 = string.Format("{0}초 경과 ⚠", s);
-				else                    line2 = string.Format("{0}초", s);
+				// 2번째 줄: 경과초 + 계좌 (어느 계좌인지 항상 보이게)
+				string warn = s >= Warn2Sec ? " !!" : (s >= Warn1Sec ? " !" : "");
+				line2 = string.Format("{0}s{1}  [{2}]", s, warn, acctLabel);
 			}
 
 			var tf = new SharpDX.DirectWrite.TextFormat(
