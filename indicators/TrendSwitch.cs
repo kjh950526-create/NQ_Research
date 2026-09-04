@@ -329,30 +329,33 @@ namespace NinjaTrader.NinjaScript.Indicators
 
 			bool on = rOn; int dir = rDir; int phase = rPhase;
 
-			SharpDX.Color bg;
+			// ── 배경은 항상 중립(어두운 회색). 심리적 압박 최소화 위해 색으로 부추기지 않음.
+			SharpDX.Color bg = new SharpDX.Color(45, 45, 48, 180);
+			SharpDX.Color txCol = new SharpDX.Color(210, 210, 210, 255);   // 기본 옅은 회색
 			string text;
 
 			if (phase == 0)        // 시작 전 대기
 			{
-				bg = new SharpDX.Color(50, 50, 50, 170);
 				text = "TrendSwitch\n대기 (10:00~)\n—";
+				txCol = new SharpDX.Color(140, 140, 140, 255);
 			}
 			else if (phase == 2)   // 종료
 			{
-				bg = new SharpDX.Color(50, 50, 50, 170);
-				text = "TrendSwitch\n종료 (11:00 지남)\n—";
+				text = "TrendSwitch\n종료 (11:00~)\n—";
+				txCol = new SharpDX.Color(140, 140, 140, 255);
 			}
 			else                   // 활성
 			{
-				if (on && dir > 0)      bg = new SharpDX.Color(30, 120, 50, 210);
-				else if (on && dir < 0) bg = new SharpDX.Color(150, 35, 35, 210);
-				else                    bg = new SharpDX.Color(70, 70, 70, 190);
-				// 스파이크성이면 주황빛 덧입혀 경고
-				if (on && rSpike)       bg = new SharpDX.Color(190, 110, 20, 215);
+				// 글씨 색만 은은하게: ON 상승=차분한 초록, ON 하락=차분한 적색, OFF=회색.
+				if (on && dir > 0)      txCol = new SharpDX.Color(120, 200, 130, 255);
+				else if (on && dir < 0) txCol = new SharpDX.Color(210, 130, 130, 255);
+				else                    txCol = new SharpDX.Color(160, 160, 165, 255);
+				// 스파이크성이면 글씨를 옅은 주황으로(경고, 여전히 담백)
+				if (on && rSpike)       txCol = new SharpDX.Color(220, 175, 110, 255);
 
-				string dirArrow = on ? (dir > 0 ? "▲ 강한 상승추세" : "▼ 강한 하락추세") : "추세 약함";
+				string dirArrow = on ? (dir > 0 ? "▲ 상승추세" : "▼ 하락추세") : "추세 약함";
 				string line1 = on ? "추세 ON" : "추세 OFF";
-				if (on && rSpike) line1 = "추세 ON ⚡스파이크";
+				if (on && rSpike) line1 = "추세 ON (⚡스파이크)";
 				string line3 = string.Format("{0}pt / eff {1}%", rMag, rEffPct);
 				text  = line1 + "\n" + dirArrow + "\n" + line3;
 			}
@@ -395,7 +398,7 @@ namespace NinjaTrader.NinjaScript.Indicators
 
 			var rect    = new SharpDX.RectangleF(x, y, w, h);
 			var brushBg = new SharpDX.Direct2D1.SolidColorBrush(RenderTarget, bg);
-			var brushTx = new SharpDX.Direct2D1.SolidColorBrush(RenderTarget, SharpDX.Color.White);
+			var brushTx = new SharpDX.Direct2D1.SolidColorBrush(RenderTarget, txCol);
 			RenderTarget.FillRectangle(rect, brushBg);
 
 			// 텍스트를 칸 안쪽에 여백주고 배치 (밑으로 안 넘치게 h 충분)
