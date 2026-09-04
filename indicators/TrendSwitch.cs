@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Text;
 using System.Windows.Media;
 using NinjaTrader.Cbi;
 using NinjaTrader.Gui;
@@ -57,11 +59,18 @@ namespace NinjaTrader.NinjaScript.Indicators
 		// ── 활성 시간창 (10:00-11:00 ET). 밖에선 계산정지+대기/종료 표시.
 		private int winPhase = 0;   // 0=시작전(대기) 1=활성 2=종료
 
+		// ── 로깅: 상태 전환 이벤트 기록 (ChaosMeter는 하루1행, 이건 전환마다 1행)
+		private List<string> pendingLog = new List<string>();  // 이번 세션 전환 이벤트
+		private int   lastLoggedState = -99;   // 직전 기록 상태(dir, OFF=0)
+		private bool  logHeaderChecked = false;
+		private DateTime logSessionDay = DateTime.MinValue;
+
 		// ── 스위치 상태 (히스테리시스)
 		private bool  switchOn   = false;
 		private int   switchDir  = 0;      // +1 상승추세 -1 하락추세
 		private int   holdBars   = 0;      // 최소유지 카운터
 		private double curMag = 0, curEff = 0;
+		private bool  curSpike = false;    // 최근 1봉이 순이동의 60%+ 차지 = 스파이크성
 
 		// ── 렌더 캐시 (volatile: OnRender는 UI스레드)
 		private volatile int    rDir = 0;       // -1/0/+1
@@ -69,6 +78,7 @@ namespace NinjaTrader.NinjaScript.Indicators
 		private volatile int    rMag = 0;
 		private volatile int    rEffPct = 0;
 		private volatile int    rPhase = 0;     // 0=대기 1=활성 2=종료
+		private volatile bool   rSpike = false;
 
 		// ── 파라미터
 		private const int    BarSec      = 10;     // 봉 크기(초)
@@ -96,6 +106,8 @@ namespace NinjaTrader.NinjaScript.Indicators
 				StartMin     = 0;
 				EndHour      = 11;     // 활성 종료 (ET) 11:00
 				EndMin       = 0;
+				WriteLog     = true;
+				LogPath      = @"C:\NQ_Research\trend_switch_log.csv";
 			}
 			else if (State == State.Configure)
 			{
@@ -126,6 +138,8 @@ namespace NinjaTrader.NinjaScript.Indicators
 				{
 					winPhase = 0; bars.Clear(); bHasData = false;
 					switchOn = false; switchDir = 0; holdBars = 0;
+					pendingLog.Clear(); lastLoggedState = -99;
+					logSessionDay = t.Date;
 				}
 				else winPhase = 0;
 				PushRender();
@@ -137,6 +151,7 @@ namespace NinjaTrader.NinjaScript.Indicators
 				if (winPhase != 2)
 				{
 					winPhase = 2; switchOn = false; switchDir = 0;
+					if (WriteLog) FlushLog();   // 세션 전환이벤트 파일 기록
 				}
 				PushRender();
 				return;
@@ -187,6 +202,15 @@ namespace NinjaTrader.NinjaScript.Indicators
 			double eff = range > 0 ? mag / range : 0;
 			int dir = net > 0 ? 1 : (net < 0 ? -1 : 0);
 
+			// ── 스파이크성 판정: 18봉 중 최대 1봉의 종가변동이 순이동의 60%+ 차지
+			double biggestMove = 0;
+			for (int i = n - LookbackBars; i < n; i++)
+			{
+				double mv = Math.Abs(bars[i].Close - bars[i - 1].Close);
+				if (mv > biggestMove) biggestMove = mv;
+			}
+			curSpike = (mag > 0) && (biggestMove / mag >= 0.60);
+
 			curMag = mag; curEff = eff;
 
 			// ── 히스테리시스 상태 전이
@@ -215,7 +239,58 @@ namespace NinjaTrader.NinjaScript.Indicators
 					switchDir = dir;
 				}
 			}
+
+			// ── 상태 전환 로깅: 현재상태(OFF=0, ON=±dir)가 직전 기록과 다르면 이벤트 기록
+			if (WriteLog)
+			{
+				int curState = switchOn ? switchDir : 0;
+				if (curState != lastLoggedState)
+				{
+					DateTime evt = bars[n - 1].T;
+					string row = string.Format("{0:yyyyMMdd},{1:HH:mm:ss},{2},{3:0},{4:0.00},{5}",
+						evt, evt,
+						switchOn ? (switchDir > 0 ? "UP" : "DOWN") : "OFF",
+						mag, eff, (switchOn && curSpike) ? "SPIKE" : "-");
+					pendingLog.Add(row);
+					lastLoggedState = curState;
+				}
+			}
 			PushRender();
+		}
+
+		private void FlushLog()
+		{
+			try
+			{
+				if (pendingLog.Count == 0) return;
+				string dir = Path.GetDirectoryName(LogPath);
+				if (!Directory.Exists(dir)) Directory.CreateDirectory(dir);
+
+				string dayKey = logSessionDay.ToString("yyyyMMdd");
+				if (logSessionDay == DateTime.MinValue && pendingLog.Count > 0)
+					dayKey = pendingLog[0].Substring(0, 8);
+
+				// 이미 이 날짜가 기록돼 있으면 재기록 안 함(중복 방지)
+				bool exists = false;
+				if (File.Exists(LogPath))
+				{
+					foreach (string line in File.ReadAllLines(LogPath))
+						if (line.StartsWith(dayKey + ",")) { exists = true; break; }
+				}
+				if (exists) { pendingLog.Clear(); return; }
+
+				bool needHeader = !File.Exists(LogPath);
+				using (StreamWriter sw = new StreamWriter(LogPath, true, Encoding.UTF8))
+				{
+					if (needHeader) sw.WriteLine("date,time,state,mag,eff,spike");
+					foreach (string row in pendingLog) sw.WriteLine(row);
+				}
+				pendingLog.Clear();
+			}
+			catch (Exception ex)
+			{
+				Print("TrendSwitch 로그 실패: " + ex.Message);
+			}
 		}
 
 		private void PushRender()
@@ -225,6 +300,7 @@ namespace NinjaTrader.NinjaScript.Indicators
 			rMag    = (int)Math.Round(curMag);
 			rEffPct = (int)Math.Round(curEff * 100);
 			rPhase  = winPhase;
+			rSpike  = switchOn && curSpike;
 		}
 
 		protected override void OnRender(ChartControl chartControl, ChartScale chartScale)
@@ -252,9 +328,12 @@ namespace NinjaTrader.NinjaScript.Indicators
 				if (on && dir > 0)      bg = new SharpDX.Color(30, 120, 50, 210);
 				else if (on && dir < 0) bg = new SharpDX.Color(150, 35, 35, 210);
 				else                    bg = new SharpDX.Color(70, 70, 70, 190);
+				// 스파이크성이면 주황빛 덧입혀 경고
+				if (on && rSpike)       bg = new SharpDX.Color(190, 110, 20, 215);
 
 				string dirArrow = on ? (dir > 0 ? "▲ 강한 상승추세" : "▼ 강한 하락추세") : "추세 약함";
 				string line1 = on ? "추세 ON" : "추세 OFF";
+				if (on && rSpike) line1 = "추세 ON ⚡스파이크";
 				string line3 = string.Format("{0}pt / eff {1}%", rMag, rEffPct);
 				text  = line1 + "\n" + dirArrow + "\n" + line3;
 			}
@@ -331,6 +410,13 @@ namespace NinjaTrader.NinjaScript.Indicators
 		[Range(0, 59)]
 		[Display(Name = "종료 분", GroupName = "활성시간창", Order = 8)]
 		public int EndMin { get; set; }
+
+		[NinjaScriptProperty]
+		[Display(Name = "로그 기록", GroupName = "로깅", Order = 9)]
+		public bool WriteLog { get; set; }
+
+		[Display(Name = "로그 경로", GroupName = "로깅", Order = 10)]
+		public string LogPath { get; set; }
 		#endregion
 	}
 }
