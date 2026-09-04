@@ -54,6 +54,9 @@ namespace NinjaTrader.NinjaScript.Indicators
 
 		private DateTime lastDataTime = DateTime.MinValue;
 
+		// ── 활성 시간창 (10:00-11:00 ET). 밖에선 계산정지+대기/종료 표시.
+		private int winPhase = 0;   // 0=시작전(대기) 1=활성 2=종료
+
 		// ── 스위치 상태 (히스테리시스)
 		private bool  switchOn   = false;
 		private int   switchDir  = 0;      // +1 상승추세 -1 하락추세
@@ -65,6 +68,7 @@ namespace NinjaTrader.NinjaScript.Indicators
 		private volatile bool   rOn  = false;
 		private volatile int    rMag = 0;
 		private volatile int    rEffPct = 0;
+		private volatile int    rPhase = 0;     // 0=대기 1=활성 2=종료
 
 		// ── 파라미터
 		private const int    BarSec      = 10;     // 봉 크기(초)
@@ -88,6 +92,10 @@ namespace NinjaTrader.NinjaScript.Indicators
 				EffOff       = 0.35;   // 꺼짐 효율(히스테리시스)
 				PanelCorner  = 3;      // 0=좌상 1=우상 2=좌하 3=우하
 				FontSizePx   = 20;
+				StartHour    = 10;     // 활성 시작 (ET) 10:00
+				StartMin     = 0;
+				EndHour      = 11;     // 활성 종료 (ET) 11:00
+				EndMin       = 0;
 			}
 			else if (State == State.Configure)
 			{
@@ -105,6 +113,35 @@ namespace NinjaTrader.NinjaScript.Indicators
 			DateTime t = Times[1][0];
 			lastDataTime = t;
 			double c = Closes[1][0], h = Highs[1][0], l = Lows[1][0];
+
+			// ── 활성 시간창 판정 (10:00:00 ~ 11:00:00). 데이터 틱 시각 기준 = playback 정확.
+			double tod = t.TimeOfDay.TotalSeconds;
+			double winStart = StartHour * 3600.0 + StartMin * 60.0;
+			double winEnd   = EndHour   * 3600.0 + EndMin   * 60.0;
+
+			if (tod < winStart)
+			{
+				// 시작 전: 대기. 상태/버퍼 초기화(전날 잔재 제거).
+				if (winPhase != 0)
+				{
+					winPhase = 0; bars.Clear(); bHasData = false;
+					switchOn = false; switchDir = 0; holdBars = 0;
+				}
+				else winPhase = 0;
+				PushRender();
+				return;
+			}
+			if (tod >= winEnd)
+			{
+				// 종료: 스위치 끄고 표시만 '종료'. 계산 정지(가벼움).
+				if (winPhase != 2)
+				{
+					winPhase = 2; switchOn = false; switchDir = 0;
+				}
+				PushRender();
+				return;
+			}
+			winPhase = 1;   // 활성
 
 			// ── 10초봉 구성 (t를 10초 경계로 내림)
 			long sec = (long)(t.TimeOfDay.TotalSeconds);
@@ -187,6 +224,7 @@ namespace NinjaTrader.NinjaScript.Indicators
 			rDir    = switchOn ? switchDir : 0;
 			rMag    = (int)Math.Round(curMag);
 			rEffPct = (int)Math.Round(curEff * 100);
+			rPhase  = winPhase;
 		}
 
 		protected override void OnRender(ChartControl chartControl, ChartScale chartScale)
@@ -194,19 +232,32 @@ namespace NinjaTrader.NinjaScript.Indicators
 			base.OnRender(chartControl, chartScale);
 			if (RenderTarget == null || ChartPanel == null) return;
 
-			bool on = rOn; int dir = rDir;
+			bool on = rOn; int dir = rDir; int phase = rPhase;
 
-			// 배경색: ON 상승=진초록, ON 하락=진빨강, OFF=회색
 			SharpDX.Color bg;
-			if (on && dir > 0)      bg = new SharpDX.Color(30, 120, 50, 210);
-			else if (on && dir < 0) bg = new SharpDX.Color(150, 35, 35, 210);
-			else                    bg = new SharpDX.Color(70, 70, 70, 190);
+			string text;
 
-			string dirArrow = on ? (dir > 0 ? "▲ 강한 상승추세" : "▼ 강한 하락추세") : "추세 약함";
-			string line1 = on ? "추세 ON" : "추세 OFF";
-			string line2 = dirArrow;
-			string line3 = string.Format("{0}pt / eff {1}%", rMag, rEffPct);
-			string text  = line1 + "\n" + line2 + "\n" + line3;
+			if (phase == 0)        // 시작 전 대기
+			{
+				bg = new SharpDX.Color(50, 50, 50, 170);
+				text = "TrendSwitch\n대기 (10:00~)\n—";
+			}
+			else if (phase == 2)   // 종료
+			{
+				bg = new SharpDX.Color(50, 50, 50, 170);
+				text = "TrendSwitch\n종료 (11:00 지남)\n—";
+			}
+			else                   // 활성
+			{
+				if (on && dir > 0)      bg = new SharpDX.Color(30, 120, 50, 210);
+				else if (on && dir < 0) bg = new SharpDX.Color(150, 35, 35, 210);
+				else                    bg = new SharpDX.Color(70, 70, 70, 190);
+
+				string dirArrow = on ? (dir > 0 ? "▲ 강한 상승추세" : "▼ 강한 하락추세") : "추세 약함";
+				string line1 = on ? "추세 ON" : "추세 OFF";
+				string line3 = string.Format("{0}pt / eff {1}%", rMag, rEffPct);
+				text  = line1 + "\n" + dirArrow + "\n" + line3;
+			}
 
 			var tf = new SharpDX.DirectWrite.TextFormat(
 				NinjaTrader.Core.Globals.DirectWriteFactory, "Segoe UI",
@@ -260,6 +311,26 @@ namespace NinjaTrader.NinjaScript.Indicators
 		[Range(8, 40)]
 		[Display(Name = "폰트 크기", GroupName = "TrendSwitch", Order = 4)]
 		public int FontSizePx { get; set; }
+
+		[NinjaScriptProperty]
+		[Range(0, 23)]
+		[Display(Name = "시작 시(ET)", GroupName = "활성시간창", Order = 5)]
+		public int StartHour { get; set; }
+
+		[NinjaScriptProperty]
+		[Range(0, 59)]
+		[Display(Name = "시작 분", GroupName = "활성시간창", Order = 6)]
+		public int StartMin { get; set; }
+
+		[NinjaScriptProperty]
+		[Range(0, 23)]
+		[Display(Name = "종료 시(ET)", GroupName = "활성시간창", Order = 7)]
+		public int EndHour { get; set; }
+
+		[NinjaScriptProperty]
+		[Range(0, 59)]
+		[Display(Name = "종료 분", GroupName = "활성시간창", Order = 8)]
+		public int EndMin { get; set; }
 		#endregion
 	}
 }
