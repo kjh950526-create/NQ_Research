@@ -100,14 +100,17 @@ namespace NinjaTrader.NinjaScript.Indicators
 				MagThreshold = 15.0;   // 켜짐 최소 이동폭(pt)
 				EffOn        = 0.50;   // 켜짐 효율
 				EffOff       = 0.35;   // 꺼짐 효율(히스테리시스)
-				PanelCorner  = 3;      // 0=좌상 1=우상 2=좌하 3=우하
-				FontSizePx   = 20;
+				PanelCorner  = 1;      // 0=좌상 1=우상 2=좌하 3=우하 (도킹 끄면 사용)
+				FontSizePx   = 16;
+				DockUnderTimer = true; // PositionTimer(우상단) 바로 아래 정렬
+				PanelWidth   = 200;    // 타이머와 폭 맞춤
+				TimerGap     = 6;      // 타이머 패널과의 세로 간격(px)
 				StartHour    = 10;     // 활성 시작 (ET) 10:00
 				StartMin     = 0;
 				EndHour      = 11;     // 활성 종료 (ET) 11:00
 				EndMin       = 0;
 				WriteLog     = true;
-				LogPath      = @"C:\NQ_Research\trend_switch_log.csv";
+				LogPath      = @"C:\NQ_Research\trend_switch.csv";   // 폴더 기준, 실제파일은 trend_switch_YYYYMMDD.csv
 			}
 			else if (State == State.Configure)
 			{
@@ -253,6 +256,8 @@ namespace NinjaTrader.NinjaScript.Indicators
 						mag, eff, (switchOn && curSpike) ? "SPIKE" : "-");
 					pendingLog.Add(row);
 					lastLoggedState = curState;
+					// 전환이 쌓이면 중간 저장(NT 중간종료 대비). 8건마다.
+					if (pendingLog.Count >= 8) FlushLog();
 				}
 			}
 			PushRender();
@@ -266,24 +271,38 @@ namespace NinjaTrader.NinjaScript.Indicators
 				string dir = Path.GetDirectoryName(LogPath);
 				if (!Directory.Exists(dir)) Directory.CreateDirectory(dir);
 
-				string dayKey = logSessionDay.ToString("yyyyMMdd");
-				if (logSessionDay == DateTime.MinValue && pendingLog.Count > 0)
-					dayKey = pendingLog[0].Substring(0, 8);
+				// ── 날짜별 파일: LogPath 폴더에 trend_switch_YYYYMMDD.csv
+				string dayKey = logSessionDay != DateTime.MinValue
+					? logSessionDay.ToString("yyyyMMdd")
+					: pendingLog[0].Substring(0, 8);
+				string dayFile = Path.Combine(dir, "trend_switch_" + dayKey + ".csv");
 
-				// 이미 이 날짜가 기록돼 있으면 재기록 안 함(중복 방지)
-				bool exists = false;
-				if (File.Exists(LogPath))
+				// ── 기존 데이터행 로드(있으면) + 이번 세션 행 합치기
+				//    key = time(HH:mm:ss) 기준 중복제거, 시간순 정렬.
+				var rows = new SortedDictionary<string, string>(StringComparer.Ordinal);
+				if (File.Exists(dayFile))
 				{
-					foreach (string line in File.ReadAllLines(LogPath))
-						if (line.StartsWith(dayKey + ",")) { exists = true; break; }
+					foreach (string line in File.ReadAllLines(dayFile))
+					{
+						if (string.IsNullOrWhiteSpace(line)) continue;
+						if (line.StartsWith("date,")) continue;              // 헤더 skip
+						string[] p = line.Split(',');
+						if (p.Length < 2) continue;
+						rows[p[1]] = line;   // p[1] = time → 같은시각이면 최신으로 덮음, 자동 정렬
+					}
 				}
-				if (exists) { pendingLog.Clear(); return; }
-
-				bool needHeader = !File.Exists(LogPath);
-				using (StreamWriter sw = new StreamWriter(LogPath, true, Encoding.UTF8))
+				foreach (string row in pendingLog)
 				{
-					if (needHeader) sw.WriteLine("date,time,state,mag,eff,spike");
-					foreach (string row in pendingLog) sw.WriteLine(row);
+					string[] p = row.Split(',');
+					if (p.Length < 2) continue;
+					rows[p[1]] = row;
+				}
+
+				// ── 시간순 정렬(SortedDictionary가 time 키로 자동) 재작성
+				using (StreamWriter sw = new StreamWriter(dayFile, false, Encoding.UTF8))
+				{
+					sw.WriteLine("date,time,state,mag,eff,spike");
+					foreach (var kv in rows) sw.WriteLine(kv.Value);
 				}
 				pendingLog.Clear();
 			}
@@ -342,17 +361,36 @@ namespace NinjaTrader.NinjaScript.Indicators
 				NinjaTrader.Core.Globals.DirectWriteFactory, "Segoe UI",
 				SharpDX.DirectWrite.FontWeight.Bold,
 				SharpDX.DirectWrite.FontStyle.Normal, FontSizePx);
+			tf.WordWrapping = SharpDX.DirectWrite.WordWrapping.NoWrap;
 
-			float w = 210, h = 78, pad = 10;
+			// ── 크기: 폭은 타이머(200)와 맞춤. 높이는 3줄 텍스트에 맞게 넉넉히.
+			float w = PanelWidth;
+			float lineH = FontSizePx * 1.35f;         // 줄 높이
+			float h = lineH * 3 + 14;                 // 3줄 + 상하 여백
+			float pad = 10;
+
+			float left   = ChartPanel.X;
+			float top    = ChartPanel.Y;
+			float right  = ChartPanel.X + ChartPanel.W;
+			float bottom = ChartPanel.Y + ChartPanel.H;
+
 			float x, y;
-			float pw = ChartPanel.W, ph = ChartPanel.H;
-			float px = ChartPanel.X, py = ChartPanel.Y;
-			switch (PanelCorner)
+			if (DockUnderTimer)
 			{
-				case 0:  x = px + pad;            y = py + pad;            break;
-				case 1:  x = px + pw - w - pad;   y = py + pad;            break;
-				case 2:  x = px + pad;            y = py + ph - h - pad;   break;
-				default: x = px + pw - w - pad;   y = py + ph - h - pad;   break;
+				// PositionTimer(우상단, 폭200 높이62 패딩10) 바로 아래에 정렬.
+				float timerH = 62;
+				x = right - w - pad;
+				y = top + pad + timerH + TimerGap;
+			}
+			else
+			{
+				switch (PanelCorner)
+				{
+					case 0:  x = left + pad;         y = top + pad;            break;
+					case 1:  x = right - w - pad;    y = top + pad;            break;
+					case 2:  x = left + pad;         y = bottom - h - pad;     break;
+					default: x = right - w - pad;    y = bottom - h - pad;     break;
+				}
 			}
 
 			var rect    = new SharpDX.RectangleF(x, y, w, h);
@@ -360,8 +398,10 @@ namespace NinjaTrader.NinjaScript.Indicators
 			var brushTx = new SharpDX.Direct2D1.SolidColorBrush(RenderTarget, SharpDX.Color.White);
 			RenderTarget.FillRectangle(rect, brushBg);
 
-			var layoutRect = new SharpDX.RectangleF(x + 10, y + 6, w - 14, h - 8);
-			RenderTarget.DrawText(text, tf, layoutRect, brushTx);
+			// 텍스트를 칸 안쪽에 여백주고 배치 (밑으로 안 넘치게 h 충분)
+			var layoutRect = new SharpDX.RectangleF(x + 10, y + 7, w - 16, h - 10);
+			RenderTarget.DrawText(text, tf, layoutRect, brushTx,
+				SharpDX.Direct2D1.DrawTextOptions.Clip);
 
 			brushBg.Dispose(); brushTx.Dispose(); tf.Dispose();
 		}
@@ -383,13 +423,27 @@ namespace NinjaTrader.NinjaScript.Indicators
 
 		[NinjaScriptProperty]
 		[Range(0, 3)]
-		[Display(Name = "패널 위치(0좌상1우상2좌하3우하)", GroupName = "TrendSwitch", Order = 3)]
+		[Display(Name = "패널 위치(0좌상1우상2좌하3우하)", GroupName = "레이아웃", Order = 3)]
 		public int PanelCorner { get; set; }
 
 		[NinjaScriptProperty]
 		[Range(8, 40)]
-		[Display(Name = "폰트 크기", GroupName = "TrendSwitch", Order = 4)]
+		[Display(Name = "폰트 크기", GroupName = "레이아웃", Order = 4)]
 		public int FontSizePx { get; set; }
+
+		[NinjaScriptProperty]
+		[Display(Name = "타이머 아래 도킹", GroupName = "레이아웃", Order = 5)]
+		public bool DockUnderTimer { get; set; }
+
+		[NinjaScriptProperty]
+		[Range(120, 400)]
+		[Display(Name = "패널 폭", GroupName = "레이아웃", Order = 6)]
+		public float PanelWidth { get; set; }
+
+		[NinjaScriptProperty]
+		[Range(0, 100)]
+		[Display(Name = "타이머와 간격(px)", GroupName = "레이아웃", Order = 7)]
+		public float TimerGap { get; set; }
 
 		[NinjaScriptProperty]
 		[Range(0, 23)]

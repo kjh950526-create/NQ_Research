@@ -4866,6 +4866,24 @@ MNQ5 단일계좌 확정(§6.162) 후 운용규칙 4가지 결정. 거래자 선
 - 중복방지(이미기록된 날 스킵), 세션종료(11:00)시 flush. → 나중에 진입시각 상태 매칭 분석용.
 
 
+
+## 6.185. ★ TrendSwitch UI/로그 정리 (거래자 요청) (2026-09-03)
+거래자 4요청: (1)로그 날짜별 파일분리 (2)시간순정렬+중복시각처리 (3)글씨 배경넘침 수정 (4)우상단 타이머 아래로 위치통합.
+
+### (1)(2) 로깅 개편
+- 날짜별 파일: trend_switch_YYYYMMDD.csv (무한누적 방지). LogPath는 폴더기준.
+- SortedDictionary(time키, Ordinal)로 병합→시각 오름차순 자동정렬. HH:mm:ss 자릿수고정이라 문자열정렬=시간순.
+- 중복시각 최신값으로 덮음(재생 여러번 돌려도 깔끔). 8건마다 중간flush(NT중간종료 대비)+11:00 종료flush.
+
+### (3) 레이아웃 수정
+- 글씨 배경 넘침: 높이를 폰트기준 동적계산(lineH*3+14), WordWrapping.NoWrap + DrawTextOptions.Clip. 폰트 20→16.
+
+### (4) 위치 통합 (타이머 아래 도킹)
+- DockUnderTimer=true 기본: PositionTimer(우상단 폭200 높이62 패딩10) 바로 아래 y=top+pad+62+gap 정렬.
+- 폭 200으로 타이머와 맞춤(세로정렬). TimerGap(간격) 파라미터.
+- 도킹 끄면 PanelCorner로 자유배치. = ChaosMeter(위양옆)+PositionTimer+TrendSwitch 우측 세로로 정리.
+
+
 ## 7. 결정 트리 — "감각도 엣지 없으면 다음은?"
 
 
@@ -5034,6 +5052,8 @@ MNQ5 단일계좌 확정(§6.162) 후 운용규칙 4가지 결정. 거래자 선
 (구글 Drive 파일생성 도구가 일시적 에러 → 시트는 거래자가 CSV 가져오기로 생성 후 프로젝트 소스 공유, fileId 받으면 Claude가 읽음.)
 
 ## 9. 업데이트 로그
+
+- **2026-09-03 (v217):** ★6.185 TrendSwitch UI/로그정리(거래자 4요청). (1)날짜별파일 trend_switch_YYYYMMDD.csv(무한누적방지). (2)SortedDictionary time키 Ordinal 병합→시각순 자동정렬, 중복시각 최신덮음, 8건마다+11:00 flush. (3)글씨넘침 수정: 높이 동적계산 lineH*3+14, NoWrap+Clip, 폰트16. (4)타이머아래 도킹(DockUnderTimer=true): PositionTimer 우상단 바로아래 정렬 폭200 맞춤, TimerGap 파라미터. 3인디(ChaosMeter/PositionTimer/TrendSwitch) 우측 세로정리.
 
 - **2026-09-03 (v216):** ★6.184 TrendSwitch 스파이크경고+로깅(거래자: 한캔들 스파이크로 오판?). 정량화: ON 7374중 18%가 스파이크성(1봉>순이동60%). 거래자 지적맞음. ★단 스파이크 걸러도 신호 개선안됨-A현재 25%p가 4방법중 최고(B24 C20 D24), 스파이크 직후도 관성남아 거스름회피 신호로 유효. 결정: A유지+⚡스파이크경고(주황빛, ON중 최근1봉>60%). 로깅 추가: trend_switch_log.csv 상태전환마다 1행(date,time,state,mag,eff,spike), 미터로그(하루1행)와 달리 전환이벤트, 중복방지+11:00 flush, 진입시각 매칭분석용.
 
